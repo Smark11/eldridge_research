@@ -1,9 +1,9 @@
 # Project Execution State
 
 **Last updated:** 2026-05-11
-**Phase:** Phase 1 COMPLETE → **CHECKPOINT B** (awaiting Mark's review)
-**Status:** Long list aggregated + affinity-scored. 10-12 ADVANCE candidates + 6-8 HOLD. Top-priority finding: George & Carol Bauer (Wilton CT, age 95) — invisible to Phase 0 but $35M+ Norwalk Hospital lead donor.
-**Next action:** Mark reviews long list + recommended short list (5-7) before Phase 2 (short-list selection) and Phase 3 (deep dossiers — heaviest phase) dispatch. Do NOT proceed without explicit approval.
+**Phase:** Phase 3 — Deep dossiers (heaviest phase)
+**Status:** Mark approved 7-candidate short list at Checkpoint B. 7 parallel dossier subagents dispatched and running in background.
+**Next action:** Await Batch 3 completion notifications, then commit dossiers, run cross-dossier consistency review, proceed to Phase 4 (benchmarking memo) and Phase 5 (tactical artifacts: network map, cheat sheets, cross-reference matrix).
 
 ---
 
@@ -75,9 +75,19 @@ If this session ended (token reset, context overflow, deliberate stop), a fresh 
 - **Jasper Johns** — Sharon CT, $217M Low Road Foundation, age 95, blue-sky.
 - **Greenwich/Stamford hedge fund corridor** is densely NYP/MSK/Mt Sinai-loyal — Phase 0 audit verdict reinforced.
 
+- ✅ **Checkpoint B** — Mark approved 7-candidate short list. Committed at `2d3d758`.
+
 ## In progress
 
-- 🛑 **CHECKPOINT B** — Mark reviews long list and recommended short list before Phase 2/3 dispatch. See Checkpoint B summary in main conversation context.
+- 🔄 **Phase 3 Batch (7 parallel dossier subagents)** — running in background. Outputs: `dossiers/01_bauer.md` through `dossiers/07_jasper_johns.md`. Source addenda: `sources/_pending_3_*.md`. No-commit subagents; orchestrator commits after all return.
+
+## Recommended next steps post-dossiers
+
+- Run cross-dossier consistency review (Task 3.4 per implementation plan)
+- Optionally dispatch Phase 4 (benchmarking memo, 8-12 case studies) in parallel with finishing Phase 3 work
+- Phase 5 tactical artifacts (warm-intro network map, per-candidate cheat sheets, cross-reference matrix) depend on dossiers complete
+- Phase 6 strategy playbook synthesis depends on Phases 0-5
+- Phase 7 executive summary + designed deck is final synthesis
 
 ## Phase 1 scope refinement (committed at `cae603e` in screening_methodology.md)
 
