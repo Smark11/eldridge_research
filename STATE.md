@@ -60,7 +60,19 @@ If this session ended (token reset, context overflow, deliberate stop), a fresh 
 
 ## In progress
 
-- 🛑 **CHECKPOINT A** — Mark reviews Phase 0 findings before Phase 1 dispatch. See Checkpoint A summary in main conversation context.
+- 🛑 **CHECKPOINT A** — Phase 0 reviewed by Mark; scope refinement received. Phase 1 dispatch paused awaiting Mark's confirmation that web tools are enabled at the harness level.
+
+## Phase 1 scope refinement (decisions from Checkpoint A)
+
+- **Candidate set tightened from 10 to 5-7 highest-affinity candidates** (per Mark, in light of the case-for-support audit verdict that Nuvance does not currently sustain a $500M campaign and the recalibration to $75-200M realistic target).
+- **Calibration shifts toward affinity-first centi-millionaires** (billionaires will rationally route to Northwell flagships post-merger; affinity-first centi-millionaires with Hudson Valley / Western CT ties are the structurally-correct segment).
+- **Source rigor is now a hard standard for all downstream work.** Every factual claim must have a live-verified source; training-data assertions must be labeled and verified before they become load-bearing. See feedback memory `feedback_source_rigor.md`.
+- **Laura Eldridge's title corrected to AVP Development** (not "Senior Director" as some online sources list). Reflected in `phase_0_verification_update.md` (commit `d3cb6a4`).
+
+## Awaiting from Mark
+
+- Confirmation that web tools (WebFetch, WebSearch, curl) are enabled at the harness level for subagent dispatch. Once confirmed, Phase 1 Batch 1.B (parallel screening across 5 source-list categories) can dispatch with subagents able to do their own live verification.
+- If web tools remain blocked at the subagent level: fall back to orchestrator running verification passes between sub-batches.
 
 ## Pending — Phase 0
 
