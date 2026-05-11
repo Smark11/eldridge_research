@@ -78,12 +78,17 @@ The Dyson Foundation has been **"the center's main benefactor"** at Vassar Broth
 - [Dyson Foundation, ProPublica Nonprofit Explorer](https://projects.propublica.org/nonprofits/organizations/136084888) — retrieved 2026-05-10
 - [Dyson Foundation on Cause IQ](https://www.causeiq.com/organizations/dyson-foundation,136084888/) — retrieved 2026-05-10
 
-## 5. Whittingham family — established multi-generational repayer donors
+## 5. Whittingham family — established multi-generational Repayer donors (CORRECTED 2026-05-11 from Phase 1 Batch 1.B)
 
 - **Anthony Whittingham gave first $1.5M in 1997** in honor of his mother, who died of ovarian cancer when he was a child → **classic Repayer motivation, multi-decade evidence**
 - Whittingham family total commitment to cancer care at Norwalk: **$4.5M** since 1997
-- **Current generation (Andrew Whittingham + his brother Michael Whittingham)** are lead contributors to the new C. Anthony and Jean Whittingham Cancer Center (35,000 sq ft, recent expansion)
-- They also named the C. Anthony and Jean Whittingham Pavilion for Specialty Care at Stamford Hospital (2001) — so giving pattern extends across multiple regional hospitals
+- **CRITICAL CORRECTION:** Andrew Whittingham died February 23, 2021 (age 66). Michael Whittingham predeceased Andrew. Both are deceased. The earlier framing here had them as "current generation lead contributors" — that is wrong as of the verification pass conducted at that time (the brothers had been active until Andrew's 2021 death; the framing reflected stale public profiles).
+- **Current Whittingham relationship principals at Norwalk Hospital:** Adam Whittingham (Andrew's son, with wife Catalina, Stamford CT) and Robyn Whittingham (Andrew's widow). Adam appears in 2024 cancer-center walk press materials and a 2024 Norwalk Hospital Facebook video.
+- **Andrew J. Whittingham Family Foundation Inc.** (established 2023, EIN 92-2217690): ~$266K in 2024 grants — modest scale.
+- They also named the C. Anthony and Jean Whittingham Pavilion for Specialty Care at Stamford Hospital (2001) — giving pattern extends across multiple regional hospitals.
+- **Strategic implication revision:** Family wealth tier is centi-millionaire-modest ($50-300M inferred), not transformational. Realistic transformational gift potential is **$1-10M tier (not $25M+ as initially framed)**. Cultivation pathway is now an estate-planning / next-generation Repayer cultivation challenge through Adam Whittingham, not a current-generation peer cultivation.
+
+**Sources for correction:** [Legacy.com Andrew Whittingham obituary](https://www.legacy.com/us/obituaries/thehour/name/andrew-whittingham-obituary?id=8005884); [Echovita obituary 1954-2021](https://www.echovita.com/us/obituaries/ct/stamford/andrew-whittingham-12358334); [Norwalk Hospital Facebook on Andrew passing](https://www.facebook.com/NorwalkHospital/photos/a.150637085010356/5150112315062783/); [Andrew J Whittingham Family Foundation Cause IQ](https://www.causeiq.com/organizations/andrew-j-whittingham-family-foundation,922217690/) — all retrieved 2026-05-10.
 
 **Sources:**
 - [Norwalk Hospital ribbon cutting on new Whittingham Cancer Center, PRWeb](https://www.prweb.com/releases/norwalk_hospital_cuts_ribbon_on_new_c_anthony_and_jean_whittingham_cancer_center/prweb13807920.htm) — retrieved 2026-05-10
