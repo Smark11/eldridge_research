@@ -1,9 +1,9 @@
 # Project Execution State
 
-**Last updated:** 2026-05-10
-**Phase:** Phase 1 — Long-list generation
-**Status:** Batch 1.B (5-way parallel geographic-wealth screen) dispatched, running in background. Methodology + scope refinements committed.
-**Next action:** Await Batch 1.B completion notifications, then aggregate to long_list.md (Task 1.4), then dispatch Batch 1.C (parallel affinity-scoring).
+**Last updated:** 2026-05-11
+**Phase:** Phase 1 COMPLETE → **CHECKPOINT B** (awaiting Mark's review)
+**Status:** Long list aggregated + affinity-scored. 10-12 ADVANCE candidates + 6-8 HOLD. Top-priority finding: George & Carol Bauer (Wilton CT, age 95) — invisible to Phase 0 but $35M+ Norwalk Hospital lead donor.
+**Next action:** Mark reviews long list + recommended short list (5-7) before Phase 2 (short-list selection) and Phase 3 (deep dossiers — heaviest phase) dispatch. Do NOT proceed without explicit approval.
 
 ---
 
@@ -60,9 +60,24 @@ If this session ended (token reset, context overflow, deliberate stop), a fresh 
 - ✅ **Checkpoint A** — completed. Scope tightened to 5-7 final candidates, web access enabled via curated allowlist (~30 domains), Laura's title corrected to AVP Development, source rigor codified.
 - ✅ **Phase 1 Task 1.1: Screening methodology** — committed at `cae603e`. Reflects scope refinement and Phase 0 priors.
 
+- ✅ **Phase 1 Batch 1.B** — 5 parallel screens complete, committed at `e993e71`. Subagents hit rate limit during return-to-orchestrator but all files were written to disk before limit. Recovered.
+- ✅ **Phase 1 aggregation + Batch 1.C (orchestrator-consolidated)** — committed at `b9b31bc`. Orchestrator-led affinity scoring saved a parallel-subagent dispatch; long_list.md complete with 10-12 ADVANCE + 6-8 HOLD candidates.
+- ✅ **Whittingham correction** — Phase 0 verification update §5 corrected (Andrew d. Feb 2021, Michael predeceased; current principals Adam + Robyn).
+
+## Critical Phase 1 findings (preview for Checkpoint B)
+
+- **George & Carol Bauer** — TOP PRIORITY. $35M+ Norwalk Hospital lead donor, age 95, succession-imminent. Invisible to Phase 0.
+- **Robert R. Dyson** — score 26/30. Multi-decade Vassar Brothers benefactor; foundation $246.9M; transformational ask requires escalation from $1M-tier history.
+- **Ray Dalio** — score 26/30. Already active Nuvance donor ($5.1M June 2025); Bridgewater exit complete = peak life-stage signal.
+- **Whittingham family** — score 23/30 BUT lower wealth tier than Phase 0 assumed. Transformational potential $1-10M, not $25M+.
+- **Michael Rees** — Feinstein/Northwell board insider; mid-career.
+- **Amy Goldman Fowler** — Rhinebeck NY core service area but cause-affinity gap.
+- **Jasper Johns** — Sharon CT, $217M Low Road Foundation, age 95, blue-sky.
+- **Greenwich/Stamford hedge fund corridor** is densely NYP/MSK/Mt Sinai-loyal — Phase 0 audit verdict reinforced.
+
 ## In progress
 
-- 🔄 **Phase 1 Batch 1.B (5 parallel subagents)** — geographic-wealth screen in 5 categories: Forbes, Bloomberg, hedge fund principals, local rich lists, foundation 990-PF principals. Each writes to a separate `screen_NN_*.md` file; orchestrator aggregates after all return.
+- 🛑 **CHECKPOINT B** — Mark reviews long list and recommended short list before Phase 2/3 dispatch. See Checkpoint B summary in main conversation context.
 
 ## Phase 1 scope refinement (committed at `cae603e` in screening_methodology.md)
 
