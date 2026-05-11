@@ -1,9 +1,9 @@
 # Project Execution State
 
 **Last updated:** 2026-05-10
-**Phase:** Phase 0 COMPLETE → **CHECKPOINT A** (awaiting Mark's review)
-**Status:** All 5 Phase 0 documents written and committed. Live-web verification pass complete. Case-for-support audit verdict: Nuvance does not currently sustain a $500M case for support; strategy must recalibrate as $75-200M transformational play over 3-5 years.
-**Next action:** Mark reviews Phase 0 findings and decides Phase 1 calibration. Do NOT proceed to Phase 1 without explicit approval.
+**Phase:** Phase 1 — Long-list generation
+**Status:** Batch 1.B (5-way parallel geographic-wealth screen) dispatched, running in background. Methodology + scope refinements committed.
+**Next action:** Await Batch 1.B completion notifications, then aggregate to long_list.md (Task 1.4), then dispatch Batch 1.C (parallel affinity-scoring).
 
 ---
 
@@ -57,22 +57,25 @@ If this session ended (token reset, context overflow, deliberate stop), a fresh 
 - **Donor base is regional, not national:** three clusters — Dutchess multigenerational families, Fairfield grateful-patient executives, Litchfield weekenders. Affinity-first calibration is strongly ratified.
 
 - ✅ **Task 0.6: Case-for-support audit** — synthesis complete, committed at `d993db4`. Verdict: Nuvance does not currently sustain $500M case. Three institutional recommendations: (1) resolve VBMC Pavilion naming 60 days, (2) define one signature institute by end FY2026 with $50M founding-donor opportunity, (3) publicly allocate the $1B Northwell capital commitment to year-1 anchor projects.
+- ✅ **Checkpoint A** — completed. Scope tightened to 5-7 final candidates, web access enabled via curated allowlist (~30 domains), Laura's title corrected to AVP Development, source rigor codified.
+- ✅ **Phase 1 Task 1.1: Screening methodology** — committed at `cae603e`. Reflects scope refinement and Phase 0 priors.
 
 ## In progress
 
-- 🛑 **CHECKPOINT A** — Phase 0 reviewed by Mark; scope refinement received. Phase 1 dispatch paused awaiting Mark's confirmation that web tools are enabled at the harness level.
+- 🔄 **Phase 1 Batch 1.B (5 parallel subagents)** — geographic-wealth screen in 5 categories: Forbes, Bloomberg, hedge fund principals, local rich lists, foundation 990-PF principals. Each writes to a separate `screen_NN_*.md` file; orchestrator aggregates after all return.
 
-## Phase 1 scope refinement (decisions from Checkpoint A)
+## Phase 1 scope refinement (committed at `cae603e` in screening_methodology.md)
 
-- **Candidate set tightened from 10 to 5-7 highest-affinity candidates** (per Mark, in light of the case-for-support audit verdict that Nuvance does not currently sustain a $500M campaign and the recalibration to $75-200M realistic target).
-- **Calibration shifts toward affinity-first centi-millionaires** (billionaires will rationally route to Northwell flagships post-merger; affinity-first centi-millionaires with Hudson Valley / Western CT ties are the structurally-correct segment).
-- **Source rigor is now a hard standard for all downstream work.** Every factual claim must have a live-verified source; training-data assertions must be labeled and verified before they become load-bearing. See feedback memory `feedback_source_rigor.md`.
-- **Laura Eldridge's title corrected to AVP Development** (not "Senior Director" as some online sources list). Reflected in `phase_0_verification_update.md` (commit `d3cb6a4`).
+- Final candidate target: 5-7 (was 10)
+- Long-list target: 25-40 (was 40-60)
+- Wealth-tier calibration shifted: ~70-80% centi-millionaires
+- Affinity-first emphasized given Northwell-merger competitive context
+- Phase 0 priors incorporated (Whittingham, Dyson, HV grandee corridor, Greenwich hedge fund cohort, Vassar College alumni network)
+- Source rigor codified as hard standard
 
-## Awaiting from Mark
+## Web access enabled
 
-- Confirmation that web tools (WebFetch, WebSearch, curl) are enabled at the harness level for subagent dispatch. Once confirmed, Phase 1 Batch 1.B (parallel screening across 5 source-list categories) can dispatch with subagents able to do their own live verification.
-- If web tools remain blocked at the subagent level: fall back to orchestrator running verification passes between sub-batches.
+Project-level settings.local.json populated with ~30 research domains. Subagents can WebFetch the allowed domains directly; new domains auto-add when first used (with permission prompt that may need user attention).
 
 ## Pending — Phase 0
 
