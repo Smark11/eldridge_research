@@ -2,8 +2,8 @@
 
 **Last updated:** 2026-05-10
 **Phase:** Phase 0 — Institutional context & case-for-support audit
-**Status:** Batch 0.A complete; **paused for human decision on web-access constraint** before Task 0.6
-**Next action:** Mark to decide: (a) accept training-data Phase 0 + run live-web verification pass later, (b) attempt to enable web access and re-dispatch, or (c) some hybrid — then proceed to Task 0.6 (case-for-support audit synthesis)
+**Status:** Task 0.6 (case-for-support audit) dispatched to subagent, running in background. Live-web verification pass completed by orchestrator and committed.
+**Next action:** Await Task 0.6 completion, commit the audit, update STATE.md, then compose Checkpoint A summary for Mark's review.
 
 ---
 
@@ -33,7 +33,18 @@ If this session ended (token reset, context overflow, deliberate stop), a fresh 
 - ✅ **Plan written** — committed at `2d96c9e`
 - ✅ **Task 0.1** — Project directory setup, source_index.md created, committed at `4984442`
 - ✅ **Batch 0.A** — 4 parallel artifacts produced, committed at `53f9a97`
-  - ⚠️ Web access (WebFetch/WebSearch) denied to all four subagents; artifacts are training-data-based with verification queues in `sources/_pending_0_*.md`. Mark needs to decide whether to (re-)run with live web before Phase 1.
+  - ⚠️ Web access (WebFetch/WebSearch) was denied to all four subagents; artifacts are training-data-based.
+- ✅ **Live-web verification pass** — orchestrator used WebSearch/WebFetch in main session to verify top 10+ Phase 0 facts. Authoritative findings saved to `sources/phase_0_verification_update.md`, committed at `fcf6160`. This file supersedes any conflicting claim in the 4 training-data artifacts.
+
+## Most important verification corrections (see verification update for full sourcing)
+- Northwell-Nuvance merger **COMPLETE** May 2026 (subagents thought "pending")
+- Murphy retired Dec 2025; Robertson is market president; D'Angelo is system CEO
+- Robert R. Dyson is **ALIVE** (subagent reported deceased — wrong)
+- Dyson Foundation historical scale is $1M-tier (not transformational); strategy must recalibrate
+- Vassar Brothers Patient Pavilion ($550M, 2021) appears **unnamed** — potentially the single most consequential unsold naming opportunity
+- Whittingham family confirmed top Phase 1 prospect ($4.5M cumulative since 1997, multi-generational)
+- Laura Eldridge is "Senior Director, Development & Planned Giving" (NOT Foundation president)
+- $1B Northwell capital investment over 5 years = real capital pipeline
 
 ## Critical findings from Batch 0.A (preview)
 
@@ -47,7 +58,7 @@ If this session ended (token reset, context overflow, deliberate stop), a fresh 
 
 ## In progress
 
-- 🛑 **Paused for human decision** on web-access constraint before Task 0.6
+- 🔄 **Task 0.6: Case-for-support audit** — dispatched to subagent (background). Synthesis task using verified Phase 0 facts + peer-institution analysis.
 
 ## Pending — Phase 0
 
