@@ -1,9 +1,9 @@
 # Project Execution State
 
 **Last updated:** 2026-05-10
-**Phase:** Phase 0 — Institutional context & case-for-support audit
-**Status:** Task 0.6 (case-for-support audit) dispatched to subagent, running in background. Live-web verification pass completed by orchestrator and committed.
-**Next action:** Await Task 0.6 completion, commit the audit, update STATE.md, then compose Checkpoint A summary for Mark's review.
+**Phase:** Phase 0 COMPLETE → **CHECKPOINT A** (awaiting Mark's review)
+**Status:** All 5 Phase 0 documents written and committed. Live-web verification pass complete. Case-for-support audit verdict: Nuvance does not currently sustain a $500M case for support; strategy must recalibrate as $75-200M transformational play over 3-5 years.
+**Next action:** Mark reviews Phase 0 findings and decides Phase 1 calibration. Do NOT proceed to Phase 1 without explicit approval.
 
 ---
 
@@ -56,9 +56,11 @@ If this session ended (token reset, context overflow, deliberate stop), a fresh 
 - **Realistic strategy framing:** $75-200M over 3-5 years from 3-5 transformational gifts is plausible; the full $500M aspiration is 12-30x current baseline and requires institutional moves not yet visible.
 - **Donor base is regional, not national:** three clusters — Dutchess multigenerational families, Fairfield grateful-patient executives, Litchfield weekenders. Affinity-first calibration is strongly ratified.
 
+- ✅ **Task 0.6: Case-for-support audit** — synthesis complete, committed at `d993db4`. Verdict: Nuvance does not currently sustain $500M case. Three institutional recommendations: (1) resolve VBMC Pavilion naming 60 days, (2) define one signature institute by end FY2026 with $50M founding-donor opportunity, (3) publicly allocate the $1B Northwell capital commitment to year-1 anchor projects.
+
 ## In progress
 
-- 🔄 **Task 0.6: Case-for-support audit** — dispatched to subagent (background). Synthesis task using verified Phase 0 facts + peer-institution analysis.
+- 🛑 **CHECKPOINT A** — Mark reviews Phase 0 findings before Phase 1 dispatch. See Checkpoint A summary in main conversation context.
 
 ## Pending — Phase 0
 
