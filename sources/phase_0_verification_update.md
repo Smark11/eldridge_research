@@ -32,7 +32,7 @@ The merger **completed in May 2026**, not "expected to close 2025" as the traini
 - **Dr. John M. Murphy** retired as Nuvance Health CEO **end of December 2025**
 - **Michelle Robertson** (formerly Nuvance COO) became **Market President for the Nuvance Health region**, effective Jan 1, 2026 — *not* a system CEO; the Nuvance CEO role no longer exists as a separate position
 - **John D'Angelo, MD** succeeded Michael Dowling as **Northwell Health system CEO** on **October 1, 2025** — D'Angelo now oversees the integrated 28-hospital system including all former Nuvance facilities
-- **Laura Eldridge, CFRE** holds the title **"Senior Director, Development & Planned Giving"** for the Foundations of Nuvance Health (per LinkedIn). Previously Director of Major and Planned Giving at The Jackson Laboratory. **Her title is NOT "President" or "Director" of the Foundation** — she's a senior individual contributor in the development organization, not the foundation executive lead.
+- **Laura Eldridge, CFRE** holds the title **"Assistant Vice President, Development" (AVP Development)** at Nuvance Health Foundation. Previously Director of Major and Planned Giving at The Jackson Laboratory. **Her title is NOT "President" or "Director" of the Foundation** — she's a senior individual contributor with major-gift portfolio responsibility. (Note: RocketReach and some LinkedIn-derived sources list her as "Senior Director" — this is outdated or incorrect; the user, who knows her directly, confirms AVP Development. ZoomInfo also lists "Assistant VP, Development.")
 
 **Sources:**
 - [Nuvance Health: Murphy retirement announcement](https://www.nuvancehealth.org/health-tips-and-news/dr-john-m-murphy-to-retire-as-president-and-ceo-of-nuvance-health) — retrieved 2026-05-10
