@@ -2,8 +2,8 @@
 
 **Last updated:** 2026-05-10
 **Phase:** Phase 0 — Institutional context & case-for-support audit
-**Status:** Batch 0.A about to be dispatched (4 parallel research subagents)
-**Next action:** Dispatch Batch 0.A — 4 parallel subagents for Tasks 0.2, 0.3, 0.4, 0.5
+**Status:** Batch 0.A complete; **paused for human decision on web-access constraint** before Task 0.6
+**Next action:** Mark to decide: (a) accept training-data Phase 0 + run live-web verification pass later, (b) attempt to enable web access and re-dispatch, or (c) some hybrid — then proceed to Task 0.6 (case-for-support audit synthesis)
 
 ---
 
@@ -32,18 +32,26 @@ If this session ended (token reset, context overflow, deliberate stop), a fresh 
 - ✅ **Brainstorming complete** — spec written and approved
 - ✅ **Plan written** — committed at `2d96c9e`
 - ✅ **Task 0.1** — Project directory setup, source_index.md created, committed at `4984442`
+- ✅ **Batch 0.A** — 4 parallel artifacts produced, committed at `53f9a97`
+  - ⚠️ Web access (WebFetch/WebSearch) denied to all four subagents; artifacts are training-data-based with verification queues in `sources/_pending_0_*.md`. Mark needs to decide whether to (re-)run with live web before Phase 1.
+
+## Critical findings from Batch 0.A (preview)
+
+- **Northwell affiliation/acquisition** is the dominant strategic context (Feb 2024 announce, ~2025 close); materially reshapes case-for-support
+- **Nuvance entered the deal from financial weakness** ($130-200M operating losses FY22-23, credit downgrades, layoffs)
+- **Dyson family/Foundation** — top Phase 1 lead (named Dyson Center for Cancer Care at Vassar Brothers; Robert Rogers Dyson died 2024 → succession window)
+- **Vassar family** genealogical question — single highest-leverage open question of the project
+- **No $100M+ named opportunity exists** at Nuvance currently; no peer-tier signature program (Smilow/Bennett/Schwab equivalent). Case-for-support audit will recommend institutional repositioning as precondition for a credible $500M campaign.
+- **Realistic strategy framing:** $75-200M over 3-5 years from 3-5 transformational gifts is plausible; the full $500M aspiration is 12-30x current baseline and requires institutional moves not yet visible.
+- **Donor base is regional, not national:** three clusters — Dutchess multigenerational families, Fairfield grateful-patient executives, Litchfield weekenders. Affinity-first calibration is strongly ratified.
 
 ## In progress
 
-- 🔄 **Batch 0.A** — about to dispatch 4 parallel subagents:
-  - Task 0.2: Nuvance Health overview → `research/phase_0_institutional_context/nuvance_overview.md`
-  - Task 0.3: Nuvance Health Foundation 990 analysis → `research/phase_0_institutional_context/nuvance_990_analysis.md`
-  - Task 0.4: Predecessor-institution legacy mapping → `research/phase_0_institutional_context/predecessor_institutions.md`
-  - Task 0.5: Naming opportunities by tier → `research/phase_0_institutional_context/naming_opportunities.md`
+- 🛑 **Paused for human decision** on web-access constraint before Task 0.6
 
 ## Pending — Phase 0
 
-- ⏸ Task 0.6: Case-for-support audit (sequential after Batch 0.A)
+- ⏸ Task 0.6: Case-for-support audit (sequential after Batch 0.A) — synthesis task, less web-dependent
 - 🛑 Checkpoint A: Halt for Mark's review
 
 ## Pending — later phases
