@@ -21,4 +21,18 @@ These queues will be resolved at Checkpoint A or before Phase 1 begins, dependin
 
 ## Verified sources
 
-(none yet — pending live verification pass)
+**Authoritative reference for Phase 0 facts:** `sources/phase_0_verification_update.md` (created 2026-05-10).
+
+That file contains the live-web-verified findings that supersede any conflicting claims in the four Phase 0 training-data artifacts. Verified items include:
+
+1. Northwell-Nuvance merger **completed May 2026** (28 hospitals, $22.6B combined revenue, $1B Northwell investment commitment over 5 years)
+2. Murphy retired Dec 2025; **Michelle Robertson** is Nuvance market president; **John D'Angelo** is Northwell system CEO
+3. **Laura Eldridge, CFRE** is **Senior Director, Development & Planned Giving** (NOT Foundation president/director)
+4. **Robert R. "Rob" Dyson is ALIVE** and remains Chairman of the Dyson Foundation (subagent error: he was reported as deceased)
+5. Dyson Foundation historical scale: **$1M-tier gifts to Vassar Brothers**, not transformational tier
+6. **Whittingham family**: $4.5M cumulative to Norwalk Hospital cancer care since 1997 (multi-generational Repayer motivation, current generation Andrew + Michael)
+7. **Vassar Brothers Patient Pavilion ($550M, 2021) appears UNNAMED** — potential extraordinary unsold naming opportunity
+8. Sharon Hospital L&D protected 5 years under Northwell agreement
+9. Moody's downgraded Nuvance to Baa2 negative outlook (pre-merger, now subsumed under Northwell rating)
+
+See the verification update file for full source citations (~25 distinct URLs, all retrieved 2026-05-10).
