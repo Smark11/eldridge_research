@@ -8,6 +8,18 @@
 
 ---
 
+> ### 📌 Phase 4 update (2026-05-12) — revised ask tier
+>
+> The Phase 3 dossier below recommends a $5-15M escalation gift. The Phase 4 Greenwich Hospital benchmarking case study (`research/phase_4_benchmarking/case_studies/04_greenwich_hospital.md`) surfaced new evidence that materially revises this upward:
+>
+> The Bauers' largest non-Norwalk gifts — **$25M+ to Yale Divinity School** (Carol B. Bauer Hall in the Living Village), the Olin School ethics professorship, and a named medical-school deanship at Washington University — establish a "theological-stewardship-of-vocation" / "Sunday-Monday connection" giving pattern at the $25M+ tier per institution. Three structural inalienability factors make them Norwalk-exclusive on the hospital side (family-tragedy anchor; Carol's 75-year volunteer/chaplain tenure; Devout giving frame).
+>
+> **Revised stretch ask tier:** **$50-75M+** — structured as a permanent endowment for the Bauer Family Endowment for Maternal-Infant Care and Spiritual Care, with a perpetuity / named-position structure that mirrors the Yale Divinity Living Village architecture. This is materially higher than the $5-15M Phase 3 baseline.
+>
+> **The dossier body below remains as written** (preserving the as-of-Phase-3 analytical reasoning). All downstream artifacts — cheat sheet, cross-reference matrix, playbook, ranked short list, executive summary, deck — reflect the revised $50-75M+ stretch tier. See `artifacts/playbook.md` Section E.4 and `research/phase_4_benchmarking/benchmarking_memo.md` Section "Bauer escalation revision" for the full reasoning chain.
+
+---
+
 ## 1. Snapshot
 
 - **Full names:** George Peter Bauer (b. 1931, age 94 as of October 2025 Yale Divinity profile; turning 95 in 2026); Carol Bruns Bauer (b. ~1932–1933, age 93 as of October 2025).
@@ -242,10 +254,12 @@ A weaker Dynast strand is present (WashU as alma mater is the closest the giving
 
 ### Phase 3 — Solicitation (months 12–18) — May 2027 to Nov 2027
 
-- **Suggested ask amount:** **$5–15M** *(escalation gift on top of $36M+ cumulative Norwalk giving; calibrated against the same magnitude as their pre-existing $20M Norwalk 2022 and $20M WashU 2024 pledges but recognizing competing campaign commitments).*
+- **Suggested ask amount:** Two tiers, depending on cultivation depth and Yale-Divinity-precedent activation:
+  - **Baseline tier: $5–15M** *(escalation gift on top of $36M+ cumulative Norwalk giving; calibrated against same magnitude as pre-existing $20M Norwalk 2022 and $20M WashU 2024 pledges; the Phase 3 default).*
+  - **Stretch tier (per Phase 4 Greenwich Hospital case-study revision): $50–75M+** — if the ask is architected as a *permanent endowment with named-position perpetuity structure* mirroring the Yale Divinity Living Village ($25M+ Carol B. Bauer Hall) commitment. The theological-stewardship-of-vocation framing is what unlocks this tier; the Bauers fund named-position legacy giving at scale when the institution invites them into that frame.
 - **Suggested named opportunity (matched to Repayer/Devout motivation):**
-  - **First-choice ask: The Bauer Family Endowment for Maternal-Infant Care + Spiritual Care at Norwalk Hospital** — a permanent endowment that funds (a) the Jeffrey Peter Bauer NICU clinical staff in perpetuity, (b) the Norwalk Hospital chaplaincy program (Carol Bauer's successor and the bereavement/maternal-loss care team), (c) annual fellowships for YDS chaplaincy interns to train at Norwalk. *This is the ideal Repayer + Devout escalation — it institutionalizes Carol's life work, perpetuates Jeffrey's memory, and bridges Yale Divinity to Norwalk Hospital.* $5–10M tier.
-  - **Alternative ask: A second-generation Bauer family naming within the Pavilion** — e.g., the women-and-infants center floor or the chaplaincy/family-grief space — explicitly named for the next-generation Bauer family (Jocelyn, Jennifer, Brad and grandchildren). This positions the next ask as a *family multigenerational moment* rather than a re-solicitation of the principals. $5–15M tier.
+  - **First-choice ask: The Bauer Family Endowment for Maternal-Infant Care + Spiritual Care at Norwalk Hospital** — a permanent endowment that funds (a) the Jeffrey Peter Bauer NICU clinical staff in perpetuity, (b) the Norwalk Hospital chaplaincy program (Carol Bauer's successor and the bereavement/maternal-loss care team), (c) annual fellowships for YDS chaplaincy interns to train at Norwalk. *This is the ideal Repayer + Devout escalation — it institutionalizes Carol's life work, perpetuates Jeffrey's memory, and bridges Yale Divinity to Norwalk Hospital.* **Baseline scope: $5–10M.** **Stretch (perpetuity-endowment structure with named clinical positions + YDS fellowship pipeline + chaplaincy team in perpetuity): $50–75M+.**
+  - **Alternative ask: A second-generation Bauer family naming within the Pavilion** — e.g., the women-and-infants center floor or the chaplaincy/family-grief space — explicitly named for the next-generation Bauer family (Jocelyn, Jennifer, Brad and grandchildren). This positions the next ask as a *family multigenerational moment* rather than a re-solicitation of the principals. $5–15M tier. Can layer with the stretch endowment structure above (multigenerational naming + family endowment combined = larger total commitment with two distinct dedications).
 - **Who should be at the ask:**
   - George + Carol (principals)
   - The three Bauer children (as the *named beneficiaries* of the multigenerational structure — present, but not the decision-makers)
