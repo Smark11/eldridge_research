@@ -1,9 +1,9 @@
 # Project Execution State
 
-**Last updated:** 2026-05-11
-**Phase:** Phase 4 — Benchmarking memo (in progress); Phase 3 complete
-**Status:** All 7 dossiers complete and committed (`780504a`). Phase 4 dispatching 8 parallel case-study subagents.
-**Next action:** Await Phase 4 completion, synthesize benchmarking memo, then Phase 5 tactical artifacts (cheat sheets, cross-reference matrix, intro network map), then Phase 6 playbook, then Phase 7 exec summary + deck.
+**Last updated:** 2026-05-12
+**Phase:** Phase 4 case studies complete; benchmarking memo synthesis next
+**Status:** All 8 case studies committed. Two extraordinary findings (Smilow already on Norwalk via Breast Health Center; Bauer escalation $50-75M+ via theological-stewardship framing). Synthesis is orchestrator-led — no more subagents.
+**Next action:** Write benchmarking memo synthesis. Then Phase 5 (cheat sheets + cross-reference matrix + intro network map — orchestrator-led, no subagents). Then Phase 6 playbook (likely 7 parallel subagents). Then Phase 7 exec summary + deck.
 
 ---
 
@@ -89,9 +89,25 @@ If this session ended (token reset, context overflow, deliberate stop), a fresh 
 - **Goldman Fowler:** TRANSFORMATIONAL FINDING — first cousin Lloyd Goldman is largest single donor in Northwell history ($100M+). Activates dramatic warm path. $5-25M for Goldman/Fowler Women's Health Center in unnamed Pavilion. Risk: active sibling litigation.
 - **Jasper Johns:** Estate plan locked-in (Low Road Sharon Inc. artist residency); no family heirs. $1-5M conditional, hard 4-month decision gate.
 
+- ✅ **Phase 4: 8 benchmarking case studies complete** — committed across `e4c59bd` (6 from initial dispatch) + this commit (Smilow, Greenwich re-dispatch).
+
+## Critical Phase 4 strategic updates
+
+- **Smilow surname is ALREADY at Norwalk Hospital** via Smilow Family Breast Health Center (predates Yale-NHH naming). Phase 5 should verify current family stewardship status — potential unsurfaced candidate.
+- **Bauer ultimate gift revised: $50-75M+** (theological-stewardship framing via Yale Divinity precedent of $25M+; "Sunday-Monday connection"; named-position legacy giving). Phase 3 dossier $5-15M was too low.
+- **System-level cancer institute brand recommendation:** Layer "[Family] Cancer Institute at Nuvance" ABOVE existing Whittingham + Dyson facility brands. Primary candidate: Dalio ($25-75M).
+- **Greenwich hedge-fund corridor confirmed off-limits:** AQR/Lone Pine/Tiger Cubs cluster has NOT produced Greenwich Hospital naming-gift principals.
+- **Norwalk Hospital case-for-support recommendations:** Dual-track architecture (comprehensive campaign + building fund); long-tenured-physician honor gifts; matching-gift mechanism; Luminate-equivalent recognition ladder.
+
 ## In progress
 
-- 🔄 **Phase 4: 8 parallel benchmarking subagents** — case studies on: Cohen Children's at Northwell, Mt Sinai Icahn, Yale-NHH Smilow, Greenwich Hospital, Hartford Ayer Neuroscience, HSS specialty institute, Northern Westchester Schwartz Northwell, Lloyd Goldman at Lenox Hill.
+- 🔄 **Phase 4 synthesis: benchmarking memo** — orchestrator-led; no more subagents for Phase 4.
+
+## Pending downstream
+
+- Phase 5 tactical artifacts (orchestrator-led): cross-reference matrix, cheat sheets, intro network map
+- Phase 6 strategy playbook (7 parallel subagents per plan)
+- Phase 7 executive summary + designed deck
 
 ## Recommended next steps post-dossiers
 
