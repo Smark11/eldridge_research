@@ -1,9 +1,9 @@
 # Project Execution State
 
 **Last updated:** 2026-05-12
-**Phase:** Phase 4 case studies complete; benchmarking memo synthesis next
-**Status:** All 8 case studies committed. Two extraordinary findings (Smilow already on Norwalk via Breast Health Center; Bauer escalation $50-75M+ via theological-stewardship framing). Synthesis is orchestrator-led — no more subagents.
-**Next action:** Write benchmarking memo synthesis. Then Phase 5 (cheat sheets + cross-reference matrix + intro network map — orchestrator-led, no subagents). Then Phase 6 playbook (likely 7 parallel subagents). Then Phase 7 exec summary + deck.
+**Phase:** v1.0 COMPLETE — all 8 phases done, all deliverables shipped
+**Status:** Full strategy package delivered. See `README.md` for package overview and `artifacts/executive_summary.md` for the top-line strategic findings.
+**Next action:** Mark reviews the package; surfaces any revisions before sharing with Laura.
 
 ---
 
@@ -89,7 +89,12 @@ If this session ended (token reset, context overflow, deliberate stop), a fresh 
 - **Goldman Fowler:** TRANSFORMATIONAL FINDING — first cousin Lloyd Goldman is largest single donor in Northwell history ($100M+). Activates dramatic warm path. $5-25M for Goldman/Fowler Women's Health Center in unnamed Pavilion. Risk: active sibling litigation.
 - **Jasper Johns:** Estate plan locked-in (Low Road Sharon Inc. artist residency); no family heirs. $1-5M conditional, hard 4-month decision gate.
 
-- ✅ **Phase 4: 8 benchmarking case studies complete** — committed across `e4c59bd` (6 from initial dispatch) + this commit (Smilow, Greenwich re-dispatch).
+- ✅ **Phase 4: 8 benchmarking case studies complete** — committed across `e4c59bd` (6 from initial dispatch) + later commit (Smilow, Greenwich re-dispatch).
+- ✅ **Phase 4 synthesis** — benchmarking_memo.md committed at `4d917f4`. 7 patterns extracted; per-candidate analog mapping; 5 institutional recommendations.
+- ✅ **Phase 5 complete** — cross-reference matrix, 7 cheat sheets, warm-intro network map (HTML+CSS+JS+JSON). Committed across `c473fda`, `b05cf9e`.
+- ✅ **Phase 6 complete** — strategy playbook (`artifacts/playbook.md`) all 7 sections (A-G). Committed at `3957815`.
+- ✅ **Phase 7 complete** — executive summary, ranked short list, designed deck (Fraunces + Newsreader editorial-monograph aesthetic). Committed at `2023b59`, `f057810`.
+- ✅ **Project README + v1.0 tag** — final.
 
 ## Critical Phase 4 strategic updates
 
@@ -99,15 +104,19 @@ If this session ended (token reset, context overflow, deliberate stop), a fresh 
 - **Greenwich hedge-fund corridor confirmed off-limits:** AQR/Lone Pine/Tiger Cubs cluster has NOT produced Greenwich Hospital naming-gift principals.
 - **Norwalk Hospital case-for-support recommendations:** Dual-track architecture (comprehensive campaign + building fund); long-tenured-physician honor gifts; matching-gift mechanism; Luminate-equivalent recognition ladder.
 
-## In progress
+## Project complete
 
-- 🔄 **Phase 4 synthesis: benchmarking memo** — orchestrator-led; no more subagents for Phase 4.
+All 8 phases done. See `README.md` for the package guide.
 
-## Pending downstream
+## The three single most consequential findings (for Mark's relay to Laura)
 
-- Phase 5 tactical artifacts (orchestrator-led): cross-reference matrix, cheat sheets, intro network map
-- Phase 6 strategy playbook (7 parallel subagents per plan)
-- Phase 7 executive summary + designed deck
+1. **Bauer ultimate gift potential is $50-75M+**, not $5-15M as initial scoping suggested. Theological-stewardship-of-vocation framing tied to Yale Divinity precedent (Carol B. Bauer Hall, $25M+; Olin ethics professorship; WashU named deanship) supports the upward calibration. 12-24 month cultivation window given age 95.
+
+2. **Lloyd Goldman is Amy Goldman Fowler's first cousin** and the largest single donor in Northwell history ($100M+ lifetime; Goldman Medical Pavilion at Lenox Hill opens 2026). This is a transformational warm-intro pathway through John D'Angelo (Northwell system CEO).
+
+3. **The June 2025 $5.1M Dalio Education gift was routed through CHRO Katie Cullinan**, not Foundation. Laura must integrate into the stewardship channel before June 2026 (12-month milestone) and Dec 2026 (18-month milestone) to position any escalation.
+
+Plus the institutional question: **Is the Vassar Brothers Patient Pavilion ($550M, opened 2021) available to name?** This gates $100M+ asks. Resolve within 60 days via internal conversation with Foundation Director + Northwell governance.
 
 ## Recommended next steps post-dossiers
 
