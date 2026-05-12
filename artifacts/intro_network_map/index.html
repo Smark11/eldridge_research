@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuvance Health — Warm-Intro Network Map</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="title-block">
+    <h1>Nuvance Health — Warm-Intro Network Map</h1>
+    <p class="subtitle">7 short-list candidates, their named connectors, and Nuvance/Northwell institutional anchors</p>
+  </div>
+  <div class="meta">
+    <span class="meta-item"><strong>Compiled</strong> 2026-05-12</span>
+    <span class="meta-item"><strong>For</strong> Laura Eldridge, AVP Development</span>
+  </div>
+</header>
+
+<main>
+  <div id="legend">
+    <h3>Legend</h3>
+    <div class="legend-section">
+      <h4>Node types</h4>
+      <ul>
+        <li><span class="dot dot-candidate"></span>Candidate (rank shown)</li>
+        <li><span class="dot dot-anchor"></span>Nuvance / Northwell anchor</li>
+        <li><span class="dot dot-connector"></span>Named connector</li>
+        <li><span class="dot dot-external"></span>External institution / facility</li>
+        <li><span class="dot dot-avoid"></span>Avoid activating (competing loyalty)</li>
+      </ul>
+    </div>
+    <div class="legend-section">
+      <h4>Edge strength</h4>
+      <ul class="edges">
+        <li><span class="line line-strong"></span>Strong — documented active relationship</li>
+        <li><span class="line line-medium"></span>Medium — documented, less recent / less direct</li>
+        <li><span class="line line-weak"></span>Weak — inferred or path-to-develop</li>
+        <li><span class="line line-avoid"></span>Avoid — competing institutional loyalty</li>
+      </ul>
+    </div>
+    <div class="legend-section">
+      <h4>Filters</h4>
+      <label><input type="checkbox" id="filter-candidates" checked> Candidates</label>
+      <label><input type="checkbox" id="filter-anchors" checked> Anchors</label>
+      <label><input type="checkbox" id="filter-connectors" checked> Connectors</label>
+      <label><input type="checkbox" id="filter-external" checked> External institutions</label>
+      <label><input type="checkbox" id="filter-avoid" checked> "Avoid" edges</label>
+    </div>
+    <div class="legend-section">
+      <h4>How to read</h4>
+      <p>Click any node for details. Drag to pan, scroll to zoom. The strongest intro path for each candidate is the thickest line out of their node. Edges marked "avoid" warn against activating competing-loyalty paths.</p>
+    </div>
+  </div>
+
+  <div id="network"></div>
+
+  <aside id="detail-panel" class="detail-hidden">
+    <button id="detail-close" aria-label="Close detail">&times;</button>
+    <div id="detail-content"></div>
+  </aside>
+</main>
+
+<script src="deck.js"></script>
+</body>
+</html>
