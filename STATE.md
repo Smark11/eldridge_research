@@ -1,9 +1,9 @@
 # Project Execution State
 
 **Last updated:** 2026-05-11
-**Phase:** Phase 3 — Deep dossiers (heaviest phase)
-**Status:** Mark approved 7-candidate short list at Checkpoint B. 7 parallel dossier subagents dispatched and running in background.
-**Next action:** Await Batch 3 completion notifications, then commit dossiers, run cross-dossier consistency review, proceed to Phase 4 (benchmarking memo) and Phase 5 (tactical artifacts: network map, cheat sheets, cross-reference matrix).
+**Phase:** Phase 4 — Benchmarking memo (in progress); Phase 3 complete
+**Status:** All 7 dossiers complete and committed (`780504a`). Phase 4 dispatching 8 parallel case-study subagents.
+**Next action:** Await Phase 4 completion, synthesize benchmarking memo, then Phase 5 tactical artifacts (cheat sheets, cross-reference matrix, intro network map), then Phase 6 playbook, then Phase 7 exec summary + deck.
 
 ---
 
@@ -77,9 +77,21 @@ If this session ended (token reset, context overflow, deliberate stop), a fresh 
 
 - ✅ **Checkpoint B** — Mark approved 7-candidate short list. Committed at `2d3d758`.
 
+- ✅ **Phase 3: 7 deep dossiers complete** — committed at `780504a`. ~60KB each. All web-verified with source citations.
+
+## Top Phase 3 strategic findings (preview)
+
+- **Bauer:** USAmeriBancorp $816M sale 2018 is wealth source; 3 children identified (Jocelyn, Jennifer, Brad); Jeffrey Peter Bauer (son d. 5 days old early 1960s) is Repayer anchor; Carol is certified chaplain. $5-15M ask via Peter Cordeau, ~12-24 month window.
+- **Dyson:** Rob served on Health Quest Systems board (parent of Vassar Brothers pre-merger) — major affinity upgrade to 28/30. Anne E. Dyson (sister d. 2000 breast cancer) = endowed-chair Repayer opportunity. $10-25M via Andrea L. Reynolds (Foundation CEO).
+- **Dalio:** STRUCTURAL ISSUE — June 2025 $5.1M routed through CHRO not Foundation; Laura must integrate before June 2026 milestone. $25-50M Dalio Health Equity Institute escalation pathway.
+- **Whittingham:** C. Anthony's wealth source: U.S. Surgical → Joint Medical Products → Johnson & Johnson 1995. Both G2 brothers deceased (Michael Oct 2020, Andrew Feb 2021). $3-7M realistic, not $25M.
+- **Rees:** Wife Allison volunteers Northwell directly; March 2026 estate transfer = 18-36 month window (not 10+ years). $10-25M Feinstein-linked via Kevin J. Tracey.
+- **Goldman Fowler:** TRANSFORMATIONAL FINDING — first cousin Lloyd Goldman is largest single donor in Northwell history ($100M+). Activates dramatic warm path. $5-25M for Goldman/Fowler Women's Health Center in unnamed Pavilion. Risk: active sibling litigation.
+- **Jasper Johns:** Estate plan locked-in (Low Road Sharon Inc. artist residency); no family heirs. $1-5M conditional, hard 4-month decision gate.
+
 ## In progress
 
-- 🔄 **Phase 3 Batch (7 parallel dossier subagents)** — running in background. Outputs: `dossiers/01_bauer.md` through `dossiers/07_jasper_johns.md`. Source addenda: `sources/_pending_3_*.md`. No-commit subagents; orchestrator commits after all return.
+- 🔄 **Phase 4: 8 parallel benchmarking subagents** — case studies on: Cohen Children's at Northwell, Mt Sinai Icahn, Yale-NHH Smilow, Greenwich Hospital, Hartford Ayer Neuroscience, HSS specialty institute, Northern Westchester Schwartz Northwell, Lloyd Goldman at Lenox Hill.
 
 ## Recommended next steps post-dossiers
 
