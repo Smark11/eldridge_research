@@ -1,0 +1,848 @@
+/* ╔════════════════════════════════════════════════════════════════════════╗
+   ║  Nuvance Health Foundation — Proposal Deck                              ║
+   ║  Editorial monograph aesthetic                                          ║
+   ║  Typography: Fraunces (display) + Newsreader (body)                     ║
+   ╚════════════════════════════════════════════════════════════════════════╝ */
+
+:root {
+  /* Palette — paper, ink, clay */
+  --paper:      #f5efe2;
+  --paper-2:    #ede5d5;
+  --ink:        #1a1f2e;
+  --ink-2:      #2a3043;
+  --ink-mute:   #5a5246;
+  --rule:       #d8d0bf;
+  --rule-deep:  #b8af9b;
+  --clay:       #a8553a;
+  --clay-deep:  #874433;
+  --cream:      #faf6ee;
+
+  /* Type scale (variable) */
+  --t-xs:   0.72rem;
+  --t-sm:   0.85rem;
+  --t-body: 1.0625rem;
+  --t-lead: 1.5rem;
+  --t-h3:   1.85rem;
+  --t-h2:   3rem;
+  --t-h1:   5rem;
+  --t-display: 7.5rem;
+  --t-numeral: 14rem;
+
+  /* Rhythm */
+  --pad-x: clamp(2.5rem, 6vw, 6.5rem);
+  --pad-y: clamp(2rem, 5vw, 5rem);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Newsreader", "Hoefler Text", Georgia, serif;
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: "opsz" 18, "wght" 400;
+}
+
+/* Paper grain overlay */
+.grain {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.55;
+  mix-blend-mode: multiply;
+}
+
+/* ╔════════════════════════════════════════════ Status bar ════════════════════════════════════════════╗ */
+
+.status {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: baseline;
+  padding: 1.25rem 1.75rem 1rem;
+  z-index: 30;
+  border-bottom: 1px solid var(--rule);
+  background: linear-gradient(to bottom, var(--paper) 60%, transparent);
+  font-family: "Newsreader", serif;
+  font-size: var(--t-xs);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  font-variation-settings: "wght" 500;
+}
+
+.status-id { justify-self: start; }
+.status-title { justify-self: center; font-style: italic; letter-spacing: 0.05em; text-transform: none; font-size: var(--t-sm); }
+.status-page { justify-self: end; font-feature-settings: "tnum"; }
+
+/* ╔════════════════════════════════════════════ Deck container ════════════════════════════════════════════╗ */
+
+#deck {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  padding: calc(var(--pad-y) + 3rem) var(--pad-x) var(--pad-y);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(40px);
+  transition: opacity 0.65s cubic-bezier(.2,.6,.2,1), transform 0.7s cubic-bezier(.2,.6,.2,1);
+}
+
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+/* Numeral in lower right of every content slide */
+.numeral, .title-numeral {
+  position: absolute;
+  right: var(--pad-x);
+  bottom: calc(var(--pad-y) - 1rem);
+  font-family: "Fraunces", serif;
+  font-size: var(--t-numeral);
+  line-height: 0.85;
+  font-variation-settings: "opsz" 144, "wght" 100, "SOFT" 30;
+  color: var(--paper-2);
+  letter-spacing: -0.04em;
+  z-index: -1;
+  user-select: none;
+}
+
+.title-numeral {
+  color: var(--clay);
+  opacity: 0.18;
+}
+
+/* Section labels (i. ii. iii.) */
+.section-label {
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-size: var(--t-sm);
+  letter-spacing: 0.02em;
+  color: var(--clay);
+  margin-bottom: 3rem;
+  font-variation-settings: "opsz" 14, "wght" 400, "SOFT" 50;
+}
+
+/* ╔════════════════════════════════════════════ Slide 1 — Title ════════════════════════════════════════════╗ */
+
+.slide-title {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 3rem;
+  align-content: stretch;
+}
+
+.title-mark {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.orn {
+  font-family: "Fraunces", serif;
+  font-size: 3rem;
+  font-variation-settings: "opsz" 144, "wght" 300;
+  color: var(--clay);
+  line-height: 1;
+}
+
+.title-stack {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 80%;
+}
+
+.kicker {
+  font-family: "Newsreader", serif;
+  font-style: italic;
+  font-size: var(--t-lead);
+  color: var(--ink-mute);
+  margin-bottom: 1.5rem;
+  font-variation-settings: "opsz" 30, "wght" 300;
+}
+
+.donor-name {
+  font-family: "Fraunces", serif;
+  font-size: var(--t-display);
+  line-height: 0.95;
+  font-variation-settings: "opsz" 144, "wght" 300, "SOFT" 20;
+  letter-spacing: -0.035em;
+  margin-bottom: 2rem;
+  color: var(--ink);
+}
+
+.subtitle {
+  font-family: "Newsreader", serif;
+  font-style: italic;
+  font-size: var(--t-h3);
+  line-height: 1.3;
+  font-variation-settings: "opsz" 36, "wght" 300;
+  color: var(--ink-2);
+  max-width: 32ch;
+}
+
+.title-meta {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+}
+
+.meta-block { font-family: "Newsreader", serif; }
+.meta-label {
+  font-size: var(--t-xs);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--clay);
+  margin-bottom: 0.4rem;
+  font-variation-settings: "wght" 500;
+}
+.meta-value {
+  font-family: "Fraunces", serif;
+  font-size: var(--t-lead);
+  font-variation-settings: "opsz" 30, "wght" 400;
+  color: var(--ink);
+  line-height: 1.3;
+}
+.meta-sub {
+  font-size: var(--t-sm);
+  font-style: italic;
+  color: var(--ink-mute);
+  margin-top: 0.25rem;
+}
+
+/* ╔════════════════════════════════════════════ Slide 2 — Narrative ════════════════════════════════════════════╗ */
+
+.slide-narrative {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.slide-narrative .section-label {
+  grid-column: 1 / 2;
+  align-self: start;
+}
+
+.narrative-body {
+  grid-column: 2 / 3;
+  max-width: 36ch;
+}
+
+.lead {
+  font-family: "Fraunces", serif;
+  font-size: var(--t-h3);
+  line-height: 1.25;
+  font-variation-settings: "opsz" 48, "wght" 350, "SOFT" 25;
+  color: var(--ink);
+  margin-bottom: 2rem;
+  letter-spacing: -0.012em;
+}
+
+.prose {
+  font-family: "Newsreader", serif;
+  font-size: var(--t-body);
+  line-height: 1.65;
+  color: var(--ink-2);
+  font-variation-settings: "opsz" 18, "wght" 400;
+}
+
+.prose::first-letter {
+  font-family: "Fraunces", serif;
+  font-size: 3.5em;
+  float: left;
+  line-height: 0.85;
+  padding: 0.05em 0.15em 0 0;
+  font-variation-settings: "opsz" 144, "wght" 300, "SOFT" 30;
+  color: var(--clay);
+}
+
+/* ╔════════════════════════════════════════════ Slide 3 — Context ════════════════════════════════════════════╗ */
+
+.slide-context {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 3rem;
+}
+
+.context-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 3rem 0;
+}
+
+.context-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-right: 2rem;
+}
+
+.block-num {
+  font-family: "Fraunces", serif;
+  font-size: 5rem;
+  line-height: 0.9;
+  font-variation-settings: "opsz" 144, "wght" 250, "SOFT" 30;
+  color: var(--clay);
+  letter-spacing: -0.04em;
+}
+
+.block-cap {
+  font-family: "Newsreader", serif;
+  font-style: italic;
+  font-size: var(--t-body);
+  line-height: 1.45;
+  color: var(--ink-mute);
+  max-width: 22ch;
+}
+
+.context-thesis {
+  font-family: "Fraunces", serif;
+  font-size: var(--t-h3);
+  line-height: 1.3;
+  font-style: italic;
+  color: var(--ink);
+  max-width: 42ch;
+  font-variation-settings: "opsz" 48, "wght" 350, "SOFT" 40;
+  letter-spacing: -0.01em;
+}
+
+/* ╔════════════════════════════════════════════ Slide 4 — Opportunity ════════════════════════════════════════════╗ */
+
+.opportunity-frame {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.opp-title {
+  font-family: "Fraunces", serif;
+  font-size: var(--t-h1);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  font-variation-settings: "opsz" 144, "wght" 350, "SOFT" 20;
+  color: var(--ink);
+}
+
+.opp-em {
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "wght" 300, "SOFT" 40;
+  color: var(--clay);
+}
+
+.opp-body {
+  font-family: "Newsreader", serif;
+  font-size: var(--t-lead);
+  line-height: 1.45;
+  font-variation-settings: "opsz" 26, "wght" 400;
+  color: var(--ink-2);
+  max-width: 36ch;
+}
+
+/* ╔════════════════════════════════════════════ Slide 5 — Pull quote ════════════════════════════════════════════╗ */
+
+.slide-quote {
+  align-items: center;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quote-mark {
+  font-family: "Fraunces", serif;
+  font-size: 12rem;
+  line-height: 0.7;
+  color: var(--clay);
+  font-variation-settings: "opsz" 144, "wght" 200;
+  align-self: flex-start;
+  margin-left: -1rem;
+  margin-bottom: -2rem;
+  opacity: 0.85;
+}
+
+.big-quote {
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.2;
+  letter-spacing: -0.012em;
+  color: var(--ink);
+  max-width: 28ch;
+  font-variation-settings: "opsz" 90, "wght" 320, "SOFT" 50;
+  align-self: flex-start;
+}
+
+.quote-attr {
+  font-family: "Newsreader", serif;
+  font-size: var(--t-sm);
+  font-style: italic;
+  color: var(--ink-mute);
+  margin-top: 2.5rem;
+  align-self: flex-start;
+  max-width: 50ch;
+}
+
+/* ╔════════════════════════════════════════════ Slide 6 — Impact list ════════════════════════════════════════════╗ */
+
+.impact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+  max-width: 64ch;
+}
+
+.impact-list li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.5rem;
+  align-items: baseline;
+}
+
+.impact-marker {
+  font-family: "Fraunces", serif;
+  font-size: var(--t-h3);
+  color: var(--clay);
+  font-variation-settings: "wght" 300;
+  line-height: 1;
+}
+
+.impact-h {
+  font-family: "Fraunces", serif;
+  font-size: var(--t-lead);
+  font-variation-settings: "opsz" 28, "wght" 400, "SOFT" 30;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+}
+
+.impact-p {
+  font-family: "Newsreader", serif;
+  font-size: var(--t-body);
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+/* ╔════════════════════════════════════════════ Slide 7 — Story ════════════════════════════════════════════╗ */
+
+.slide-story {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 3rem;
+}
+
+.story-frame {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.story-lead {
+  font-family: "Fraunces", serif;
+  font-size: var(--t-h3);
+  line-height: 1.3;
+  font-variation-settings: "opsz" 48, "wght" 350, "SOFT" 35;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  font-style: italic;
+}
+
+.story-prose {
+  font-family: "Newsreader", serif;
+  font-size: var(--t-body);
+  line-height: 1.7;
+  color: var(--ink-2);
+}
+
+/* ╔════════════════════════════════════════════ Slide 8 — Model ════════════════════════════════════════════╗ */
+
+.model-grid {
+  display: grid;
+  gap: 0;
+  max-width: 72ch;
+  border-top: 1px solid var(--rule);
+}
+
+.model-row {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: baseline;
+}
+
+.model-label {
+  font-family: "Newsreader", serif;
+  font-style: italic;
+  font-size: var(--t-sm);
+  letter-spacing: 0.02em;
+  color: var(--clay);
+  font-variation-settings: "wght" 500;
+}
+
+.model-value {
+  font-family: "Fraunces", serif;
+  font-size: var(--t-body);
+  line-height: 1.4;
+  font-variation-settings: "opsz" 18, "wght" 380;
+  color: var(--ink);
+}
+
+/* ╔════════════════════════════════════════════ Slide 9 — Team ════════════════════════════════════════════╗ */
+
+.team-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem 4rem;
+  max-width: 80ch;
+}
+
+.team-row { display: flex; flex-direction: column; }
+
+.team-name {
+  font-family: "Fraunces", serif;
+  font-size: var(--t-h3);
+  font-variation-settings: "opsz" 42, "wght" 380, "SOFT" 25;
+  color: var(--ink);
+  letter-spacing: -0.012em;
+  line-height: 1.05;
+}
+
+.team-role {
+  font-family: "Newsreader", serif;
+  font-style: italic;
+  font-size: var(--t-body);
+  color: var(--clay);
+  margin: 0.3rem 0 0.8rem;
+}
+
+.team-blurb {
+  font-family: "Newsreader", serif;
+  font-size: var(--t-sm);
+  line-height: 1.55;
+  color: var(--ink-mute);
+}
+
+/* ╔════════════════════════════════════════════ Slide 10 — Community ════════════════════════════════════════════╗ */
+
+.slide-community {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 2rem;
+}
+
+.community-lead {
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-size: var(--t-lead);
+  line-height: 1.4;
+  font-variation-settings: "opsz" 28, "wght" 380, "SOFT" 40;
+  color: var(--ink);
+  max-width: 50ch;
+}
+
+.community-list {
+  list-style: none;
+  border-top: 1px solid var(--rule);
+}
+
+.community-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: baseline;
+}
+
+.community-name {
+  font-family: "Fraunces", serif;
+  font-size: var(--t-lead);
+  font-variation-settings: "opsz" 30, "wght" 380, "SOFT" 25;
+  color: var(--ink);
+}
+
+.community-note {
+  font-family: "Newsreader", serif;
+  font-style: italic;
+  font-size: var(--t-body);
+  color: var(--ink-mute);
+}
+
+.community-coda {
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-size: var(--t-h3);
+  line-height: 1.35;
+  font-variation-settings: "opsz" 42, "wght" 350, "SOFT" 50;
+  color: var(--clay-deep);
+  max-width: 48ch;
+  letter-spacing: -0.005em;
+}
+
+/* ╔════════════════════════════════════════════ Slide 11 — The Ask ════════════════════════════════════════════╗ */
+
+.slide-ask {
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.ask-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 50ch;
+}
+
+.ask-quiet {
+  font-family: "Newsreader", serif;
+  font-style: italic;
+  font-size: var(--t-lead);
+  color: var(--ink-mute);
+  line-height: 1.4;
+  font-variation-settings: "wght" 300;
+}
+
+.ask-amount {
+  font-family: "Fraunces", serif;
+  font-size: var(--t-display);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  font-variation-settings: "opsz" 144, "wght" 300, "SOFT" 30;
+  color: var(--clay-deep);
+  margin: 0.6rem 0;
+}
+
+.ask-purpose {
+  font-family: "Fraunces", serif;
+  font-size: var(--t-h3);
+  line-height: 1.2;
+  font-variation-settings: "opsz" 48, "wght" 380, "SOFT" 30;
+  color: var(--ink);
+  letter-spacing: -0.012em;
+  margin: 0.5rem 0;
+}
+
+/* ╔════════════════════════════════════════════ Slide 12 — Next ════════════════════════════════════════════╗ */
+
+.next-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 64ch;
+}
+
+.next-list li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.5rem;
+  align-items: baseline;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.next-list li:last-child { border-bottom: 0; }
+
+.next-num {
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-size: var(--t-lead);
+  color: var(--clay);
+  font-variation-settings: "opsz" 30, "wght" 350, "SOFT" 50;
+  line-height: 1;
+}
+
+.next-text {
+  font-family: "Newsreader", serif;
+  font-size: var(--t-body);
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+/* ╔════════════════════════════════════════════ Slide 13 — Closing ════════════════════════════════════════════╗ */
+
+.slide-closing {
+  align-items: center;
+  justify-content: center;
+}
+
+.closing-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  align-items: center;
+  text-align: center;
+  max-width: 48ch;
+}
+
+.closing-orn {
+  font-family: "Fraunces", serif;
+  font-size: 4rem;
+  color: var(--clay);
+  font-variation-settings: "wght" 200;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.closing-prose {
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-size: var(--t-h3);
+  line-height: 1.35;
+  font-variation-settings: "opsz" 42, "wght" 350, "SOFT" 40;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+
+.closing-sign {
+  font-family: "Newsreader", serif;
+  font-size: var(--t-body);
+  font-style: italic;
+  color: var(--ink-mute);
+  margin-top: 1.5rem;
+}
+
+.closing-name {
+  font-family: "Fraunces", serif;
+  font-size: var(--t-lead);
+  font-variation-settings: "opsz" 28, "wght" 400, "SOFT" 30;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+
+/* ╔════════════════════════════════════════════ Navigation ════════════════════════════════════════════╗ */
+
+.nav {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 50;
+}
+
+.nav-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: transparent;
+  border: 1px solid var(--rule-deep);
+  color: var(--ink);
+  font-family: "Newsreader", serif;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+  border-radius: 0;
+}
+
+.nav-btn:hover {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+.nav-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* ╔════════════════════════════════════════════ Reveal animation on active ════════════════════════════════════════════╗ */
+
+.slide.active > * {
+  animation: rise 0.85s cubic-bezier(.2,.6,.2,1) both;
+}
+
+.slide.active > *:nth-child(2) { animation-delay: 0.05s; }
+.slide.active > *:nth-child(3) { animation-delay: 0.12s; }
+.slide.active > *:nth-child(4) { animation-delay: 0.18s; }
+.slide.active > *:nth-child(5) { animation-delay: 0.24s; }
+.slide.active > *:nth-child(6) { animation-delay: 0.3s; }
+.slide.active .numeral,
+.slide.active .title-numeral {
+  animation: dim-rise 1.2s cubic-bezier(.2,.6,.2,1) both;
+  animation-delay: 0.1s;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes dim-rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ╔════════════════════════════════════════════ Print ════════════════════════════════════════════╗ */
+
+@media print {
+  body, .grain { background: white !important; }
+  .status, .nav { display: none !important; }
+  .slide {
+    position: relative;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    page-break-after: always;
+    height: auto;
+    min-height: 100vh;
+  }
+}
+
+/* ╔════════════════════════════════════════════ Smaller screens (laptop) ════════════════════════════════════════════╗ */
+
+@media (max-width: 1280px) {
+  :root {
+    --t-display: 5.5rem;
+    --t-h1: 4rem;
+    --t-h2: 2.5rem;
+    --t-numeral: 10rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .slide-title, .slide-narrative, .opportunity-frame, .context-grid, .story-frame, .team-list {
+    grid-template-columns: 1fr !important;
+  }
+  :root {
+    --pad-x: 2rem;
+    --pad-y: 2.5rem;
+    --t-display: 3.5rem;
+    --t-h1: 2.75rem;
+    --t-h2: 2rem;
+    --t-h3: 1.4rem;
+    --t-numeral: 6rem;
+  }
+}
