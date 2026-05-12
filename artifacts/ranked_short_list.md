@@ -32,7 +32,7 @@ After reviewing this list, compare to your internal portfolio:
 - **Residence:** Wilton CT (Fairfield County)
 - **Age:** George ~95 (b. 1931); Carol ~93
 - **Primary motivation:** **Repayer + Devout (twinned)** — Jeffrey Peter Bauer (firstborn son d. 5 days, early 1960s); Carol certified chaplain in his NICU; Yale Divinity $25M+ Living Village with Carol B. Bauer Hall
-- **Suggested first gift:** $5-15M (escalation on $35M+ cumulative); **stretch $50-75M+** via Yale-Divinity-precedent perpetuity-endowment legacy structure
+- **Suggested ask:** **$50-75M+** (Yale-Divinity-precedent perpetuity-endowment legacy structure) — this is materially higher than the Phase 3 dossier's initial $5-15M baseline; the lower tier remains the scaled-down floor if the legacy frame doesn't land
 - **Suggested named opportunity:** Bauer Family Endowment for Maternal-Infant Care + Spiritual Care at Norwalk Hospital (named-position-in-perpetuity structure)
 - **Top warm-intro path:** Laura + Peter Cordeau (Norwalk Hospital president) within 60 days, with Pavilion opening as anchor. Backup: Greg Smith (Maplewood Senior Living CEO, Pavilion campaign co-chair) — calls George his "mentor."
 - **Three children identified:** Jocelyn Bauer, Jennifer Bauer Toll (Wilton/New Canaan/Naples FL), Brad Bauer — all on Bauer Foundation board

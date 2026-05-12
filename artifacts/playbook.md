@@ -184,7 +184,7 @@ For **new candidates** (Rees, Goldman Fowler, Jasper Johns):
 
 | Candidate | Ask amount | Named opportunity | Setting |
 |-----------|-----------|--------------------|---------|
-| Bauer | $5-15M (stretch $50-75M) | Bauer Family Endowment for Maternal-Infant Care + Spiritual Care | Their setting; with three children present |
+| Bauer | **$50-75M+** (Yale-Divinity-precedent legacy tier; $5-15M floor if scaled-down) | Bauer Family Endowment for Maternal-Infant Care + Spiritual Care | Their setting; with three children present |
 | Dyson | $10-25M (mid $15M) | Phase II of Dyson Cancer Care + Anne E. Dyson Endowed Chair | Dyson Foundation Millbrook office; with Christopher + Molly |
 | Dalio | $25-50M (stretch $75M+) | Dalio Health Equity Institute at Nuvance | TBD; institutional cultivation arc needs work |
 | Whittingham | $3-7M | 30th-anniversary 2027 endowed chair (named for Andrew + Michael) | Whittingham Cancer Center / family gathering |
@@ -375,7 +375,7 @@ These are the operational artifacts for meeting-day prep.
 
 Per the Phase 0 case-for-support audit verdict (Nuvance does not currently sustain a $500M case; realistic 3-5 year target $75-200M from 2-3 transformational gifts), and per Phase 4 benchmarking on conversion rates:
 
-**Plausible 3-5 year cumulative gift range from these 7:** **$110-200M**, weighted heavily on Bauer + Dalio landings. The high-end ($200M) requires Bauer escalation to the $50-75M tier per the Greenwich-case-study revision.
+**Plausible 3-5 year cumulative gift range from these 7:** **$110-200M**, weighted heavily on Bauer + Dalio landings. The Bauer ask is calibrated at the **$50-75M+ Yale-Divinity-precedent legacy tier** per the Greenwich-case-study revision (a material upward recalibration from the initial $5-15M Phase 3 baseline). Without that Bauer landing, the cumulative compresses toward $70-100M; with it, the cumulative reaches the $150-200M range.
 
 ### E.2 Gift table by tier
 

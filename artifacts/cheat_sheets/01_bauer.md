@@ -1,6 +1,6 @@
 # Cheat Sheet — George & Carol Bauer
 
-**Rank:** #1 | **Tier:** Centi-millionaire | **Suggested first gift:** $5-15M (escalation); **stretch:** $50-75M (Yale-Divinity-precedent legacy structure)
+**Rank:** #1 | **Tier:** Centi-millionaire | **Suggested ask:** **$50-75M+** (Yale-Divinity-precedent perpetuity-endowment legacy structure); $5-15M is the scaled-down floor if the legacy frame doesn't land
 **Primary motivation:** Repayer + Devout | **Top intro path:** Laura + Peter Cordeau (Norwalk Hospital president) within 60 days
 
 ---

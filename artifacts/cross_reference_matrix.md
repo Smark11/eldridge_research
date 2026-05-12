@@ -19,7 +19,7 @@ For each candidate below, the affinity-signal scores (1-5 each, six signals), mo
 
 | Rank | Name | Tier | Wealth est | S1 Conn | S2 Res | S3 Health$ | S4 Cause | S5 Vehicle | S6 Life | **Total** | Primary motivation | Suggested gift | Risk flags |
 |------|------|------|------------|---------|--------|------------|----------|------------|---------|-----------|---------------------|-----------------|------------|
-| 1 | **George & Carol Bauer + next gen** | Centi | $200-500M+ | 5 | 5 | 5 | 5 | 4 | 5 | **29** | Repayer + Devout | $5-15M (revised: $50-75M+ via Yale Divinity playbook) | Age 95 succession window; GPB Capital naming-overlap reputational |
+| 1 | **George & Carol Bauer + next gen** | Centi | $200-500M+ | 5 | 5 | 5 | 5 | 4 | 5 | **29** | Repayer + Devout | **$50-75M+** (Yale-Divinity-precedent legacy tier; $5-15M floor if scaled-down) | Age 95 succession window; GPB Capital naming-overlap reputational |
 | 2 | **Robert R. Dyson + family** | Centi | $300M-$1B | 5 | 5 | 3 | 5 | 5 | 4 | **27** (rev. from 28 after Phase 3) | Dynast | $10-25M (mid $15M) | Health Quest Systems board service confirms S1=5; Democratic political donor framing risk |
 | 3 | **Ray Dalio** | Bill | $15.4B | 5 | 4 | 5 | 2 | 5 | 5 | **26** | Investor + Communitarian | $25-50M (institute) | June 2025 gift routed via CHRO not Foundation — Laura integration urgent; sensitive: son Devon d. Dec 2020 |
 | 4 | **Adam + Robyn Whittingham (G3)** | Centi-modest | $50-300M | 5 | 4 | 4 | 5 | 2 | 3 | **23** | Dynast + Repayer | $3-7M (revised) | Stamford Hospital competing loyalty; modest foundation infrastructure |

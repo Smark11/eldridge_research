@@ -50,7 +50,7 @@ The deck is pre-populated with the **Bauer family** example pitch (Rank #1, ~$50
 
 | Donor | Slide-3 thesis line | Slide-11 ask amount | Slide-11 ask purpose |
 |-------|---------------------|---------------------|------------------------|
-| Bauer | (default in deck) | $50 million | Bauer Family Endowment for Maternal-Infant Care and Spiritual Care |
+| Bauer | (default in deck) | $50-75 million (Yale-Divinity-precedent legacy tier) | Bauer Family Endowment for Maternal-Infant Care and Spiritual Care |
 | Dyson | Vassar Brothers as the heart of Mid-Hudson cancer care | $15 million | Phase II of Dyson Center for Cancer Care + Anne E. Dyson Endowed Chair in Oncology |
 | Dalio | Hudson Valley / Western Connecticut health equity as a distinct institutional model | $35 million | Dalio Health Equity Institute at Nuvance |
 | Whittingham | Thirty years of three generations of cancer care at Norwalk | $5 million | 30th-Anniversary Whittingham Endowed Chair (named for Andrew and Michael) |
