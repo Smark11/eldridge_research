@@ -58,6 +58,18 @@ The deck is pre-populated with the **Bauer family** example pitch (Rank #1, ~$50
 | Goldman Fowler | A Goldman family women's-health legacy from Lenox Hill to the Hudson Valley | $15 million | Goldman/Fowler Women's Health Center at Vassar Brothers |
 | Jasper Johns (Conley Rollins) | Sharon Hospital as Sharon community infrastructure | $3 million | Sharon Hospital Community Programs Endowment |
 
+## Imagery
+
+The deck includes atmospheric photography on most slides — full-bleed dimmed backgrounds on the title and closing slides; framed inset photographs on the narrative, opportunity, and patient-story slides; thin photo strips on the context and community slides; ornamental rules on the impact, model, and next slides. Imagery is loaded via `picsum.photos` seeded URLs at view-time (no local image files; the deck still has no build step).
+
+All imagery receives editorial filtering — sepia 0.32-0.40, low saturation, slight contrast lift, brightness pulled down — so the photos read as documentary/archival rather than stock. A paper-color veil overlays full-bleed backgrounds; insets get a 10px cream border + thin rule + subtle vignette.
+
+To swap an image, find the `background-image: url('https://picsum.photos/seed/...')` line in `index.html` and replace the seed string. The seed is deterministic — same seed → same image. Suggested seed convention: descriptive phrase (e.g. `seed/hudson-valley-fields-golden`) for stability and intent.
+
+**Deliberate choice:** No images are photographs of specific people. Using stock photos to represent the Bauer family (or any actual donor) would misrepresent them. Imagery here is *atmosphere*, not *identity* — architecture, light, hands, landscape, materials.
+
+**Print to PDF:** Imagery prints cleanly to PDF; sepia treatment holds in print output.
+
 ## Design notes
 
 - **Fraunces** is used for all display type — a variable-axis serif with optical-size and a "SOFT" axis. Section labels use the soft, italic form; titles use the harder, more authoritative form. This is *not* a generic serif; it has a particular humanist warmth that fits a hospital context.
