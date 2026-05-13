@@ -1,0 +1,2928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuvance Health Major-Gift Strategy — Implementation Plan — The Nuvance Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,200..900,0..100;1,9..144,200..900,0..100&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../artifacts/site/artifact.css">
+</head>
+<body>
+
+<svg class="grain" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <filter id="noiseFilter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch" />
+    <feColorMatrix type="matrix" values="0 0 0 0 0.10  0 0 0 0 0.10  0 0 0 0 0.18  0 0 0 0.08 0" />
+  </filter>
+  <rect width="100%" height="100%" filter="url(#noiseFilter)" />
+</svg>
+
+<header class="page-head">
+  <div>
+    <a href="../../../artifacts/site/index.html" class="back-link"><span class="orn">⁂</span>The Nuvance Portfolio</a>
+  </div>
+  <div class="page-head-r">
+    <span class="cat-num">N.042</span>
+    <span class="cat-tag">plan</span>
+  </div>
+</header>
+
+<main class="prose">
+<h1>Nuvance Health Major-Gift Strategy — Implementation Plan</h1>
+<blockquote>
+<p><strong>For agentic workers:</strong> REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (<code>- [ ]</code>) syntax for tracking.</p>
+</blockquote>
+<p><strong>Goal:</strong> Produce a comprehensive eight-artifact research and strategy package for Laura Eldridge&#39;s major-gift work at Nuvance Health Foundation: 10 candidate dossiers, warm-intro network map, benchmarking memo, per-candidate cheat sheets, ranked short-list, tailored strategy playbook, executive summary, and a designed presentation deck.</p>
+<p><strong>Architecture:</strong> Eight sequential phases with two parallel tracks (Phase 4 benchmarking runs alongside Phase 3 dossier work). Affinity-first methodology, calibrated wealth tiers (4-5 billionaires + 5-6 centi-millionaires = 10 total). Per-candidate research follows a master Dossier Template (Appendix A) so each candidate task is self-contained for agentic execution. Explicit checkpoints with the project owner (Mark) pause execution for review at five critical decision points before heavy-effort work begins.</p>
+<p><strong>Tech Stack:</strong> Markdown for research artifacts. HTML + CSS + minimal JS (D3 or vis-network) for the warm-intro network map visualization. HTML + CSS for the presentation deck (built using the <code>frontend-design</code> skill). Git for version control. Web search and web fetch for primary-source retrieval (Forbes, Bloomberg, SEC EDGAR, ProPublica Nonprofit Explorer, news archives, LinkedIn, 990 filings).</p>
+<p><strong>Spec reference:</strong> <code>docs/superpowers/specs/2026-05-10-nuvance-fundraising-strategy-design.md</code></p>
+<hr>
+<h2>File Structure</h2>
+<p>The full directory layout that this plan produces:</p>
+<pre><code>eldridge_research/
+├── docs/
+│   └── superpowers/
+│       ├── specs/2026-05-10-nuvance-fundraising-strategy-design.md   # input (spec)
+│       └── plans/2026-05-10-nuvance-fundraising-implementation.md    # this file
+├── research/
+│   ├── phase_0_institutional_context/
+│   │   ├── nuvance_overview.md
+│   │   ├── nuvance_990_analysis.md
+│   │   ├── predecessor_institutions.md
+│   │   ├── naming_opportunities.md
+│   │   └── case_for_support_audit.md
+│   ├── phase_1_long_list/
+│   │   ├── screening_methodology.md
+│   │   └── long_list.md
+│   ├── phase_2_short_list/
+│   │   └── short_list.md
+│   └── phase_4_benchmarking/
+│       ├── case_studies/01_*.md ... 12_*.md
+│       └── benchmarking_memo.md
+├── dossiers/
+│   └── 01_*.md ... 10_*.md
+├── artifacts/
+│   ├── ranked_short_list.md                  # Artifact 5 (final)
+│   ├── cross_reference_matrix.md             # Artifact 5 supplement
+│   ├── intro_network_map/                    # Artifact 2
+│   │   ├── index.html
+│   │   ├── style.css
+│   │   └── network_data.json
+│   ├── cheat_sheets/01_*.md ... 10_*.md      # Artifact 4
+│   ├── playbook.md                            # Artifact 6
+│   ├── executive_summary.md                  # Artifact 7
+│   └── deck/                                  # Artifact 8
+│       ├── index.html
+│       ├── style.css
+│       ├── deck.js
+│       └── assets/
+└── sources/
+    └── source_index.md                        # Master citation index
+</code></pre>
+<p><strong>File-responsibility map:</strong></p>
+<ul>
+<li><code>research/phase_0_*/*.md</code> — internal context documents; not delivered to Laura but underpin all later work</li>
+<li><code>research/phase_1_long_list/long_list.md</code> — scored long list of 40-60 candidates (intermediate artifact)</li>
+<li><code>research/phase_2_short_list/short_list.md</code> — final 10 candidates with paragraph rationales (intermediate)</li>
+<li><code>research/phase_4_benchmarking/case_studies/NN_*.md</code> — one case study per comparable mega-gift studied</li>
+<li><code>research/phase_4_benchmarking/benchmarking_memo.md</code> — synthesis memo (Artifact 3)</li>
+<li><code>dossiers/NN_&lt;slug&gt;.md</code> — full 6-8 page dossier per candidate (Artifact 1)</li>
+<li><code>artifacts/*</code> — final deliverables to Laura</li>
+<li><code>sources/source_index.md</code> — master index of every source cited, with retrieval date, to support verification</li>
+</ul>
+<hr>
+<h2>Quality Standards (apply to every research task)</h2>
+<p>Every research artifact must meet these standards before commit:</p>
+<ol>
+<li><strong>Every factual claim cites a source.</strong> Format: <code>[claim] (source: URL or filing identifier, retrieved YYYY-MM-DD)</code>. No &quot;reportedly&quot; or unsourced assertions.</li>
+<li><strong>Wealth, giving history, and affinity claims are triangulated.</strong> Each must be confirmed by at least two independent sources, or explicitly flagged as single-source with the implication called out.</li>
+<li><strong>Confidence labels are explicit.</strong> Each major claim is tagged <code>(known)</code>, <code>(inferred)</code>, or <code>(unknown)</code>. &quot;Inferred&quot; claims include the inferential chain.</li>
+<li><strong>Negative findings are reported.</strong> When research finds <em>no</em> evidence of something expected, that absence is reported, not omitted.</li>
+<li><strong>All sources added to <code>sources/source_index.md</code></strong> with a stable URL or filing identifier, retrieval date, and brief description.</li>
+</ol>
+<hr>
+<h2>Checkpoints</h2>
+<p>Five checkpoints pause execution for Mark&#39;s review before heavy-effort downstream work:</p>
+<ul>
+<li><strong>Checkpoint A (after Phase 0):</strong> Case-for-support audit findings reviewed</li>
+<li><strong>Checkpoint B (after Phase 1):</strong> Long list reviewed; names added/removed</li>
+<li><strong>Checkpoint C (after Phase 2):</strong> Final 10 short-list approved</li>
+<li><strong>Checkpoint D (after Phase 3 sample, 2 dossiers):</strong> Format/depth/emphasis approved before remaining 8</li>
+<li><strong>Checkpoint E (after Phase 6):</strong> Playbook draft reviewed before final polish</li>
+</ul>
+<p>When execution reaches a checkpoint, the executing agent halts and posts the artifact for review.</p>
+<hr>
+<h2>Parallelization Strategy</h2>
+<p>This plan is designed for heavy parallelization. Most research work is embarrassingly parallel: each candidate&#39;s dossier is independent, each benchmarking case study is independent, each playbook section is independent. The orchestrating agent should use <code>superpowers:dispatching-parallel-agents</code> and the <code>Agent</code> tool (typically <code>subagent_type: general-purpose</code> or <code>Explore</code>) to dispatch parallel subagents for each batch below.</p>
+<h3>Realistic time impact</h3>
+<ul>
+<li><strong>Sequential execution:</strong> 6-10 weeks</li>
+<li><strong>Parallelized execution (8-12 subagents in peak batches):</strong> 1.5-3 weeks</li>
+<li>The bottlenecks are (a) the 5 sequential checkpoints, (b) synthesis tasks that require all parallel work to complete first, and (c) human review time at each checkpoint</li>
+</ul>
+<h3>Dispatch rules for parallel batches</h3>
+<ol>
+<li><strong>Each parallel task must be self-contained.</strong> Subagents start with no shared memory. The Appendices (A, B, C) are the self-contained templates each parallel subagent reads.</li>
+<li><strong>Each parallel dispatch tells the subagent:</strong> which unit of work (candidate / case study / section), which Appendix to follow, which prior-phase files to read first, the exact output file path, the commit message.</li>
+<li><strong>Quality standards apply equally to every parallel subagent.</strong> Every subagent runs the standard verification at the end (sources cited, triangulation, confidence labels, source-index update).</li>
+<li><strong>Coordinator merges and reviews after each batch.</strong> After each parallel batch completes, the orchestrating agent runs a brief consistency check (Tasks 3.4 for dossiers, equivalent for other batches) before proceeding.</li>
+</ol>
+<h3>Batch map</h3>
+<table>
+<thead>
+<tr>
+<th>Batch</th>
+<th>Tasks</th>
+<th>Parallelism</th>
+<th>Subagent count</th>
+<th>Dependencies (must complete first)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Batch 0.A</strong></td>
+<td>0.2, 0.3, 0.4, 0.5</td>
+<td>4-way parallel</td>
+<td>4</td>
+<td>0.1 (directory setup)</td>
+</tr>
+<tr>
+<td>0.6</td>
+<td>sequential</td>
+<td>1</td>
+<td>Batch 0.A</td>
+<td></td>
+</tr>
+<tr>
+<td>0.7 (Checkpoint A)</td>
+<td>sequential — human review</td>
+<td>0</td>
+<td>0.6</td>
+<td></td>
+</tr>
+<tr>
+<td>1.1</td>
+<td>sequential</td>
+<td>1</td>
+<td>Checkpoint A</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Batch 1.B</strong></td>
+<td>1.2 split: Forbes / Bloomberg / hedge fund / local rich list / foundation 990-PF screens</td>
+<td>5-way parallel</td>
+<td>5</td>
+<td>1.1</td>
+</tr>
+<tr>
+<td>1.2 aggregation</td>
+<td>sequential merge</td>
+<td>1</td>
+<td>Batch 1.B</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Batch 1.C</strong></td>
+<td>1.3 split: affinity-score candidate batches of 10-15 per subagent</td>
+<td>6-10-way parallel (size depends on pool)</td>
+<td>6-10</td>
+<td>1.2 aggregation</td>
+</tr>
+<tr>
+<td>1.3 aggregation</td>
+<td>sequential merge</td>
+<td>1</td>
+<td>Batch 1.C</td>
+<td></td>
+</tr>
+<tr>
+<td>1.4 (Checkpoint B)</td>
+<td>sequential — human review</td>
+<td>0</td>
+<td>1.3 aggregation</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Batch 2.A</strong></td>
+<td>2.1 split: deeper-dive on top 20 in batches of 5 per subagent</td>
+<td>4-way parallel</td>
+<td>4</td>
+<td>Checkpoint B</td>
+</tr>
+<tr>
+<td>2.2</td>
+<td>sequential synthesis</td>
+<td>1</td>
+<td>Batch 2.A</td>
+<td></td>
+</tr>
+<tr>
+<td>2.3 (Checkpoint C)</td>
+<td>sequential — human review</td>
+<td>0</td>
+<td>2.2</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Batch 3.A</strong></td>
+<td>3.1 split: sample dossiers for ranks #1 and #2</td>
+<td>2-way parallel</td>
+<td>2</td>
+<td>Checkpoint C</td>
+</tr>
+<tr>
+<td>3.2 (Checkpoint D)</td>
+<td>sequential — human review</td>
+<td>0</td>
+<td>Batch 3.A</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Batch 3.B</strong></td>
+<td>3.3 split: dossiers for ranks #3-#10, one subagent per candidate</td>
+<td>8-way parallel</td>
+<td>8</td>
+<td>Checkpoint D</td>
+</tr>
+<tr>
+<td>3.4</td>
+<td>sequential consistency review</td>
+<td>1</td>
+<td>Batch 3.B</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Batch 4.A</strong></td>
+<td>4.2 split: benchmarking case studies, one subagent per case</td>
+<td>8-12-way parallel</td>
+<td>8-12</td>
+<td>4.1</td>
+</tr>
+<tr>
+<td></td>
+<td><em>(Batch 4.A can also run in parallel with Batches 3.A and 3.B)</em></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4.3</td>
+<td>sequential synthesis</td>
+<td>1</td>
+<td>Batch 4.A</td>
+<td></td>
+</tr>
+<tr>
+<td>5.1</td>
+<td>sequential (one synthesis task across 10 dossiers)</td>
+<td>1</td>
+<td>Batch 3.B + 3.4</td>
+<td></td>
+</tr>
+<tr>
+<td>5.2</td>
+<td>sequential (HTML/CSS/JS coding task)</td>
+<td>1</td>
+<td>5.1</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Batch 5.A</strong></td>
+<td>5.3 split: cheat sheets, one subagent per candidate</td>
+<td>10-way parallel</td>
+<td>10</td>
+<td>3.4</td>
+</tr>
+<tr>
+<td>5.4</td>
+<td>sequential synthesis</td>
+<td>1</td>
+<td>3.4</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Batch 6.A</strong></td>
+<td>6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7 — one subagent per playbook section</td>
+<td>7-way parallel</td>
+<td>7</td>
+<td>Phases 0-5 complete</td>
+</tr>
+<tr>
+<td>6.8 (Checkpoint E)</td>
+<td>sequential — human review</td>
+<td>0</td>
+<td>Batch 6.A</td>
+<td></td>
+</tr>
+<tr>
+<td>6.9</td>
+<td>sequential polish</td>
+<td>1</td>
+<td>Checkpoint E</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Batch 7.A</strong></td>
+<td>7.1 (exec summary), 7.2 (ranked short list), 7.3 (deck)</td>
+<td>3-way parallel</td>
+<td>3</td>
+<td>6.9</td>
+</tr>
+<tr>
+<td>7.4</td>
+<td>sequential final review</td>
+<td>1</td>
+<td>Batch 7.A</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3>Concurrency considerations</h3>
+<ul>
+<li><p><strong>Phase 3 + Phase 4 can run concurrently.</strong> The most aggressive schedule dispatches Batch 3.B (8 dossier subagents) and Batch 4.A (8-12 case study subagents) simultaneously — up to 20 parallel subagents at peak. Limit by available concurrency budget.</p>
+</li>
+<li><p><strong>Source-index conflicts.</strong> When parallel subagents both want to add to <code>sources/source_index.md</code>, conflicts can arise. Resolution: each subagent writes a <strong>per-batch source addendum</strong> (e.g., <code>sources/sources_batch_3B_dossier_05.md</code>) and the orchestrator merges these into <code>source_index.md</code> at batch completion.</p>
+</li>
+<li><p><strong>Git conflicts.</strong> Parallel subagents committing to the same repo can conflict. Two options:</p>
+<ol>
+<li><strong>Worktrees:</strong> Each subagent operates in a separate git worktree, then orchestrator merges. Use <code>superpowers:using-git-worktrees</code>.</li>
+<li><strong>No-commit subagents:</strong> Subagents produce their artifact files but do NOT commit. Orchestrator commits after batch completes. Simpler but less granular history.</li>
+</ol>
+<p><strong>Recommendation:</strong> No-commit subagents for Batches 0.A, 1.B, 1.C, 2.A, 5.A, 6.A, 7.A (file outputs only). Worktrees for Batches 3.A, 3.B, 4.A (the heaviest research batches where granular commits per dossier / case study matter).</p>
+</li>
+<li><p><strong>Cost budget.</strong> Parallel dispatch is expensive. The heaviest batches (3.B with 8 subagents, 4.A with 8-12) will each cost roughly 8-12x a single dossier&#39;s cost. Budget accordingly.</p>
+</li>
+</ul>
+<hr>
+<h1>Phase 0 — Institutional context &amp; case-for-support audit</h1>
+<p>Foundation phase. Establishes what Nuvance is actually raising for; underpins all candidate-fit analysis.</p>
+<h3>Task 0.1: Set up project directory structure</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Create: directory tree per the File Structure section above</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: Create the full directory tree</strong></p>
+</li>
+</ul>
+<p>Run:</p>
+<pre><code class="language-bash">cd /Users/marksenerth/_src/eldridge_research
+mkdir -p research/phase_0_institutional_context \
+         research/phase_1_long_list \
+         research/phase_2_short_list \
+         research/phase_4_benchmarking/case_studies \
+         dossiers \
+         artifacts/intro_network_map \
+         artifacts/cheat_sheets \
+         artifacts/deck/assets \
+         sources
+</code></pre>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 2: Initialize the source index file</strong></li>
+</ul>
+<p>Create <code>sources/source_index.md</code> with this content:</p>
+<pre><code class="language-markdown"># Source Index
+
+Master index of every external source cited in this project. Every research artifact references entries here.
+
+Format: `[ID] [Title] — [URL or identifier] — [retrieved YYYY-MM-DD] — [brief description]`
+
+Sources will be added as research proceeds.
+
+## Sources
+
+(none yet)
+</code></pre>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 3: Verify directory tree</strong></li>
+</ul>
+<p>Run: <code>find . -type d -not -path &quot;./.git*&quot; | sort</code></p>
+<p>Expected output should include all directories created in Step 1.</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 4: Commit</strong></li>
+</ul>
+<pre><code class="language-bash">git add research/ dossiers/ artifacts/ sources/
+git commit -m &quot;Set up project directory structure and source index&quot;
+</code></pre>
+<h3>Task 0.2: Nuvance Health overview research</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Create: <code>research/phase_0_institutional_context/nuvance_overview.md</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: Define success criteria for this artifact</strong></p>
+</li>
+</ul>
+<p>The overview must answer:</p>
+<ol>
+<li>What is Nuvance Health structurally? (legal entity, parent org, merger history)</li>
+<li>What are the constituent hospitals/facilities, and where are they located?</li>
+<li>What is the system&#39;s clinical service profile (specialties, signature programs, research footprint)?</li>
+<li>Who is the current leadership team (CEO, CMO, foundation president/director)?</li>
+<li>What is the most recent reported annual revenue and patient volume?</li>
+<li>What strategic initiatives are publicly announced (capital projects, expansions, mergers)?</li>
+<li>What recent news (past 24 months) is relevant to fundraising context (controversies, accolades, leadership changes, financial news)?</li>
+</ol>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 2: Conduct primary-source research</strong></li>
+</ul>
+<p>Use web search and web fetch on:</p>
+<ul>
+<li><p><code>https://www.nuvancehealth.org/</code> (main site)</p>
+</li>
+<li><p><code>https://www.nuvancehealth.org/about-us</code> and similar org pages</p>
+</li>
+<li><p>Nuvance Health Foundation pages</p>
+</li>
+<li><p>News searches: &quot;Nuvance Health&quot; past 24 months (filter by date)</p>
+</li>
+<li><p>LinkedIn search for &quot;Nuvance Health&quot; leadership</p>
+</li>
+<li><p>Wikipedia entry for &quot;Nuvance Health&quot; (use cautiously, verify against primary sources)</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 3: Write the overview document</strong></p>
+</li>
+</ul>
+<p>Create <code>research/phase_0_institutional_context/nuvance_overview.md</code> with these sections, every claim cited:</p>
+<pre><code class="language-markdown"># Nuvance Health — Institutional Overview
+
+**Compiled:** YYYY-MM-DD
+**Purpose:** Internal context document for the major-gift strategy project. Not for external distribution.
+
+## 1. Structure and history
+(legal entity, parent org, merger history of Western CT Health Network + Health Quest)
+
+## 2. Constituent facilities
+(each hospital named, location, bed count if available, specialty focus)
+
+## 3. Clinical service profile
+(specialty programs, signature offerings, research footprint, academic affiliations if any)
+
+## 4. Leadership
+(CEO, CMO, foundation president/director, board chair, recent leadership transitions)
+
+## 5. Financials
+(most recent annual revenue, patient volume, payer mix if disclosed, operating margin)
+
+## 6. Strategic initiatives
+(announced capital projects, expansions, technology investments, growth strategy)
+
+## 7. Recent news (past 24 months)
+(major announcements, leadership changes, controversies, accolades, financial events)
+
+## 8. Sources
+(numbered list, each entry referencing source_index.md)
+</code></pre>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 4: Update source index</strong></li>
+</ul>
+<p>For every source used in Step 2-3, add an entry to <code>sources/source_index.md</code>.</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 5: Verify against quality standards</strong></li>
+</ul>
+<p>Confirm:</p>
+<ul>
+<li><p>Every factual claim has an inline citation</p>
+</li>
+<li><p>Wealth/revenue numbers triangulated against ≥2 sources where possible (annual report + news, or 990 + news)</p>
+</li>
+<li><p>Any &quot;single-source&quot; claim is flagged</p>
+</li>
+<li><p>Confidence labels applied where relevant</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 6: Commit</strong></p>
+</li>
+</ul>
+<pre><code class="language-bash">git add research/phase_0_institutional_context/nuvance_overview.md sources/source_index.md
+git commit -m &quot;Phase 0: Nuvance Health institutional overview&quot;
+</code></pre>
+<h3>Task 0.3: Nuvance Health Foundation 990 analysis</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Create: <code>research/phase_0_institutional_context/nuvance_990_analysis.md</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: Define success criteria</strong></p>
+</li>
+</ul>
+<p>The 990 analysis must determine:</p>
+<ol>
+<li>The EIN(s) and exact legal name(s) of Nuvance Health Foundation entities (there may be several — system foundation, hospital-level foundations from predecessor institutions)</li>
+<li>Annual contribution revenue trends over the last 5 years where available</li>
+<li>Largest reported donors where 990 Schedule B is accessible</li>
+<li>Largest single gifts disclosed (often noted in annual reports or news)</li>
+<li>Existing major-donor base composition (signal: are existing donors local, regional, or national; old-money vs. new-money; healthcare-affinity-driven or community-driven)</li>
+<li>Foundation staffing/structure (per Form 990 Part VII)</li>
+</ol>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 2: Retrieve 990 filings</strong></li>
+</ul>
+<p>Use ProPublica Nonprofit Explorer (<code>https://projects.propublica.org/nonprofits/</code>) and Cause IQ (<code>https://www.causeiq.com/</code>):</p>
+<ul>
+<li><p>Search &quot;Nuvance Health Foundation&quot;</p>
+</li>
+<li><p>Also search &quot;Vassar Brothers Medical Center&quot; foundation, &quot;Danbury Hospital&quot; foundation, &quot;Norwalk Hospital&quot; foundation, &quot;Health Quest&quot; foundation (predecessor entities may still exist as separate 501(c)(3)s)</p>
+</li>
+<li><p>Retrieve the most recent available Form 990 for each entity</p>
+</li>
+<li><p>Note the filing year (likely 2 years lagged)</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 3: Extract key data per filing</strong></p>
+</li>
+</ul>
+<p>For each 990 retrieved, capture in a structured table:
+| Entity | EIN | Filing Year | Total Revenue | Contribution Revenue | Largest Gifts (Sch B if public) | Top Officers |</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 4: Write the analysis document</strong></li>
+</ul>
+<p>Create <code>research/phase_0_institutional_context/nuvance_990_analysis.md</code>:</p>
+<pre><code class="language-markdown"># Nuvance Health Foundation — 990 Analysis
+
+**Compiled:** YYYY-MM-DD
+**Purpose:** Internal context for major-gift strategy. Maps the existing donor base and the foundation&#39;s recent fundraising performance.
+
+## 1. Legal entities identified
+(list of foundation 501(c)(3) entities, with EIN, related hospital/system, year established)
+
+## 2. Contribution revenue trends (5-year)
+(table showing annual contributions over time; note any obvious campaign-driven spikes)
+
+## 3. Largest disclosed gifts
+(where Schedule B is accessible, list named largest contributors; otherwise note that Schedule B is not public for hospital orgs but cross-reference any gifts noted in annual reports / news)
+
+## 4. Donor-base composition observations
+(based on annual report donor lists, news of named gifts, any patterns visible — geographic, multigenerational families, business-affiliated, grateful-patient program tier)
+
+## 5. Foundation staffing
+(per Form 990 Part VII — Laura&#39;s title if listed, foundation president/director, board composition)
+
+## 6. Implications for our work
+(brief: what does this tell us about Nuvance&#39;s current donor base that informs candidate fit, and what gaps exist — e.g., few national billionaires, mostly Hudson Valley families, or vice versa)
+
+## 7. Sources
+</code></pre>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 5: Update source index</strong></li>
+</ul>
+<p>Add every 990 filing and supplementary source to <code>sources/source_index.md</code> with filing year and retrieval date.</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 6: Verify against quality standards</strong></li>
+</ul>
+<p>Confirm:</p>
+<ul>
+<li><p>All numbers cited to specific 990 line items</p>
+</li>
+<li><p>Predecessor-entity foundations explicitly searched even if no separate entity found</p>
+</li>
+<li><p>Implications section labeled <code>(inferred)</code> clearly</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 7: Commit</strong></p>
+</li>
+</ul>
+<pre><code class="language-bash">git add research/phase_0_institutional_context/nuvance_990_analysis.md sources/source_index.md
+git commit -m &quot;Phase 0: Nuvance Health Foundation 990 analysis&quot;
+</code></pre>
+<h3>Task 0.4: Predecessor-institution legacy mapping</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Create: <code>research/phase_0_institutional_context/predecessor_institutions.md</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: Define success criteria</strong></p>
+</li>
+</ul>
+<p>For each predecessor institution (Western CT Health Network, Health Quest, Vassar Brothers Medical Center, Danbury Hospital, Norwalk Hospital, Sharon Hospital, Northern Dutchess Hospital, Putnam Hospital, New Milford Hospital), the analysis must capture:</p>
+<ol>
+<li>Founding history and major donor families historically associated with that institution</li>
+<li>Named buildings, wings, programs, and chairs (indicating prior major-gift donor names — sometimes those families still give)</li>
+<li>Past capital campaigns and their reported outcomes</li>
+<li>Multigenerational donor patterns (where a family name appears across decades)</li>
+<li>Predecessor-foundation board members where publicly known</li>
+</ol>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 2: Research each predecessor institution</strong></li>
+</ul>
+<p>For each institution:</p>
+<ul>
+<li><p>Visit current Nuvance pages referencing that facility</p>
+</li>
+<li><p>Search the institution&#39;s historical website (Wayback Machine: <code>https://web.archive.org/</code>) for older annual reports and donor lists</p>
+</li>
+<li><p>Search news archives for capital campaign announcements, building dedications, named gifts</p>
+</li>
+<li><p>For older institutions, look for institutional histories (often published as books or booklets for centennials)</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 3: Write the legacy mapping document</strong></p>
+</li>
+</ul>
+<p>Create <code>research/phase_0_institutional_context/predecessor_institutions.md</code>:</p>
+<pre><code class="language-markdown"># Predecessor Institutions — Legacy Donor Mapping
+
+**Compiled:** YYYY-MM-DD
+**Purpose:** Identify legacy donor families whose names appear on predecessor-institution buildings/programs, since these families often remain engaged with the merged system.
+
+## 1. Western Connecticut Health Network
+### Danbury Hospital
+- Founding: (year, founders if notable)
+- Named buildings/wings/programs
+- Notable historical donors
+- Recent campaigns
+
+### Norwalk Hospital
+(same structure)
+
+### New Milford Hospital
+(same structure)
+
+## 2. Health Quest
+### Vassar Brothers Medical Center
+(same structure — and note this is the most prominent named institution in the system, with potential Vassar family legacy implications)
+
+### Northern Dutchess Hospital
+(same structure)
+
+### Putnam Hospital
+(same structure)
+
+### Sharon Hospital
+(same structure)
+
+## 3. Cross-institutional legacy families
+(any family names appearing across multiple institutions — these are particularly high-value affinity signals)
+
+## 4. Sources
+</code></pre>
+<ul>
+<li><p><input disabled="" type="checkbox"> <strong>Step 4: Update source index</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 5: Verify against quality standards</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 6: Commit</strong></p>
+</li>
+</ul>
+<pre><code class="language-bash">git add research/phase_0_institutional_context/predecessor_institutions.md sources/source_index.md
+git commit -m &quot;Phase 0: Predecessor institution legacy donor mapping&quot;
+</code></pre>
+<h3>Task 0.5: Naming opportunities by tier</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Create: <code>research/phase_0_institutional_context/naming_opportunities.md</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: Define success criteria</strong></p>
+</li>
+</ul>
+<p>Identify plausible naming opportunities for Nuvance, tiered by gift size:</p>
+<ul>
+<li>$10M tier (named programs, chairs, smaller named spaces)</li>
+<li>$25M tier (named departments, mid-size facilities, distinguished chairs)</li>
+<li>$50M tier (named institutes, major programs, building wings)</li>
+<li>$100M tier (named buildings, major capital projects)</li>
+<li>$250M+ tier (entire system or major institute naming — extraordinary opportunities)</li>
+</ul>
+<p>For each tier, identify:</p>
+<ol>
+<li>Existing publicly announced opportunities (if any)</li>
+<li>Inferred opportunities based on Nuvance&#39;s strategic initiatives (e.g., if Nuvance is planning a new cancer center, that&#39;s a tier-X opportunity even if not yet announced)</li>
+<li>Realistic limits (e.g., &quot;system-wide naming&quot; is likely not feasible for a regional system)</li>
+</ol>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 2: Research existing and inferred opportunities</strong></li>
+</ul>
+<p>Sources:</p>
+<ul>
+<li><p>Nuvance Health&#39;s strategic plan documents (Step 2 of Task 0.2 should have surfaced these)</p>
+</li>
+<li><p>News announcements of planned construction or program launches</p>
+</li>
+<li><p>Recent published capital campaign materials (if any)</p>
+</li>
+<li><p>Comparable regional health system named-opportunity menus (Yale-New Haven, Northwell, Greenwich Hospital all publish theirs — useful benchmarks)</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 3: Write the opportunities document</strong></p>
+</li>
+</ul>
+<p>Create <code>research/phase_0_institutional_context/naming_opportunities.md</code>:</p>
+<pre><code class="language-markdown"># Naming Opportunities — by Tier
+
+**Compiled:** YYYY-MM-DD
+**Purpose:** Identify the specific named opportunities that a major gift could fund. This document anchors per-candidate &quot;ask&quot; recommendations in dossiers.
+
+## $10M tier
+| Opportunity | Status (announced / inferred) | Strategic alignment | Notes |
+|---|---|---|---|
+| ... | ... | ... | ... |
+
+## $25M tier
+(same table)
+
+## $50M tier
+(same table)
+
+## $100M tier
+(same table)
+
+## $250M+ tier
+(same table)
+
+## Strategic gaps
+(opportunities that *should* exist for a $500M campaign but currently don&#39;t appear available — surface honestly)
+
+## Sources
+</code></pre>
+<ul>
+<li><p><input disabled="" type="checkbox"> <strong>Step 4: Update source index</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 5: Verify against quality standards</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 6: Commit</strong></p>
+</li>
+</ul>
+<pre><code class="language-bash">git add research/phase_0_institutional_context/naming_opportunities.md sources/source_index.md
+git commit -m &quot;Phase 0: Naming opportunities by tier&quot;
+</code></pre>
+<h3>Task 0.6: Case-for-support audit</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li>Create: <code>research/phase_0_institutional_context/case_for_support_audit.md</code></li>
+</ul>
+<p>This is the most consequential Phase 0 task — surfaces honest institutional findings.</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 1: Define success criteria</strong></li>
+</ul>
+<p>The audit must answer:</p>
+<ol>
+<li>Does Nuvance currently have a clearly articulated case for support that could anchor a $500M campaign?</li>
+<li>What is that case for support (in their own words, sourced)?</li>
+<li>How does Nuvance&#39;s case compare to comparable regional health systems&#39; published cases (Yale-New Haven, Northwell, Greenwich, Stamford Health, Hartford Healthcare)?</li>
+<li>What clinical or strategic differentiators does Nuvance have that would be compelling to a transformational donor?</li>
+<li>What institutional gaps exist (e.g., no major research footprint, no signature capital project, no widely-recognized clinical program of national stature)?</li>
+<li>What would Nuvance need to do institutionally to make a $500M campaign credible? (This is the uncomfortable section.)</li>
+</ol>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 2: Conduct comparative research</strong></li>
+</ul>
+<p>Pull case-for-support materials from comparable regional systems:</p>
+<ul>
+<li>Yale-New Haven Health (<code>https://www.ynhh.org/</code>)</li>
+<li>Northwell Health (<code>https://www.northwell.edu/</code>)</li>
+<li>Greenwich Hospital (part of Yale-New Haven)</li>
+<li>Stamford Health</li>
+<li>Hartford HealthCare</li>
+</ul>
+<p>Note their:</p>
+<ul>
+<li><p>Stated strategic priorities</p>
+</li>
+<li><p>Signature programs / research centers / institutes</p>
+</li>
+<li><p>Recent or current capital campaign goals and themes</p>
+</li>
+<li><p>Donor-facing language and emotional framing</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 3: Conduct the audit</strong></p>
+</li>
+</ul>
+<p>Write the audit document with intellectual honesty. If Nuvance&#39;s current case is weaker than comparators, say so. If it&#39;s strong, say so. If the $500M aspiration is institutionally premature, surface that.</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 4: Write the audit document</strong></li>
+</ul>
+<p>Create <code>research/phase_0_institutional_context/case_for_support_audit.md</code>:</p>
+<pre><code class="language-markdown"># Case-for-Support Audit
+
+**Compiled:** YYYY-MM-DD
+**Purpose:** Honest assessment of Nuvance Health&#39;s current case for support and what it can credibly sustain at the major-gift level.
+
+## 1. Nuvance&#39;s stated case for support
+(quoted from official sources — strategic plan, foundation materials, CEO statements)
+
+## 2. Strategic differentiators
+(what Nuvance has that&#39;s distinctive — clinical, geographic, programmatic)
+
+## 3. Comparative analysis
+(Nuvance vs. Yale-New Haven, Northwell, Greenwich, Stamford, Hartford on case strength, signature programs, research depth)
+
+## 4. Institutional gaps for a $500M aspiration
+(brutally honest — what&#39;s missing)
+
+## 5. What would need to be true institutionally
+(what investments, signature initiatives, or strategic moves would make the $500M case credible)
+
+## 6. Implications for the strategy package
+(if the case is weak, our major-gift strategy must include recommendations for institutional repositioning; if the case is strong, dossiers and pitch architecture lean into those differentiators)
+
+## 7. Sources
+</code></pre>
+<ul>
+<li><p><input disabled="" type="checkbox"> <strong>Step 5: Update source index</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 6: Verify against quality standards</strong></p>
+</li>
+</ul>
+<p>This artifact specifically must include negative findings. If everything is rosy, the audit isn&#39;t doing its job.</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 7: Commit</strong></li>
+</ul>
+<pre><code class="language-bash">git add research/phase_0_institutional_context/case_for_support_audit.md sources/source_index.md
+git commit -m &quot;Phase 0: Case-for-support audit&quot;
+</code></pre>
+<h3>Task 0.7: Checkpoint A — present Phase 0 findings to Mark</h3>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 1: Compose a checkpoint summary</strong></li>
+</ul>
+<p>Write a brief checkpoint message to Mark that includes:</p>
+<ol>
+<li>The five Phase 0 documents now exist and are linked</li>
+<li>The 2-3 most important findings from the case-for-support audit (especially any uncomfortable findings)</li>
+<li>Whether the institutional context affects the Phase 1 long-list methodology in any way (e.g., if the case-for-support audit reveals that Nuvance&#39;s natural donor profile is more &quot;Hudson Valley community-leader&quot; than &quot;national billionaire&quot;, recommend reweighting affinity signals accordingly)</li>
+<li>Specific questions for Mark to decide before Phase 1 proceeds</li>
+</ol>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 2: Pause execution and post the summary</strong></li>
+</ul>
+<p>The executing agent halts here. Mark reviews the Phase 0 documents and the checkpoint summary, then approves or redirects.</p>
+<p>Do not proceed to Phase 1 without explicit approval.</p>
+<hr>
+<h1>Phase 1 — Long-list generation</h1>
+<p>Produce a scored long list of 40-60 candidate names.</p>
+<h3>Task 1.1: Document the screening methodology</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Create: <code>research/phase_1_long_list/screening_methodology.md</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: Write the methodology document</strong></p>
+</li>
+</ul>
+<p>Create <code>research/phase_1_long_list/screening_methodology.md</code>:</p>
+<pre><code class="language-markdown"># Long-List Screening Methodology
+
+**Compiled:** YYYY-MM-DD
+
+## Inclusion criteria
+
+A candidate is added to the long list if they meet ALL of:
+1. Estimated net worth ≥ $300M (verified against ≥1 source)
+2. At least one of: primary residence in Nuvance service area (Hudson Valley NY or Western/Fairfield CT), secondary residence in service area, primary business operations in service area, board service at any Nuvance facility (current or past), documented patient history at any Nuvance facility (rare — typically only known through news/obit references)
+3. Not on the documented exclusion list (Task 1.2 disqualifying factors)
+
+A candidate is also added if they meet:
+- Estimated net worth ≥ $1B AND any past hospital/medical gift ≥ $5M anywhere (even without service-area connection — billionaires are mobile)
+
+## Affinity-signal scoring (1-5 each)
+
+1. **Documented Nuvance connection** — 5 if board service or major patient experience; 3 if predecessor-institution legacy family; 1 if no direct connection but indirect (employee, vendor, neighbor)
+2. **Residential ties** — 5 if primary residence in core service area (Dutchess, Putnam, western Fairfield); 3 if secondary residence or adjacent county; 1 if commuter-relationship only
+3. **Healthcare giving history** — 5 if any named gift ≥ $10M to a hospital; 3 if cumulative healthcare giving ≥ $5M; 1 if minor healthcare giving
+4. **Cause affinity** — 5 if giving aligns with Nuvance signature programs (cancer, cardiac, women&#39;s health, neurosciences — per Phase 0 audit); 3 if related healthcare giving; 1 if unrelated
+5. **Giving vehicle sophistication** — 5 if active private foundation with $50M+ assets; 3 if active DAF or foundation with $10M+ assets; 1 if minimal philanthropic infrastructure
+6. **Life-stage signals** — 5 if age 65+ AND recent liquidity event AND succession-relevant family situation; 3 if any two of those; 1 if young or no liquidity signals
+
+Sum the six signals (range 6-30). Candidates scoring ≥18 advance to short-list consideration.
+
+## Disqualifying factors
+
+A candidate is excluded (even if otherwise qualified) if:
+- Documented public hostility toward Nuvance or a predecessor institution
+- Active major-gift cultivation by a competitor that is in late-stage solicitation (where Nuvance approaching would be counterproductive)
+- Recent declined ask at multiple comparable institutions for unrelated reasons (signals not philanthropically active right now)
+- Active litigation or controversy that would create reputational risk for Nuvance
+- Wealth is structurally illiquid with no near-term liquidity path AND no foundation/DAF to give from
+
+## Methodology limitations
+
+Documented in spec Section 7. Restated for reference:
+- DAF grants not public
+- Wealth estimates for non-Forbes-listed individuals are inferred
+- Anonymous gifts are common
+- 990-PF data lags 18-24 months
+- Family-office structures often opaque
+</code></pre>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 2: Commit</strong></li>
+</ul>
+<pre><code class="language-bash">git add research/phase_1_long_list/screening_methodology.md
+git commit -m &quot;Phase 1: Screening methodology&quot;
+</code></pre>
+<h3>Task 1.2: Generate the geographic-wealth screen</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Create: <code>research/phase_1_long_list/long_list.md</code> (initial structure; will be populated)</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: Define success criteria</strong></p>
+</li>
+</ul>
+<p>Produce an initial pool of 80-120 candidate names from geographic-wealth screening alone, <em>before</em> affinity scoring. This is a wide net that will be narrowed.</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 2: Pull from primary lists</strong></li>
+</ul>
+<p>Sources to query (and add each to source_index.md):</p>
+<ul>
+<li><p><strong>Forbes 400</strong> (2024 or most recent): filter for NY, CT residents</p>
+</li>
+<li><p><strong>Bloomberg Billionaires Index</strong>: filter for service-area zip codes / cities (Greenwich, Westport, New Canaan, Darien, Westport CT; Pound Ridge, Bedford, Mt. Kisco, Chappaqua, Scarsdale, Bronxville, Rye, Larchmont, Mamaroneck NY; Millbrook, Rhinebeck, Hyde Park, Poughkeepsie, Garrison, Cold Spring NY; Sharon, Litchfield, Kent CT)</p>
+</li>
+<li><p><strong>Local rich-list publications</strong>: Westchester County Business Journal &quot;Power 100&quot;, CT Mirror wealth profiles, Hudson Valley Magazine annual features</p>
+</li>
+<li><p><strong>Hedge fund founder lists</strong>: Greenwich and Stamford host enormous hedge fund concentration; pull from HFR or Institutional Investor lists for principals residing in service area</p>
+</li>
+<li><p><strong>Family-foundation principals</strong>: query ProPublica Nonprofit Explorer for private foundations with addresses in service-area zip codes; surface the principals</p>
+</li>
+<li><p><strong>Top recent IPO/M&amp;A liquidity events</strong>: query SEC EDGAR for 10b5-1 sales and recent S-1 filings from principals with service-area residences</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 3: Document each candidate&#39;s source-of-discovery</strong></p>
+</li>
+</ul>
+<p>For each name surfaced, capture in a table format:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Name</th>
+<th>Wealth est</th>
+<th>Wealth source</th>
+<th>Discovery source</th>
+<th>Residence</th>
+<th>Initial notes</th>
+</tr>
+</thead>
+</table>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 4: Initial deduplication and triage</strong></li>
+</ul>
+<p>Remove duplicates. Remove anyone where the residence link turns out to be tenuous on closer look (e.g., listed in Bloomberg as &quot;Greenwich&quot; but actually based in NYC with a vacation home — keep but note).</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 5: Save the initial pool</strong></li>
+</ul>
+<p>Save the initial 80-120-name pool to <code>research/phase_1_long_list/long_list.md</code> (this file will be enriched with affinity scoring in the next task).</p>
+<pre><code class="language-markdown"># Long List — Initial Pool
+
+**Compiled:** YYYY-MM-DD
+**Status:** Pre-affinity-scored. To be enriched in Task 1.3.
+
+## Candidate pool
+
+(table of 80-120 names with the columns from Step 3)
+
+## Discovery source summary
+
+(brief: how many candidates came from each source)
+
+## Sources
+</code></pre>
+<ul>
+<li><p><input disabled="" type="checkbox"> <strong>Step 6: Update source index</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 7: Commit</strong></p>
+</li>
+</ul>
+<pre><code class="language-bash">git add research/phase_1_long_list/long_list.md sources/source_index.md
+git commit -m &quot;Phase 1: Initial geographic-wealth screen, ~80-120 candidates&quot;
+</code></pre>
+<h3>Task 1.3: Affinity-score each candidate</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Modify: <code>research/phase_1_long_list/long_list.md</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: Define success criteria</strong></p>
+</li>
+</ul>
+<p>For each candidate in the initial pool:</p>
+<ul>
+<li><p>Apply the six affinity-signal scoring (Task 1.1 methodology)</p>
+</li>
+<li><p>Confirm or revise wealth estimate against a second source</p>
+</li>
+<li><p>Apply disqualifying-factor screen</p>
+</li>
+<li><p>Flag candidates scoring ≥18 (advance) vs &lt;18 (drop)</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 2: For each candidate, research and score</strong></p>
+</li>
+</ul>
+<p>For each candidate in the initial pool, do the following research:</p>
+<p><strong>(A) Confirm wealth.</strong> Cross-reference Forbes/Bloomberg against:</p>
+<ul>
+<li>SEC 13D/13G filings for insider holdings (large stock positions tied to a person)</li>
+<li>Recent news estimating their net worth</li>
+<li>Family-office or foundation 990-PF asset levels</li>
+</ul>
+<p><strong>(B) Score signal 1 (Nuvance connection).</strong> Search:</p>
+<ul>
+<li>Nuvance Health Foundation board (current and historical via Wayback Machine)</li>
+<li>News archives for &quot;[Candidate Name] Nuvance&quot; / &quot;[Candidate Name] Vassar Brothers&quot; / &quot;[Candidate Name] Danbury Hospital&quot; / etc.</li>
+<li>LinkedIn for any current or historical board affiliation</li>
+</ul>
+<p><strong>(C) Score signal 2 (residential ties).</strong> Verify residence via:</p>
+<ul>
+<li>Property records (where publicly accessible)</li>
+<li>News profiles mentioning their home</li>
+<li>Public society/event coverage placing them in the area</li>
+</ul>
+<p><strong>(D) Score signal 3 (healthcare giving history).</strong> Search:</p>
+<ul>
+<li>News archives for named hospital gifts</li>
+<li>Foundation 990-PF Schedule I (grants paid) for hospital-recipient patterns</li>
+<li>Donor walls and annual reports of comparable hospitals (NYP, Yale-New Haven, MSK, Greenwich, etc.)</li>
+</ul>
+<p><strong>(E) Score signal 4 (cause affinity).</strong> Map their giving against Nuvance signature programs identified in Phase 0.</p>
+<p><strong>(F) Score signal 5 (giving vehicle sophistication).</strong> Check ProPublica Nonprofit Explorer for any associated private foundation; check news/coverage for DAF activity.</p>
+<p><strong>(G) Score signal 6 (life-stage signals).</strong> Determine age (Wikipedia, executive bios, news), recent liquidity events (SEC filings, news), succession-relevance (children active in business, foundation transitions, etc.).</p>
+<p><strong>(H) Check disqualifying factors.</strong> Search for any of the listed disqualifying patterns.</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 3: Update long_list.md with scoring</strong></li>
+</ul>
+<p>Update the file structure to include scoring:</p>
+<pre><code class="language-markdown"># Long List — Affinity-Scored
+
+**Compiled:** YYYY-MM-DD
+**Status:** Affinity-scored, ready for short-list selection (Phase 2).
+
+## Methodology
+
+(reference Task 1.1 — link to screening_methodology.md)
+
+## Scored candidates
+
+(table; sorted by total score descending)
+
+| # | Name | Wealth est | S1 Conn | S2 Res | S3 Health$ | S4 Cause | S5 Vehicle | S6 Life | TOTAL | DQ flags | Status |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | ... | $2.5B | 5 | 5 | 5 | 4 | 5 | 3 | 27 | None | ADVANCE |
+| ... |
+
+## Per-candidate scoring rationale
+
+For each candidate scoring ≥18, a 100-200 word rationale documenting the basis for each score with citations.
+
+### [Candidate Name] (Score: NN)
+- **S1 (Nuvance connection):** [score and 1-2 sentence rationale with citation]
+- **S2 (Residential):** ...
+- **S3 (Healthcare giving):** ...
+- **S4 (Cause affinity):** ...
+- **S5 (Giving vehicle):** ...
+- **S6 (Life-stage):** ...
+- **Disqualifying factors:** None observed / [list]
+
+(repeat for each ADVANCE candidate)
+
+## Dropped candidates
+
+Brief note (1 sentence) on why each dropped candidate didn&#39;t advance.
+
+## Sources
+</code></pre>
+<ul>
+<li><p><input disabled="" type="checkbox"> <strong>Step 4: Update source index for any new sources used</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 5: Verify against quality standards</strong></p>
+</li>
+</ul>
+<p>Cross-check that the long list has 40-60 ADVANCE candidates (per spec target).</p>
+<ul>
+<li><p>If &lt;40 ADVANCE candidates: methodology may be too strict; review borderline cases (16-17 score) for inclusion</p>
+</li>
+<li><p>If &gt;60: methodology produced too many; surface this and adjust score threshold or apply stricter affinity weights</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 6: Commit</strong></p>
+</li>
+</ul>
+<pre><code class="language-bash">git add research/phase_1_long_list/long_list.md sources/source_index.md
+git commit -m &quot;Phase 1: Affinity-scored long list, ~40-60 advance candidates&quot;
+</code></pre>
+<h3>Task 1.4: Checkpoint B — present long list to Mark</h3>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 1: Compose checkpoint summary</strong></li>
+</ul>
+<p>Write a brief summary for Mark:</p>
+<ol>
+<li>Total candidates screened: NN</li>
+<li>Total ADVANCE (score ≥18): NN</li>
+<li>Score distribution histogram (text)</li>
+<li>Top 5 by score, with one-line each</li>
+<li>Any notable inclusions or exclusions worth flagging</li>
+<li>Any wealth-tier observations (e.g., &quot;Of 47 ADVANCE candidates, 12 are confirmed billionaires and 35 are centi-millionaires&quot;)</li>
+<li>Specific names Mark may want to consider adding or excluding before Phase 2</li>
+</ol>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 2: Pause execution and post the summary</strong></li>
+</ul>
+<p>Halt and await Mark&#39;s review. Mark can add names, exclude names, or approve as-is. Do not proceed to Phase 2 without explicit approval.</p>
+<hr>
+<h1>Phase 2 — Short-list selection (top 10)</h1>
+<p>Narrow the ADVANCE pool to a final 10 candidates.</p>
+<h3>Task 2.1: Deeper-dive on top 15-20 candidates</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Modify: <code>research/phase_1_long_list/long_list.md</code> (add deeper-dive annotations on top 15-20)</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: Define success criteria</strong></p>
+</li>
+</ul>
+<p>For the top 15-20 candidates (by long-list score), conduct deeper research to confirm or revise their candidacy:</p>
+<ul>
+<li><p>Verify every gift ≥ $1M to hospital/medical institutions in the past 15 years (this is more thorough than the long-list signal)</p>
+</li>
+<li><p>Identify the single strongest warm-intro path (named connector) for each</p>
+</li>
+<li><p>Identify any competing institutional loyalties (e.g., serves on NYP board — would be hard to redirect philanthropy to Nuvance)</p>
+</li>
+<li><p>Update affinity scoring if deeper research reveals previously-missed signals</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 2: For each top-20 candidate, conduct deeper research</strong></p>
+</li>
+</ul>
+<p>For each:</p>
+<ul>
+<li><p><strong>Comprehensive healthcare-gift inventory.</strong> Search comparable hospital annual reports, donor walls, news archives, and 990-PF Schedule I grants from any associated family foundation. Goal: a complete-as-possible list of every healthcare gift ≥ $1M.</p>
+</li>
+<li><p><strong>Initial warm-intro mapping.</strong> Identify the single most plausible connector between this candidate and Nuvance&#39;s known network (Nuvance board members, foundation board, CEO&#39;s known contacts, predecessor-institution legacy donors). One named connector with rationale.</p>
+</li>
+<li><p><strong>Competing institutional loyalties.</strong> Identify any other healthcare institution where the candidate is in active major-gift cultivation, on the board, or has made a recent $25M+ gift. Document these — they&#39;re not necessarily disqualifying but they shape cultivation strategy.</p>
+</li>
+<li><p><strong>Revise the affinity score</strong> if deeper research surfaces new evidence.</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 3: Annotate long_list.md</strong></p>
+</li>
+</ul>
+<p>Add a new section to <code>research/phase_1_long_list/long_list.md</code>:</p>
+<pre><code class="language-markdown">## Top 20 — Deeper-Dive Annotations
+
+For each top-20 candidate (by score):
+
+### [Candidate Name] (Revised Score: NN)
+- **Healthcare gift inventory:** [list of named gifts ≥ $1M with year, amount, recipient, source]
+- **Strongest warm-intro path:** [named connector + rationale]
+- **Competing loyalties:** [list of active institutional commitments]
+- **Updated motivation hypothesis (preliminary):** [which of Prince&#39;s Seven Faces appears dominant + 1-sentence evidence]
+- **Updated score rationale:** [if score changed, why]
+</code></pre>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 4: Commit</strong></li>
+</ul>
+<pre><code class="language-bash">git add research/phase_1_long_list/long_list.md sources/source_index.md
+git commit -m &quot;Phase 2: Deeper-dive annotations on top 20 candidates&quot;
+</code></pre>
+<h3>Task 2.2: Final short-list selection (10 candidates)</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Create: <code>research/phase_2_short_list/short_list.md</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: Define success criteria</strong></p>
+</li>
+</ul>
+<p>Produce the final 10 candidates with:</p>
+<ul>
+<li><p>Calibration to spec target: 4-5 billionaires + 5-6 centi-millionaires, summing to exactly 10</p>
+</li>
+<li><p>Selection logic explicitly documented</p>
+</li>
+<li><p>Per-candidate paragraph rationale</p>
+</li>
+<li><p>Each candidate has a specified rank order (1-10) with justification for the ranking</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 2: Select the 10</strong></p>
+</li>
+</ul>
+<p>From the top-20 deeper-dive list, select 10 by:</p>
+<ol>
+<li>Sort top 20 by revised affinity score</li>
+<li>Apply wealth-tier calibration: select 4-5 highest-scoring billionaires + 5-6 highest-scoring centi-millionaires</li>
+<li>Where ranking is close, prefer candidates with:<ul>
+<li>Strong warm-intro paths (Phase 3 cultivation will be easier)</li>
+<li>Fewer competing institutional loyalties</li>
+<li>Clearer motivation hypothesis (easier to design pitch)</li>
+</ul>
+</li>
+<li>Confirm final count = 10</li>
+</ol>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 3: Write the short-list document</strong></li>
+</ul>
+<p>Create <code>research/phase_2_short_list/short_list.md</code>:</p>
+<pre><code class="language-markdown"># Short List — Final 10 Candidates
+
+**Compiled:** YYYY-MM-DD
+**Status:** Final selection for Phase 3 dossier work, pending Mark&#39;s approval.
+
+## Wealth-tier breakdown
+- Billionaires (≥ $1B): N
+- Centi-millionaires ($300M-$999M): N
+- Total: 10
+
+## Selection logic
+(2-3 paragraphs documenting how these 10 were chosen from the top 20)
+
+## Ranked candidates
+
+### Rank #1: [Name]
+- **Wealth estimate:** $XB / $XM
+- **Tier:** Billionaire / Centi-millionaire
+- **Affinity score:** NN/30
+- **Primary motivation hypothesis:** [Prince&#39;s face — Repayer, Dynast, etc. — with 1-line evidence]
+- **Suggested gift range:** $XM - $XM
+- **Suggested named opportunity:** [from Phase 0 naming inventory]
+- **Strongest warm-intro path:** [named connector]
+- **Rationale for inclusion at rank 1:** [paragraph, 100-150 words]
+
+### Rank #2: [Name]
+(same structure)
+
+... through Rank #10.
+
+## Why these 10 and not others from the top 20
+(brief notes on the 5-10 near-miss candidates who didn&#39;t make the cut)
+
+## Sources
+</code></pre>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 4: Commit</strong></li>
+</ul>
+<pre><code class="language-bash">git add research/phase_2_short_list/short_list.md sources/source_index.md
+git commit -m &quot;Phase 2: Final short list of 10 candidates&quot;
+</code></pre>
+<h3>Task 2.3: Checkpoint C — present short list to Mark</h3>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 1: Compose checkpoint summary</strong></li>
+</ul>
+<p>Write Mark a checkpoint summary:</p>
+<ol>
+<li>Final 10 with names, tier, wealth, affinity score, motivation hypothesis, suggested gift range</li>
+<li>Wealth-tier breakdown confirming spec calibration</li>
+<li>Near-miss candidates and why they didn&#39;t make it</li>
+<li>Confidence levels — which candidates are &quot;near-certain qualified&quot; and which are &quot;promising-but-thinner-evidence&quot;</li>
+<li>Question for Mark: any swaps, adjustments, or approvals before heavy dossier work begins</li>
+</ol>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 2: Pause execution and post the summary</strong></li>
+</ul>
+<p>Halt. Mark reviews; approves, swaps, or revises. Do not proceed to Phase 3 (heaviest phase) without explicit approval.</p>
+<hr>
+<h1>Phase 3 — Deep dossiers (10 candidates)</h1>
+<p>The heaviest phase. Produce 10 full dossiers following the Dossier Template (Appendix A).</p>
+<h3>Task 3.1: Build dossiers for ranks #1 and #2 (samples for Checkpoint D)</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Create: <code>dossiers/01_&lt;slug&gt;.md</code></p>
+</li>
+<li><p>Create: <code>dossiers/02_&lt;slug&gt;.md</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: Identify the slugs</strong></p>
+</li>
+</ul>
+<p>Read <code>research/phase_2_short_list/short_list.md</code>. For Rank #1 and Rank #2, take the candidate&#39;s name and produce a URL-safe slug (lowercase, hyphens for spaces, no special chars). E.g., &quot;John Q. Smith&quot; → &quot;john-q-smith&quot;.</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 2: For Rank #1, execute the Dossier Template (Appendix A)</strong></li>
+</ul>
+<p>Follow Appendix A in full. The dossier must include every section listed in the appendix, with every claim cited and every confidence level explicit. Save to <code>dossiers/01_&lt;slug&gt;.md</code>.</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 3: For Rank #2, execute the Dossier Template (Appendix A)</strong></li>
+</ul>
+<p>Same. Save to <code>dossiers/02_&lt;slug&gt;.md</code>.</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 4: Commit</strong></li>
+</ul>
+<pre><code class="language-bash">git add dossiers/01_*.md dossiers/02_*.md sources/source_index.md
+git commit -m &quot;Phase 3: Sample dossiers for top 2 candidates (Checkpoint D)&quot;
+</code></pre>
+<h3>Task 3.2: Checkpoint D — present 2 sample dossiers to Mark</h3>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 1: Compose checkpoint summary</strong></li>
+</ul>
+<p>Write Mark a checkpoint summary:</p>
+<ol>
+<li>Sample dossiers for ranks #1 and #2 are at <code>dossiers/01_*.md</code> and <code>dossiers/02_*.md</code></li>
+<li>Format/depth/emphasis questions for Mark to review:<ul>
+<li>Is the page count right (target 6-8 pages each)?</li>
+<li>Is the level of detail appropriate?</li>
+<li>Is the motivation hypothesis section clear and well-evidenced?</li>
+<li>Is the cultivation plan specific enough?</li>
+<li>Are there sections to add, remove, or reweight?</li>
+</ul>
+</li>
+<li>Specific request: Mark reviews both dossiers and provides format-level feedback before remaining 8 dossiers are built</li>
+</ol>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 2: Pause execution and post the summary</strong></li>
+</ul>
+<p>Halt. Mark reviews and provides format feedback. Do not produce remaining 8 dossiers without explicit approval.</p>
+<h3>Task 3.3: Build dossiers for ranks #3 through #10</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Create: <code>dossiers/03_&lt;slug&gt;.md</code> through <code>dossiers/10_&lt;slug&gt;.md</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: For each rank #3 through #10, execute the Dossier Template (Appendix A)</strong></p>
+</li>
+</ul>
+<p>For each rank in sequence:</p>
+<ol>
+<li>Read <code>research/phase_2_short_list/short_list.md</code> to identify the candidate</li>
+<li>Produce the URL-safe slug</li>
+<li>Execute Appendix A in full</li>
+<li>Save to <code>dossiers/NN_&lt;slug&gt;.md</code> where NN is the zero-padded rank</li>
+<li>Update <code>sources/source_index.md</code> for any new sources used</li>
+<li>Apply any format adjustments requested at Checkpoint D</li>
+</ol>
+<p>Commit after each dossier (commit cadence per spec):</p>
+<pre><code class="language-bash">git add dossiers/NN_*.md sources/source_index.md
+git commit -m &quot;Phase 3: Dossier for rank #N candidate, &lt;candidate name&gt;&quot;
+</code></pre>
+<p>This produces 8 commits, one per dossier.</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 2: Final verification</strong></li>
+</ul>
+<p>Confirm all 10 dossiers exist:</p>
+<pre><code class="language-bash">ls -1 /Users/marksenerth/_src/eldridge_research/dossiers/
+</code></pre>
+<p>Expected: 10 files, named <code>01_*.md</code> through <code>10_*.md</code>.</p>
+<h3>Task 3.4: Cross-dossier consistency review</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Modify: dossiers as needed for consistency</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: Define success criteria</strong></p>
+</li>
+</ul>
+<p>After all 10 dossiers exist, review for consistency:</p>
+<ul>
+<li><p>Same structural sections across all dossiers (per Appendix A)</p>
+</li>
+<li><p>Comparable depth and length (6-8 pages each)</p>
+</li>
+<li><p>Source citation format consistent</p>
+</li>
+<li><p>Motivation-hypothesis framing consistent (using Prince&#39;s Seven Faces terminology)</p>
+</li>
+<li><p>Gift-range and named-opportunity recommendations consistent with Phase 0 tier inventory</p>
+</li>
+<li><p>Cross-references to other candidates (where one dossier references another candidate as a peer or connector) are accurate</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 2: Conduct the review</strong></p>
+</li>
+</ul>
+<p>For each dossier, spot-check the consistency criteria. Note discrepancies.</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 3: Fix discrepancies</strong></li>
+</ul>
+<p>Where a dossier deviates from the template structure or shows different depth/format, make targeted edits to bring it in line.</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 4: Commit any fixes</strong></li>
+</ul>
+<pre><code class="language-bash">git add dossiers/
+git commit -m &quot;Phase 3: Cross-dossier consistency review and fixes&quot;
+</code></pre>
+<hr>
+<h1>Phase 4 — Benchmarking memo</h1>
+<p>Can run in parallel with Phase 3. Produce a deep-dive on 8-12 comparable mega-gifts.</p>
+<h3>Task 4.1: Select 8-12 case studies</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Create: <code>research/phase_4_benchmarking/case_selection.md</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: Define success criteria</strong></p>
+</li>
+</ul>
+<p>Identify 8-12 comparable regional-health-system mega-gifts of the past 15 years, prioritizing:</p>
+<ul>
+<li>Geographic relevance (Northeast U.S., especially NY/CT/MA regional systems)</li>
+<li>Size relevance ($25M+ each)</li>
+<li>Diversity of donor motivation (mix of Repayer, Dynast, Communitarian, etc.)</li>
+<li>Both successful &quot;anchor gifts&quot; and any documented failed or rescinded gifts (failures teach more)</li>
+<li>Recency (last 15 years; bias toward more recent)</li>
+</ul>
+<p>Likely candidates to include (verify each is documented with public detail):</p>
+<ul>
+<li>Various gifts to Greenwich Hospital</li>
+<li>Hospital for Special Surgery $50M+ donors</li>
+<li>Northwell Health transformational gifts (Lenox Hill, others)</li>
+<li>Mount Sinai — Carl Icahn / Icahn School of Medicine naming</li>
+<li>Penn Medicine — major donor gifts to Perelman, Abramson</li>
+<li>NYU Langone — Helen Kimmel, Ronald Perelman gifts</li>
+<li>Yale-New Haven Health — Smilow Cancer Hospital naming</li>
+<li>Memorial Sloan Kettering — David H. Koch Center</li>
+<li>Stamford Health — recent capital campaign anchors</li>
+<li>Hartford HealthCare — significant named gifts</li>
+<li>Hospital of Special Surgery — Kellen, others</li>
+<li>Boston regional examples: Brigham and Women&#39;s, Beth Israel Deaconess</li>
+</ul>
+<p>Note: We&#39;re studying <em>regional</em> mega-gifts specifically — gifts to academic medical center flagships (Mayo, Cleveland Clinic) are less relevant.</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 2: Write the case selection document</strong></li>
+</ul>
+<p>Create <code>research/phase_4_benchmarking/case_selection.md</code>:</p>
+<pre><code class="language-markdown"># Benchmarking Case Selection
+
+**Compiled:** YYYY-MM-DD
+
+## Selected case studies
+
+| # | Donor / Family | Recipient Institution | Gift Size | Year | Stated Purpose | Motivation Type (Prince) |
+|---|---|---|---|---|---|---|
+| 01 | ... | ... | ... | ... | ... | ... |
+| ... | | | | | | |
+| 12 | ... | ... | ... | ... | ... | ... |
+
+## Selection rationale
+
+(brief: why these 12 specifically — covers geographic spread, motivation diversity, recency, documentation availability)
+</code></pre>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 3: Commit</strong></li>
+</ul>
+<pre><code class="language-bash">git add research/phase_4_benchmarking/case_selection.md
+git commit -m &quot;Phase 4: Case study selection (8-12 mega-gifts)&quot;
+</code></pre>
+<h3>Task 4.2: For each case study, execute Appendix B</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Create: <code>research/phase_4_benchmarking/case_studies/NN_&lt;institution&gt;_&lt;donor&gt;.md</code> for each case</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: For each selected case, execute the Case Study Template (Appendix B)</strong></p>
+</li>
+</ul>
+<p>Iterate through the 8-12 case studies. For each, follow Appendix B fully. File naming: <code>NN_&lt;institution&gt;_&lt;donor&gt;.md</code> (e.g., <code>03_mount-sinai_icahn.md</code>).</p>
+<p>Commit after each case study:</p>
+<pre><code class="language-bash">git add research/phase_4_benchmarking/case_studies/NN_*.md sources/source_index.md
+git commit -m &quot;Phase 4: Case study NN — &lt;donor&gt; at &lt;institution&gt;&quot;
+</code></pre>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 2: Verify all case studies present</strong></li>
+</ul>
+<pre><code class="language-bash">ls -1 /Users/marksenerth/_src/eldridge_research/research/phase_4_benchmarking/case_studies/
+</code></pre>
+<p>Expected: 8-12 files.</p>
+<h3>Task 4.3: Synthesize the benchmarking memo</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Create: <code>research/phase_4_benchmarking/benchmarking_memo.md</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: Define success criteria</strong></p>
+</li>
+</ul>
+<p>The memo must:</p>
+<ol>
+<li>Summarize each case study at the 1-paragraph level (executive synthesis)</li>
+<li>Extract patterns across cases:<ul>
+<li><strong>What worked:</strong> common moves that landed mega-gifts (e.g., grateful-patient program engagement, clinical-leadership introductions, specific board peer-asking models)</li>
+<li><strong>What didn&#39;t:</strong> common failure patterns (e.g., institutional naming-rights inflation, donor-fatigue from over-asking, leadership transitions mid-cultivation)</li>
+<li><strong>Donor motivation patterns:</strong> which Prince&#39;s-faces motivations dominate at the regional-system mega-gift level</li>
+<li><strong>Cultivation length patterns:</strong> typical months from first qualified meeting to closed gift</li>
+<li><strong>Cultivation team patterns:</strong> who was at the ask (CEO + dev director + board peer is common; what variations exist?)</li>
+</ul>
+</li>
+<li>Apply to Nuvance specifically: which patterns most apply, what Nuvance should adopt, and what Nuvance currently lacks</li>
+</ol>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 2: Write the memo</strong></li>
+</ul>
+<p>Create <code>research/phase_4_benchmarking/benchmarking_memo.md</code>:</p>
+<pre><code class="language-markdown"># Benchmarking Memo — Regional Health System Mega-Gifts (2010-Present)
+
+**Compiled:** YYYY-MM-DD
+**Length:** 15-25 pages
+
+## Executive summary
+
+(2-page synthesis of the case studies and their patterns)
+
+## Case study summaries
+
+For each of the 8-12 case studies:
+### NN. [Donor / Recipient / Year / Amount]
+(1-2 paragraphs synthesizing the case)
+
+## Pattern extraction
+
+### Pattern 1: What worked
+(detailed analysis of successful moves observed across multiple cases, with specific case-study references)
+
+### Pattern 2: What didn&#39;t
+(failure patterns, with examples)
+
+### Pattern 3: Donor motivation
+(which Prince&#39;s faces dominated, with frequency)
+
+### Pattern 4: Cultivation length and cadence
+(quantitative analysis where data exists)
+
+### Pattern 5: Cultivation team composition
+(who was at the ask, and what variations matter)
+
+### Pattern 6: Named opportunity sophistication
+(how named opportunities were structured: naming rights with sunset, multigenerational naming, naming-with-impact-clauses, etc.)
+
+### Pattern 7: Post-gift stewardship leading to follow-on gifts
+(which institutions converted first-gift donors into second-larger-gift donors, and how)
+
+## Application to Nuvance Health
+
+(systematic mapping of each pattern to Nuvance&#39;s situation: what Nuvance is doing, what Nuvance should adopt, what&#39;s missing institutionally to apply the pattern)
+
+## Sources
+</code></pre>
+<ul>
+<li><p><input disabled="" type="checkbox"> <strong>Step 3: Update source index</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 4: Verify against quality standards</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 5: Commit</strong></p>
+</li>
+</ul>
+<pre><code class="language-bash">git add research/phase_4_benchmarking/benchmarking_memo.md sources/source_index.md
+git commit -m &quot;Phase 4: Benchmarking memo synthesis&quot;
+</code></pre>
+<hr>
+<h1>Phase 5 — Tactical artifacts</h1>
+<p>Three artifacts: warm-intro network map (HTML viz), per-candidate cheat sheets (10), cross-reference matrix.</p>
+<h3>Task 5.1: Build the warm-intro network map data</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Create: <code>artifacts/intro_network_map/network_data.json</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: Define success criteria</strong></p>
+</li>
+</ul>
+<p>Produce a JSON data file describing the network graph:</p>
+<ul>
+<li><p><strong>Nodes:</strong> all 10 candidates + every named connector identified in their dossiers + Nuvance&#39;s known network anchors (foundation board, CEO, key clinical leaders if relevant)</p>
+</li>
+<li><p><strong>Edges:</strong> every relationship between two nodes documented in any dossier, with edge metadata (relationship type, strength, source)</p>
+</li>
+<li><p>Node metadata: type (candidate / connector / nuvance-anchor), name, organization, dossier reference</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 2: Extract relationships from dossiers</strong></p>
+</li>
+</ul>
+<p>For each of the 10 dossiers, read the warm-intro paths section. Capture every (candidate, connector) edge with:</p>
+<ul>
+<li><p>Source dossier</p>
+</li>
+<li><p>Relationship type (board service, club, school, business, family, prior philanthropic collaboration, etc.)</p>
+</li>
+<li><p>Strength assessment (strong / medium / weak — based on how directly the dossier indicates the connection)</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 3: Add Nuvance network anchors</strong></p>
+</li>
+</ul>
+<p>Add nodes for Nuvance&#39;s known connectors (foundation board members, CEO, etc. — from Phase 0 research). Add edges where any candidate-connector relationship eventually ties back to a Nuvance anchor.</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 4: Write the JSON</strong></li>
+</ul>
+<pre><code class="language-json">{
+  &quot;nodes&quot;: [
+    {&quot;id&quot;: &quot;candidate_01_slug&quot;, &quot;name&quot;: &quot;Full Name&quot;, &quot;type&quot;: &quot;candidate&quot;, &quot;rank&quot;: 1, &quot;wealth_est&quot;: &quot;$XB&quot;, &quot;dossier&quot;: &quot;dossiers/01_slug.md&quot;},
+    {&quot;id&quot;: &quot;connector_001&quot;, &quot;name&quot;: &quot;Connector Name&quot;, &quot;type&quot;: &quot;connector&quot;, &quot;org&quot;: &quot;Their org&quot;},
+    {&quot;id&quot;: &quot;nuvance_001&quot;, &quot;name&quot;: &quot;Anchor Name&quot;, &quot;type&quot;: &quot;nuvance-anchor&quot;, &quot;role&quot;: &quot;Foundation board chair&quot;},
+    ...
+  ],
+  &quot;edges&quot;: [
+    {&quot;source&quot;: &quot;candidate_01_slug&quot;, &quot;target&quot;: &quot;connector_001&quot;, &quot;type&quot;: &quot;board-service&quot;, &quot;strength&quot;: &quot;strong&quot;, &quot;evidence&quot;: &quot;Both on Greenwich Country Club board 2019-present&quot;, &quot;dossier_ref&quot;: &quot;dossiers/01_slug.md&quot;},
+    ...
+  ]
+}
+</code></pre>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 5: Commit</strong></li>
+</ul>
+<pre><code class="language-bash">git add artifacts/intro_network_map/network_data.json
+git commit -m &quot;Phase 5: Network map data extracted from dossiers&quot;
+</code></pre>
+<h3>Task 5.2: Build the warm-intro network map visualization</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Create: <code>artifacts/intro_network_map/index.html</code></p>
+</li>
+<li><p>Create: <code>artifacts/intro_network_map/style.css</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: Define success criteria</strong></p>
+</li>
+</ul>
+<p>A single self-contained HTML file (with linked CSS) that:</p>
+<ul>
+<li><p>Renders the network from <code>network_data.json</code> as an interactive graph</p>
+</li>
+<li><p>Uses vis-network or D3.js via CDN (no npm/build step)</p>
+</li>
+<li><p>Visually distinguishes node types (candidates: large, color-coded by tier; connectors: medium; Nuvance anchors: distinct color)</p>
+</li>
+<li><p>Visually encodes edge strength (line weight)</p>
+</li>
+<li><p>On hover, shows node details (name, role, dossier ref)</p>
+</li>
+<li><p>On click, optionally opens a side panel with more detail</p>
+</li>
+<li><p>Color palette and typography aligned with Nuvance&#39;s brand identity (research from Phase 0)</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 2: Write the test page</strong></p>
+</li>
+</ul>
+<p>First, write a simple test HTML that loads <code>network_data.json</code> and logs the parsed structure to console — verify the data file is well-formed before building the viz.</p>
+<p>Test file (temporary, gitignored):</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;Test load&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;script&gt;
+fetch(&#39;network_data.json&#39;).then(r =&gt; r.json()).then(d =&gt; {
+  console.log(&quot;Nodes:&quot;, d.nodes.length);
+  console.log(&quot;Edges:&quot;, d.edges.length);
+  console.log(&quot;Sample node:&quot;, d.nodes[0]);
+  console.log(&quot;Sample edge:&quot;, d.edges[0]);
+});
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Open the file in a browser, confirm the data loads.</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 3: Build index.html</strong></li>
+</ul>
+<p>Create <code>artifacts/intro_network_map/index.html</code> using vis-network (via CDN). Reference style.css. Include:</p>
+<ul>
+<li><p>Header with project title and date</p>
+</li>
+<li><p>Legend (node types, edge strengths)</p>
+</li>
+<li><p>Network container (full viewport minus header)</p>
+</li>
+<li><p>Click handler for nodes (opens detail panel)</p>
+</li>
+<li><p>Initial layout: force-directed</p>
+</li>
+<li><p>Filter controls (show/hide by tier, by edge strength)</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 4: Build style.css</strong></p>
+</li>
+</ul>
+<p>Create <code>artifacts/intro_network_map/style.css</code> with:</p>
+<ul>
+<li><p>Color palette (Nuvance brand-aligned colors from Phase 0)</p>
+</li>
+<li><p>Typography (clean, professional sans-serif)</p>
+</li>
+<li><p>Responsive layout for desktop primarily</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 5: Test in browser</strong></p>
+</li>
+</ul>
+<p>Open <code>artifacts/intro_network_map/index.html</code> in a browser. Verify:</p>
+<ul>
+<li><p>All 10 candidate nodes render</p>
+</li>
+<li><p>All connector nodes render</p>
+</li>
+<li><p>Edges are visible with appropriate weight</p>
+</li>
+<li><p>Hover/click interactions work</p>
+</li>
+<li><p>Legend is clear</p>
+</li>
+<li><p>Visual polish is professional</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 6: Commit</strong></p>
+</li>
+</ul>
+<pre><code class="language-bash">git add artifacts/intro_network_map/
+git commit -m &quot;Phase 5: Warm-intro network map visualization&quot;
+</code></pre>
+<h3>Task 5.3: Build cheat sheets for each candidate</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Create: <code>artifacts/cheat_sheets/01_&lt;slug&gt;.md</code> through <code>10_&lt;slug&gt;.md</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: For each candidate, execute the Cheat Sheet Template (Appendix C)</strong></p>
+</li>
+</ul>
+<p>For rank #1 through #10:</p>
+<ol>
+<li>Read the dossier <code>dossiers/NN_&lt;slug&gt;.md</code></li>
+<li>Execute Appendix C, distilling the dossier into a single printable page</li>
+<li>Save to <code>artifacts/cheat_sheets/NN_&lt;slug&gt;.md</code></li>
+</ol>
+<p>Commit after each batch of 3-5 cheat sheets, or all 10 together if produced as one task pass:</p>
+<pre><code class="language-bash">git add artifacts/cheat_sheets/
+git commit -m &quot;Phase 5: Cheat sheets for all 10 candidates&quot;
+</code></pre>
+<h3>Task 5.4: Build the cross-reference matrix</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Create: <code>artifacts/cross_reference_matrix.md</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: Define success criteria</strong></p>
+</li>
+</ul>
+<p>A single-page (or two-page) matrix showing all 10 candidates side-by-side on the six affinity signals, plus key strategic dimensions. Designed so Laura can lay her own internal portfolio next to ours and immediately see comparison points.</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 2: Build the matrix</strong></li>
+</ul>
+<p>Create <code>artifacts/cross_reference_matrix.md</code>:</p>
+<pre><code class="language-markdown"># Cross-Reference Matrix — Top 10 Candidates
+
+**Compiled:** YYYY-MM-DD
+**Purpose:** Side-by-side comparison. Laura can lay her own portfolio against this matrix to identify overlaps and gaps.
+
+## Master matrix
+
+| Rank | Name | Tier | Wealth est | S1 Conn | S2 Res | S3 Health$ | S4 Cause | S5 Vehicle | S6 Life | Total | Motivation (Prince) | Suggested Gift | Top Intro | Risk Flags |
+|------|------|------|------------|---------|--------|------------|----------|------------|---------|-------|---------------------|----------------|-----------|------------|
+| 1 | ... | B | $XB | 5 | 5 | 5 | 4 | 5 | 3 | 27 | Repayer | $50M | Connector Name | None |
+| ... |
+
+## Strategic dimensions matrix
+
+| Rank | Name | Best cultivation lead | Optimal first-meeting frame | Recommended cultivation length | Competing institutional risk |
+|------|------|------|------|------|------|
+| ... |
+
+## How to use this matrix
+
+(2-3 paragraph note for Laura on how to read and apply this matrix vs. her own portfolio)
+</code></pre>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 3: Commit</strong></li>
+</ul>
+<pre><code class="language-bash">git add artifacts/cross_reference_matrix.md
+git commit -m &quot;Phase 5: Cross-reference matrix&quot;
+</code></pre>
+<hr>
+<h1>Phase 6 — Strategy playbook synthesis</h1>
+<p>Pull Phases 0-5 into a single tailored playbook for Laura.</p>
+<h3>Task 6.1: Draft Section A — Donor psychology, applied</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Create: <code>artifacts/playbook.md</code> (initial file with this section)</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: Define success criteria</strong></p>
+</li>
+</ul>
+<p>Section A must:</p>
+<ul>
+<li><p>Provide a brief framework (Prince&#39;s Seven Faces, Bekkers &amp; Wiepking mechanisms, hospital-mega-gift evidence base)</p>
+</li>
+<li><p>Map each of the 10 candidates to their motivation profile</p>
+</li>
+<li><p>Translate motivation profiles into operational implications</p>
+</li>
+<li><p>Include anti-patterns per face</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 2: Write Section A</strong></p>
+</li>
+</ul>
+<p>Create <code>artifacts/playbook.md</code> with header + Section A:</p>
+<pre><code class="language-markdown"># Major-Gift Strategy Playbook — Nuvance Health
+
+**Compiled:** YYYY-MM-DD
+**For:** Laura Eldridge, CFRE
+**Companion artifacts:** 10 dossiers (`dossiers/`), 10 cheat sheets (`artifacts/cheat_sheets/`), warm-intro network map (`artifacts/intro_network_map/`), benchmarking memo (`research/phase_4_benchmarking/benchmarking_memo.md`), ranked short list (`artifacts/ranked_short_list.md` — built later), cross-reference matrix (`artifacts/cross_reference_matrix.md`)
+
+## Section A — Donor psychology, applied
+
+### A.1 Framework: Prince&#39;s Seven Faces of Philanthropy
+
+(brief 1-page synthesis of Prince &amp; File 1994 — Communitarian, Devout, Investor, Socialite, Repayer, Altruist, Dynast — with citations and one example per face)
+
+### A.2 Framework: Bekkers &amp; Wiepking&#39;s eight mechanisms
+
+(brief 1-page synthesis of the 2011 meta-analysis: awareness of need, solicitation, costs/benefits, altruism, reputation, psychological benefits, values, efficacy — with citations)
+
+### A.3 The hospital-mega-gift evidence base
+
+(synthesis: Repayer dominates $10M+ hospital gifts; legacy/mortality salience secondary; cite specific studies and the benchmarking-memo findings)
+
+### A.4 Candidate motivation profiles
+
+For each of the 10 candidates:
+
+#### Rank #1: [Name]
+- **Primary face:** Repayer (or whichever) — evidence summary
+- **Secondary face:** Dynast (or whichever) — evidence summary
+- **Operational implications:** (specific moves that work with this profile)
+- **Anti-patterns:** (specific moves to avoid)
+
+(repeat through rank #10)
+
+### A.5 Anti-pattern summary by face
+
+| Face | Engagement style that works | Engagement style that breaks trust |
+|------|------------------------------|------------------------------------|
+| Repayer | Gratitude-anchored, care-experience-centered | Generic mission language, no link to their care |
+| Dynast | Family naming, multigenerational involvement | Single-generation framing |
+| Investor | Impact metrics, tax-strategic structuring | Soft mission language |
+| Communitarian | &quot;World-class hospital for our community&quot; | National prestige framing |
+| Altruist | Mission-focused, low-recognition | Aggressive recognition push |
+| Socialite | Events, social belonging | Solitary impact framing |
+| Devout | Values-aligned language, faith framing where appropriate | Secular impact metrics |
+</code></pre>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 3: Commit</strong></li>
+</ul>
+<pre><code class="language-bash">git add artifacts/playbook.md
+git commit -m &quot;Phase 6: Playbook Section A — donor psychology, applied&quot;
+</code></pre>
+<h3>Task 6.2: Draft Section B — Cultivation cadence</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Modify: <code>artifacts/playbook.md</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: Define success criteria</strong></p>
+</li>
+</ul>
+<p>Section B must describe the 12-24 month cultivation cadence for a $50M+ ask, with research-backed touchpoint types, intervals, and the specific moves that occur in each phase.</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 2: Append Section B to playbook.md</strong></li>
+</ul>
+<pre><code class="language-markdown">## Section B — Cultivation cadence
+
+### B.1 Overview
+
+A research-backed 12-24 month cadence calibrated to a $50M+ ask. Adjustments per-candidate are noted in their dossiers.
+
+### B.2 Phase 1 — Qualification (months 0-3)
+
+**Goal:** Establish actual interest, confirm capacity, map motivations. The goal is *not* to ask; it&#39;s to learn enough that the candidate moves to active portfolio or gets dropped.
+
+**Touchpoints:**
+- Warm-intro outreach (via the connector identified in their dossier)
+- Informal coffee or lunch
+- Hospital tour if natural
+
+**Success criteria for qualification:**
+- Candidate is genuinely interested (not just polite)
+- Capacity confirmed at the relevant gift level
+- Primary motivation hypothesis tested and either confirmed or revised
+- Decision: advance to Phase 2 cultivation or drop
+
+### B.3 Phase 2 — Cultivation (months 3-12)
+
+**Goal:** Build relationship and demonstrate institutional fit. Value-additive touches that leave the candidate feeling smarter or more connected, not solicited.
+
+**Touchpoints:**
+- Clinical leadership introductions (CMO, named-physician dinners)
+- Site visits to relevant program
+- Peer-donor events (especially valuable for Socialites and for any candidate; signals &quot;you&#39;d be in good company&quot;)
+- Sharing of relevant institutional milestones (program launches, research breakthroughs, accolades)
+- Customized engagement around the candidate&#39;s specific clinical interest
+
+**Critical principle:** Cultivation touches should be value-additive to the donor, not extractive. Each touch should leave them feeling they gained, not gave.
+
+### B.4 Phase 3 — Solicitation (months 12-18)
+
+**Goal:** The formal ask.
+
+**Composition of the ask:** Almost never the development officer alone. Usually CEO + board chair + a peer donor.
+
+**Location:** Their setting (their office, their home), not yours.
+
+**The specific ask:** Specific number, specific named opportunity, specific timeline, with a written proposal left behind.
+
+**Anchoring principle:** Donors give within 10-30% of the specific number asked. Vague asks underperform by ~40%. Ask high but defensible.
+
+### B.5 Phase 4 — Stewardship (months 18+)
+
+**Goal:** Position for a second (usually larger) gift.
+
+**Touchpoints:**
+- Named-recognition event (designed around the candidate&#39;s preferences)
+- Impact reporting on a defined cadence (quarterly or annually)
+- Continued access to clinical leadership
+- Family engagement where relevant (for Dynasts especially)
+
+**Critical principle:** The second gift is usually larger than the first if stewardship is excellent, and zero if it isn&#39;t.
+</code></pre>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 3: Commit</strong></li>
+</ul>
+<pre><code class="language-bash">git add artifacts/playbook.md
+git commit -m &quot;Phase 6: Playbook Section B — cultivation cadence&quot;
+</code></pre>
+<h3>Task 6.3: Draft Section C — Appointment-getting tactics</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Modify: <code>artifacts/playbook.md</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: Append Section C</strong></p>
+</li>
+</ul>
+<pre><code class="language-markdown">## Section C — Appointment-getting tactics
+
+### C.1 Warm-intro leverage
+
+Warm intro is approximately 10x more effective than cold outreach. The warm-intro network map (Artifact 2) and per-candidate dossier warm-intro path are designed to give Laura a clear ranked path for each candidate.
+
+For each of the 10 candidates, the top-3 intro paths are summarized:
+
+#### Rank #1: [Name]
+1. **Best:** [connector + relationship + rationale]
+2. **Backup:** [connector + relationship]
+3. **Alternative:** [connector + relationship]
+
+(repeat through #10)
+
+### C.2 The &quot;no-ask&quot; first meeting
+
+Research shows the highest-converting initial meetings are framed as advice or insight requests, not solicitations.
+
+**Sample framing template:**
+&quot;We&#39;re rethinking our [program / strategy] and Laura&#39;s CEO specifically wants to get your perspective given your work on [their specific area].&quot;
+
+**Why this works:** Activates the donor&#39;s expertise/status motive rather than triggering solicitation defenses.
+
+### C.3 Calendar leverage points
+
+For each candidate, the dossier identifies the optimal times for outreach:
+- End-of-year tax planning (October-December)
+- Post-liquidity events (within 6 months of IPO, sale, or major distribution)
+- Post-personal-health-event (very sensitive; only with high-confidence intro)
+- Board-cycle transitions (when a candidate is rotating off another institution&#39;s board, they may be receptive to new engagement)
+
+### C.4 Gatekeeper management
+
+Most candidates have one or more gatekeepers:
+- Executive assistants
+- Family-office gatekeepers
+- Foundation program officers (when the candidate&#39;s foundation has staff)
+
+**Patterns that work:**
+- Treat the gatekeeper as a peer, not as a barrier
+- Provide them with materials they can independently evaluate
+- Offer to make their job easier, not harder
+
+**Patterns that fail:**
+- Going around the gatekeeper after they&#39;ve already responded
+- Cold-outreaching the principal after the gatekeeper said no
+
+### C.5 What to do when the answer is &quot;no, not now, or radio silence&quot;
+
+**For &quot;no&quot;:** Thank them sincerely. Continue gentle stewardship-style engagement (sharing relevant institutional news every 6 months). Do not re-ask for 18-24 months unless circumstances change materially.
+
+**For &quot;not now&quot;:** Ask what would need to be different. Set a re-engagement timeline they agree to. Honor it precisely.
+
+**For radio silence:** Three follow-ups maximum over 60 days, then move to long-cycle stewardship (3-month check-ins via institutional news).
+</code></pre>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 2: Commit</strong></li>
+</ul>
+<pre><code class="language-bash">git add artifacts/playbook.md
+git commit -m &quot;Phase 6: Playbook Section C — appointment-getting tactics&quot;
+</code></pre>
+<h3>Task 6.4: Draft Section D — Pitch architecture</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Modify: <code>artifacts/playbook.md</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: Append Section D</strong></p>
+</li>
+</ul>
+<pre><code class="language-markdown">## Section D — Pitch architecture
+
+### D.1 Structural framework for the $50M+ solicitation conversation
+
+#### Opening (first 15 minutes)
+**Center the donor&#39;s why, not yours.** First 15 minutes are about *their* experience, motivation, and connection. Never lead with institutional needs.
+
+Sample opening questions per motivation type — built into each cheat sheet.
+
+#### Bridge (next 15 minutes)
+**Connect their why to a specific opportunity.** The named opportunity, tied to their motivation hypothesis — not Nuvance&#39;s biggest institutional need.
+
+#### The specific ask (5 minutes)
+**Exact number, exact named opportunity, exact timeline, exact pledge structure.**
+
+Anchoring principle: Donors give within 10-30% of the specific number asked. Vague asks underperform by ~40%.
+
+#### Anticipated objections (5-10 minutes)
+
+Common objections to expect, with research-backed handling:
+
+**&quot;Why Nuvance over [flagship — NYP, MSK, Yale-New Haven]?&quot;**
+→ &quot;Flagship institutions are remarkable, and your gift to [flagship] is one of the reasons. But Nuvance is where the people in your community actually receive care. The flagship serves the country; we serve [their town]. Your gift here changes care for people you know.&quot;
+
+**&quot;We already give to [other institution].&quot;**
+→ Complement, not compete. &quot;Our work is complementary — we [specific complementary value]. Many of our largest donors also give to [other institution]. Different gifts serve different missions.&quot;
+
+**&quot;We need to talk to our advisors.&quot;**
+→ &quot;Absolutely. I&#39;d love to make that easier — I can send a proposal package your wealth advisor and family-office team will find well-structured. What&#39;s the best way to put that in motion?&quot;
+
+#### The close
+**Silence after the ask.** Research-backed principle: The development officer who speaks first after the ask loses ~30% of expected gift size.
+
+#### Walk-away clarity
+At the end, both parties leave with explicit clarity:
+- What&#39;s agreed
+- When you&#39;ll be back
+- What the candidate commits to in the meantime (e.g., reviewing the proposal with their advisor by [date])
+
+### D.2 Pitch customization per motivation type
+
+For each of the 7 Faces:
+
+#### Repayer-dominant
+- **Open with:** Their specific care experience or family member&#39;s care experience
+- **Bridge:** &quot;What if no one else had to go through what your family went through alone&quot;
+- **Named opportunity:** Tied to the specific service that helped them (cancer program, cardiac care, etc.)
+
+#### Dynast-dominant
+- **Open with:** Family legacy, multigenerational impact
+- **Bridge:** &quot;Your name on this institute is your family&#39;s legacy in this community for generations&quot;
+- **Named opportunity:** Family naming, with provisions for future-generation engagement
+
+#### Investor-dominant
+- **Open with:** Impact metrics, strategic positioning of Nuvance
+- **Bridge:** &quot;Here&#39;s the ROI on care quality, lives saved, and community economic impact per dollar invested&quot;
+- **Named opportunity:** Performance-linked with measurable outcomes
+
+#### Communitarian-dominant
+- **Open with:** The community&#39;s need for world-class care close to home
+- **Bridge:** &quot;World-class care in [town] means our neighbors don&#39;t have to drive to [city] for [serious diagnosis]&quot;
+- **Named opportunity:** Community-anchored, locally recognized
+
+(continue through other faces)
+
+### D.3 Pitch customization per candidate
+
+Each cheat sheet (Artifact 4) gives Laura the specific opening, bridge, ask, and objection-handling for that candidate.
+</code></pre>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 2: Commit</strong></li>
+</ul>
+<pre><code class="language-bash">git add artifacts/playbook.md
+git commit -m &quot;Phase 6: Playbook Section D — pitch architecture&quot;
+</code></pre>
+<h3>Task 6.5: Draft Section E — Gift table</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Modify: <code>artifacts/playbook.md</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: Append Section E</strong></p>
+</li>
+</ul>
+<pre><code class="language-markdown">## Section E — Gift table
+
+### E.1 Sample mega-campaign gift table to reach $500M
+
+The standard &quot;rule of thumb&quot; gift table for a $500M campaign:
+
+| Tier | Gifts | Per-gift amount | Sub-total | Cumulative |
+|------|-------|------------------|-----------|------------|
+| Lead | 1 | $100M+ | $100M | $100M |
+| Principal | 2 | $50M | $100M | $200M |
+| Major-A | 4 | $25M | $100M | $300M |
+| Major-B | 8 | $10M | $80M | $380M |
+| Mid-A | 20 | $5M | $100M | $480M |
+| Mid-B | 40 | $1M | $40M | $520M |
+
+This is a textbook gift table for a campaign of this size.
+
+### E.2 Mapping our 10 candidates to the table
+
+(table mapping each of our 10 candidates to a tier and a target gift size based on their dossier suggested-gift-range)
+
+| Rank | Name | Tier | Suggested gift | Named opportunity (per Phase 0) |
+|------|------|------|------|------|
+| 1 | ... | Lead | $100M-$200M | Cancer Institute |
+| 2 | ... | Principal | $50M | ... |
+| ... |
+
+### E.3 Honest institutional assessment
+
+**Does Nuvance&#39;s current case for support sustain this gift table?**
+
+(Direct synthesis from the Phase 0 case-for-support audit. Be honest. If the audit found that Nuvance lacks a $100M+ named opportunity worthy of a Lead gift, surface that here. If the strategic plan needs to articulate the case more compellingly, say so.)
+
+**What would need to be true institutionally for this gift table to be credible?**
+
+(specific institutional moves required — signature capital project, named institute structure, board commitment, etc.)
+
+**Recommendations for Nuvance leadership (separate from candidate cultivation):**
+
+(itemized list of institutional moves that need to happen alongside candidate cultivation for a $500M campaign to land)
+</code></pre>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 2: Commit</strong></li>
+</ul>
+<pre><code class="language-bash">git add artifacts/playbook.md
+git commit -m &quot;Phase 6: Playbook Section E — gift table and institutional assessment&quot;
+</code></pre>
+<h3>Task 6.6: Draft Section F — Risk register and contingency plans</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Modify: <code>artifacts/playbook.md</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: Append Section F</strong></p>
+</li>
+</ul>
+<pre><code class="language-markdown">## Section F — Risk register and contingency plans
+
+### F.1 Top-ranked candidate declines or goes cold
+
+For each rank, who&#39;s the natural next-up candidate? Mapped as a fallback table.
+
+| If candidate X declines / cools | Pivot focus to | Why |
+|-------------------------------|-----------------|------|
+| Rank #1 | Rank #2 (if Lead tier) or Rank #3 (for principal tier consolidation) | Comparable motivation profile + capacity |
+| ... | | |
+
+### F.2 Competing institution in active cultivation
+
+For each candidate where a competing institution (NYP, Yale-New Haven, MSK, Greenwich, Northwell) is identified as in active cultivation, the strategy:
+- **Complement, not compete.** Frame the Nuvance gift as additive to their existing commitments.
+- **Avoid timing collisions.** If competitor is in mid-solicitation, delay the Nuvance ask 6-12 months.
+- **Use peer-donor cohort framing** to make giving to both institutions normative.
+
+### F.3 Candidate life situation changes during cultivation
+
+| Life event | Strategy adjustment |
+|------------|----------------------|
+| Death of candidate | Express condolences sincerely. Re-evaluate cultivation through next-generation or surviving spouse. |
+| Divorce | Halt active solicitation 12-18 months. Re-engage when settled, often with both parties separately. |
+| Illness | Pause active solicitation. Maintain quiet stewardship and care-relationship engagement (especially for Repayer-motivated candidates this can become more relevant). |
+| Financial reversal | Pause solicitation. Maintain relationship through low-cost engagement. Don&#39;t ask during reversal. |
+
+### F.4 Institutional case-for-support shifts mid-cultivation
+
+If Nuvance&#39;s strategic plan shifts mid-cultivation (e.g., merger, leadership change, new signature initiative):
+- Re-baseline every active cultivation
+- Some candidates&#39; fit improves; some worsens
+- Communicate proactively with candidates already in late-stage cultivation; better to surface a strategic shift early than to have them learn it from external news
+</code></pre>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 2: Commit</strong></li>
+</ul>
+<pre><code class="language-bash">git add artifacts/playbook.md
+git commit -m &quot;Phase 6: Playbook Section F — risk register and contingency plans&quot;
+</code></pre>
+<h3>Task 6.7: Draft Section G — Novel and frontier strategies</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Modify: <code>artifacts/playbook.md</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: Append Section G</strong></p>
+</li>
+</ul>
+<pre><code class="language-markdown">## Section G — Novel and frontier strategies
+
+These go beyond the standard CFRE playbook. Marked as evidence-backed or speculative.
+
+### G.1 (Evidence-backed) Donor-advised fund (DAF) activation
+
+**The opportunity:** Many candidates have $10M-$500M in undirected DAFs at Fidelity Charitable, Schwab Charitable, Vanguard Charitable, or family-office-administered DAFs. *That money is already donated tax-wise — it just hasn&#39;t been directed.* Asking for a DAF grant is structurally easier than asking for a new commitment.
+
+**Application to our 10:** Per each candidate&#39;s dossier, we&#39;ve flagged whether DAF activity is documented or inferred. For candidates with known DAF activity, design the ask as a DAF grant (or a hybrid: DAF grant for cash portion + appreciated-stock gift for capital portion).
+
+### G.2 (Evidence-backed) Family-office direct engagement
+
+**The opportunity:** Many of our candidates make philanthropic decisions through their family offices, which have dedicated philanthropy directors. Going around the principal to engage the family-office philanthropy director directly (with principal&#39;s awareness) dramatically shortens cycle time.
+
+**Application to our 10:** Each dossier flags family-office structure where known. The cultivation plan recommends parallel engagement with the family-office philanthropy lead where applicable.
+
+### G.3 (Evidence-backed) Peer-cohort / circle asks
+
+**The opportunity:** Cluster 3-5 peer-level donors who already know each other and create a *founding cohort* that gives together. Leverages social proof and competitive philanthropy.
+
+**Application to our 10:** Identify the natural clusters within our 10 (e.g., Greenwich-resident hedge fund principals; Hudson Valley estate-country families; Westchester corporate executives). Where 3-4 of our candidates know each other, propose a coordinated &quot;founding cohort&quot; framing.
+
+(specific cohort recommendations here, naming the candidate clusters)
+
+### G.4 (Evidence-backed) Patient-advocate council at scale
+
+**The opportunity:** Build an institutional program where existing patient-donors actively champion new prospects — turning grateful-patient motivation into a peer cultivation engine.
+
+**Application to our 10:** This is an institutional recommendation for Nuvance leadership, not a per-candidate move. If Nuvance doesn&#39;t already have a patient-advocate council, surfacing it as a Phase 0 recommendation.
+
+### G.5 (Evidence-backed) Donor&#39;s-advisor-ecosystem cultivation
+
+**The opportunity:** Build relationships with the candidate&#39;s *own* wealth managers, trust officers, and estate-planning attorneys. They can recommend Nuvance as a beneficiary at the moment of estate planning.
+
+**Application to our 10:** For each candidate over age 65, identify their wealth advisor / trust officer where possible (often documented in court filings, foundation officer listings, or news mentions). Plan engagement.
+
+### G.6 (Speculative) Donor-as-co-architect
+
+**The opportunity:** Invite the prospective lead donor to help design the named opportunity. Co-creation builds ownership and produces dramatically larger gifts when it works.
+
+**Application to our 10:** Only feasible for the Lead-tier candidate (Rank #1) and requires institutional flexibility from Nuvance leadership. Surface as an option, not a default.
+
+### G.7 (Speculative) Impact-investment / hybrid grant-loan structures
+
+**The opportunity:** Some Investor-type donors prefer to invest alongside the institution rather than donate. Hybrid grant-loan structures, program-related investments, or hospital revenue bonds with philanthropic kickers.
+
+**Application to our 10:** Only relevant for candidates with strong Investor motivation profile. Per-candidate applicability flagged in dossiers.
+
+### G.8 (Speculative) Naming 2.0
+
+**The opportunity:** Traditional naming has plateaued for some donors. Alternatives: named clinical-trial cohorts, multigenerational programs, naming with sunset provisions, &quot;founding family&quot; framing.
+
+**Application to our 10:** For candidates whose existing institutional landscape includes multiple naming rights they already hold, propose novel naming structures rather than traditional building naming.
+
+### G.9 (Speculative) Convening-as-cultivation
+
+**The opportunity:** Host a recurring topical convening — bringing the candidate into the room with clinical leaders, peer donors, and policy experts.
+
+**Application to our 10:** Most powerful for Communitarian and Investor motivations. Requires Nuvance to have genuine intellectual content to convene around (Phase 0 audit informs feasibility).
+
+### G.10 (Speculative) AI-instrumented donor intelligence
+
+**The opportunity:** Continuously monitor public information about candidates to surface real-time signals (liquidity events, deaths in family, board transitions) that trigger cultivation moves at optimal moments.
+
+**Application to our 10:** This is an institutional infrastructure recommendation, not a per-candidate move. Worth raising with Nuvance leadership.
+
+### G.11 Per-candidate novel-strategy applicability
+
+Summary table:
+
+| Rank | Name | Most applicable novel strategies |
+|------|------|----------------------------------|
+| 1 | ... | G.1 (DAF), G.3 (cohort with #4 and #7), G.6 (co-architect for Lead opportunity) |
+| ... | | |
+</code></pre>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 2: Commit</strong></li>
+</ul>
+<pre><code class="language-bash">git add artifacts/playbook.md
+git commit -m &quot;Phase 6: Playbook Section G — novel and frontier strategies&quot;
+</code></pre>
+<h3>Task 6.8: Checkpoint E — playbook draft to Mark</h3>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 1: Compose checkpoint summary</strong></li>
+</ul>
+<p>Write Mark a summary:</p>
+<ol>
+<li>Playbook draft is complete at <code>artifacts/playbook.md</code></li>
+<li>Section-by-section overview (1 line each)</li>
+<li>Most consequential findings (especially from Section E gift table and the case-for-support honest assessment)</li>
+<li>Specific questions for Mark to review</li>
+</ol>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 2: Pause execution and post the summary</strong></li>
+</ul>
+<p>Halt. Mark reviews and provides feedback. Do not proceed to Phase 7 final polish without explicit approval.</p>
+<h3>Task 6.9: Final playbook polish</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Modify: <code>artifacts/playbook.md</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: Apply feedback from Checkpoint E</strong></p>
+</li>
+</ul>
+<p>Make any edits Mark requested.</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 2: Cross-link to other artifacts</strong></li>
+</ul>
+<p>Verify every reference to dossiers, cheat sheets, intro map, etc. has correct relative paths.</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 3: Add table of contents</strong></li>
+</ul>
+<p>Add a TOC at the top of <code>artifacts/playbook.md</code> linking to all sections.</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 4: Final read-through for consistency</strong></li>
+</ul>
+<p>Read top-to-bottom. Fix any inconsistencies in terminology, candidate references, or formatting.</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 5: Commit</strong></li>
+</ul>
+<pre><code class="language-bash">git add artifacts/playbook.md
+git commit -m &quot;Phase 6: Final playbook polish&quot;
+</code></pre>
+<hr>
+<h1>Phase 7 — Executive summary + designed presentation deck</h1>
+<p>Final artifacts. Executive summary first, then deck.</p>
+<h3>Task 7.1: Draft the executive summary</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Create: <code>artifacts/executive_summary.md</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: Define success criteria</strong></p>
+</li>
+</ul>
+<p>2-3 page summary that:</p>
+<ul>
+<li><p>Frames the strategy in one paragraph</p>
+</li>
+<li><p>Lists all 10 candidates with one-line each</p>
+</li>
+<li><p>Points to the rest of the package</p>
+</li>
+<li><p>Is shareable as-is up Laura&#39;s chain (foundation director, CEO, board chair) without editing</p>
+</li>
+<li><p>Surfaces the most consequential institutional finding (from Phase 0 audit) so leadership sees it</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 2: Write the executive summary</strong></p>
+</li>
+</ul>
+<p>Create <code>artifacts/executive_summary.md</code>:</p>
+<pre><code class="language-markdown"># Nuvance Health Major-Gift Strategy — Executive Summary
+
+**Prepared:** YYYY-MM-DD
+**For:** Laura Eldridge, CFRE, Nuvance Health Foundation
+**Authorized for re-sharing:** Foundation Director, CEO, Board Chair
+
+## The strategy in one paragraph
+
+(1 paragraph synthesizing the affinity-first methodology, the 10 candidates, the suggested gift table, and the institutional considerations)
+
+## The 10 candidates
+
+| Rank | Name | Tier | Suggested gift | Primary motivation | Top intro path |
+|------|------|------|------|------|------|
+| 1 | ... | ... | $XXM | Repayer | Connector Name |
+| ... |
+
+## Most consequential findings
+
+### Finding 1: [Case-for-support audit headline]
+(1-2 sentence headline plus 1 paragraph elaboration)
+
+### Finding 2: [Net-new candidate vs. expected billionaire-only frame]
+(1-2 sentence headline plus 1 paragraph)
+
+### Finding 3: [Institutional gap finding from gift table]
+(1-2 sentence headline plus 1 paragraph)
+
+## What&#39;s in the rest of the package
+
+- **Dossiers (10):** Full per-candidate research with wealth, giving history, motivation hypothesis, warm-intro paths, cultivation plan, risk flags — `dossiers/01_*.md` through `10_*.md`
+- **Warm-intro network map:** Interactive visualization at `artifacts/intro_network_map/index.html`
+- **Cheat sheets (10):** Printable one-page meeting prep cards at `artifacts/cheat_sheets/`
+- **Benchmarking memo:** 8-12 comparable mega-gifts analyzed for pattern extraction — `research/phase_4_benchmarking/benchmarking_memo.md`
+- **Cross-reference matrix:** Side-by-side candidate comparison at `artifacts/cross_reference_matrix.md`
+- **Strategy playbook:** Tailored synthesis at `artifacts/playbook.md`
+- **Presentation deck:** Designed deck for customization per donor at `artifacts/deck/index.html`
+
+## Recommendations for Nuvance leadership
+
+(itemized list of institutional moves required for the strategy to land at full scale, derived from Phase 0 audit and Section E of the playbook)
+</code></pre>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 3: Commit</strong></li>
+</ul>
+<pre><code class="language-bash">git add artifacts/executive_summary.md
+git commit -m &quot;Phase 7: Executive summary&quot;
+</code></pre>
+<h3>Task 7.2: Build the ranked short-list artifact</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Create: <code>artifacts/ranked_short_list.md</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: Define success criteria</strong></p>
+</li>
+</ul>
+<p>A clean, polished version of the short list (vs. the working <code>research/phase_2_short_list/short_list.md</code>). Includes everything in the dossier summary plus the additional artifact-level polish.</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 2: Write the document</strong></li>
+</ul>
+<p>Create <code>artifacts/ranked_short_list.md</code>:</p>
+<pre><code class="language-markdown"># Ranked Short List — Final 10 Candidates
+
+**Prepared:** YYYY-MM-DD
+**For:** Laura Eldridge, CFRE
+
+## How to use this list
+
+Lay this alongside your internal 250-candidate portfolio. Compare:
+- Which of these 10 are already in your portfolio (validation)
+- Which are net-new (potential additions)
+- Which are ranked differently by us vs. you (worth a conversation about why)
+
+## The 10 in priority order
+
+### Rank #1: [Name]
+- **Tier:** Billionaire / Centi-millionaire
+- **Wealth est:** $XB / $XM
+- **Primary motivation:** [Prince&#39;s face]
+- **Suggested first gift:** $XM
+- **Suggested named opportunity:** [from Phase 0]
+- **Top warm-intro path:** [connector]
+- **Why rank #1:** (paragraph)
+
+**Read the full dossier:** `dossiers/01_&lt;slug&gt;.md`
+**Get pre-meeting:** `artifacts/cheat_sheets/01_&lt;slug&gt;.md`
+
+(repeat for #2 through #10)
+
+## Net-new vs. validation matrix
+
+(reference: Laura&#39;s task is to map which of these 10 she already has vs. which are new — we don&#39;t fill this column, she does)
+</code></pre>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 3: Commit</strong></li>
+</ul>
+<pre><code class="language-bash">git add artifacts/ranked_short_list.md
+git commit -m &quot;Phase 7: Ranked short list final artifact&quot;
+</code></pre>
+<h3>Task 7.3: Design and build the presentation deck</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li>Create: <code>artifacts/deck/index.html</code></li>
+<li>Create: <code>artifacts/deck/style.css</code></li>
+<li>Create: <code>artifacts/deck/deck.js</code></li>
+<li>Create: <code>artifacts/deck/assets/</code> (any images)</li>
+</ul>
+<p>This task invokes the <code>frontend-design</code> skill to ensure design rigor. The Skill should be invoked at the start of this task.</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 1: Define success criteria</strong></li>
+</ul>
+<p>A presentation deck that:</p>
+<ul>
+<li><p>Is HTML-based (not PowerPoint) — runs in browser, easy to update</p>
+</li>
+<li><p>10-15 slides</p>
+</li>
+<li><p>Visually distinctive — not a generic template</p>
+</li>
+<li><p>On-brand with Nuvance Health&#39;s visual identity (color palette, typography from Phase 0 research)</p>
+</li>
+<li><p>Customizable per donor — explicit slots in the markup for swapping in candidate-specific motivation framing and named-opportunity</p>
+</li>
+<li><p>Designed to be both presented AND left behind as a written document</p>
+</li>
+<li><p>Built with care; uses real design principles (typographic hierarchy, white space, asymmetric grid where appropriate, considered color use, photographic treatment)</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 2: Invoke the frontend-design skill</strong></p>
+</li>
+</ul>
+<p>Use the <code>Skill</code> tool to invoke <code>frontend-design:frontend-design</code>. Provide context:</p>
+<ul>
+<li><p>This is a presentation deck for major-gift solicitation</p>
+</li>
+<li><p>Target audience: ultra-high-net-worth philanthropists</p>
+</li>
+<li><p>Tone: confident, considered, refined — not aggressive, not &quot;marketing-y&quot;</p>
+</li>
+<li><p>Reference brands: think how MIT Media Lab, Stanford Medicine, MoMA present — confident institutional design, not corporate-blandness</p>
+</li>
+<li><p>Brand inputs: Nuvance&#39;s color palette and typography from Phase 0</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 3: Outline deck content</strong></p>
+</li>
+</ul>
+<p>Standard slide flow (subject to design adjustment):</p>
+<ol>
+<li><strong>Title slide</strong> — Nuvance branding, project title, date, donor name slot</li>
+<li><strong>Their why</strong> — donor&#39;s specific connection / motivation (customizable slot)</li>
+<li><strong>Where Nuvance is today</strong> — institutional snapshot, 2-3 strategic differentiators</li>
+<li><strong>The opportunity</strong> — specific named opportunity tied to their motivation (customizable slot)</li>
+<li><strong>The impact</strong> — what this gift makes possible, told as patient story + statistical reach</li>
+<li><strong>The model</strong> — gift structure, naming, recognition, multi-year pledge if applicable</li>
+<li><strong>The team</strong> — clinical leadership the donor would partner with (photos, brief bios)</li>
+<li><strong>The community</strong> — peer donors and their commitments (social proof, customizable per cohort framing)</li>
+<li><strong>The ask</strong> — specific number, specific naming, specific timeline (customizable slot)</li>
+<li><strong>What comes next</strong> — proposed next steps, timeline, follow-up commitments</li>
+<li><strong>Thank you</strong> — closing with quote or brief vision statement</li>
+</ol>
+<p>For longer decks (up to 15 slides), expand &quot;The opportunity&quot; and &quot;The impact&quot; into 2-3 slides each.</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 4: Build the deck</strong></li>
+</ul>
+<p>Following the frontend-design guidance from Step 2, build:</p>
+<ul>
+<li><code>artifacts/deck/index.html</code> — slide structure with <code>&lt;section&gt;</code> elements for each slide</li>
+<li><code>artifacts/deck/style.css</code> — design system (colors, typography, spacing, slide transitions)</li>
+<li><code>artifacts/deck/deck.js</code> — minimal JS for keyboard navigation (left/right arrows, escape to overview)</li>
+<li><code>artifacts/deck/assets/</code> — any images</li>
+</ul>
+<p>Use real design principles. Specifically:</p>
+<ul>
+<li><p>Strong typographic hierarchy</p>
+</li>
+<li><p>Considered use of white space</p>
+</li>
+<li><p>Photographic treatment that feels institutional (not stock-photo-bland)</p>
+</li>
+<li><p>Color palette restraint</p>
+</li>
+<li><p>Asymmetric layouts where they serve the content</p>
+</li>
+<li><p>No bullet-point cliché slides</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 5: Test in browser</strong></p>
+</li>
+</ul>
+<p>Open <code>artifacts/deck/index.html</code> in a browser. Click/keyboard through all slides. Verify:</p>
+<ul>
+<li><p>All slides render</p>
+</li>
+<li><p>Navigation works</p>
+</li>
+<li><p>Customizable slots are clearly marked</p>
+</li>
+<li><p>Visual polish is real</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 6: Document customization instructions</strong></p>
+</li>
+</ul>
+<p>Create <code>artifacts/deck/README.md</code> explaining how Laura customizes the deck per donor:</p>
+<pre><code class="language-markdown"># Presentation Deck — Customization Guide
+
+## Per-donor customization slots
+
+Each slide marked `&lt;!-- CUSTOMIZE: donor_name --&gt;` contains a placeholder that should be replaced per donor.
+
+| Slide | Slot ID | What to customize |
+|-------|---------|---------------------|
+| 1 | donor_name | Replace &quot;[Donor Name]&quot; with actual name |
+| 2 | donor_why | Replace placeholder with donor&#39;s specific motivation framing (pull from dossier section X) |
+| 4 | named_opportunity | Replace with specific named opportunity for this donor |
+| 9 | specific_ask | Replace with specific gift number, naming, timeline |
+
+## Workflow
+
+1. Open `index.html` in a code editor
+2. Search for `CUSTOMIZE` comments
+3. Replace each slot per the donor&#39;s dossier and cheat sheet
+4. Save and open in browser to verify
+5. Print to PDF for the leave-behind version
+</code></pre>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 7: Commit</strong></li>
+</ul>
+<pre><code class="language-bash">git add artifacts/deck/
+git commit -m &quot;Phase 7: Designed presentation deck&quot;
+</code></pre>
+<h3>Task 7.4: Final package review</h3>
+<p><strong>Files:</strong></p>
+<ul>
+<li><p>Create: <code>README.md</code> at project root</p>
+</li>
+<li><p><input disabled="" type="checkbox"> <strong>Step 1: Verify all eight artifacts exist</strong></p>
+</li>
+</ul>
+<pre><code class="language-bash">cd /Users/marksenerth/_src/eldridge_research
+ls -1 dossiers/ | wc -l    # Expect 10
+ls -1 artifacts/cheat_sheets/ | wc -l  # Expect 10
+ls -1 artifacts/intro_network_map/   # Expect index.html, style.css, network_data.json
+ls -1 artifacts/deck/                # Expect index.html, style.css, deck.js, assets/, README.md
+test -f artifacts/playbook.md
+test -f artifacts/executive_summary.md
+test -f artifacts/ranked_short_list.md
+test -f artifacts/cross_reference_matrix.md
+test -f research/phase_4_benchmarking/benchmarking_memo.md
+</code></pre>
+<p>All checks should pass.</p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 2: Create project README</strong></li>
+</ul>
+<p>Create <code>/Users/marksenerth/_src/eldridge_research/README.md</code>:</p>
+<pre><code class="language-markdown"># Nuvance Health Major-Gift Strategy Package
+
+**For:** Laura Eldridge, CFRE, Nuvance Health Foundation
+**Prepared:** YYYY-MM-DD
+
+## Start here
+
+→ `artifacts/executive_summary.md` (2-3 page overview)
+
+## The full package
+
+| Artifact | Path | Purpose |
+|---------|------|--------|
+| 1. Dossiers | `dossiers/` | Full per-candidate research files |
+| 2. Warm-intro network map | `artifacts/intro_network_map/index.html` | Interactive intro-path visualization |
+| 3. Benchmarking memo | `research/phase_4_benchmarking/benchmarking_memo.md` | Comparable mega-gift patterns |
+| 4. Cheat sheets | `artifacts/cheat_sheets/` | One-page printable meeting prep cards |
+| 5. Ranked short list | `artifacts/ranked_short_list.md` | The 10 candidates ranked |
+| Supplement: Cross-reference matrix | `artifacts/cross_reference_matrix.md` | Side-by-side comparison |
+| 6. Strategy playbook | `artifacts/playbook.md` | Tailored synthesis (Sections A-G) |
+| 7. Executive summary | `artifacts/executive_summary.md` | Shareable framing |
+| 8. Presentation deck | `artifacts/deck/index.html` | Designed deck for customization |
+
+## Research foundations
+
+| Foundation | Path |
+|------------|------|
+| Institutional context | `research/phase_0_institutional_context/` |
+| Long list | `research/phase_1_long_list/` |
+| Short list | `research/phase_2_short_list/` |
+| Benchmarking case studies | `research/phase_4_benchmarking/case_studies/` |
+| Source index | `sources/source_index.md` |
+
+## How to use this package
+
+1. Read the **executive summary** first.
+2. Compare the **ranked short list** to your internal portfolio.
+3. For each candidate you&#39;ll cultivate, read the **dossier** + **cheat sheet**.
+4. Use the **warm-intro network map** to identify the best intro path.
+5. For pitch-stage candidates, customize the **presentation deck** (see `artifacts/deck/README.md`).
+6. Reference the **playbook** for cultivation cadence and donor-psychology framing.
+7. Reference the **benchmarking memo** for institutional-pattern context.
+
+## Spec and plan
+
+- Spec: `docs/superpowers/specs/2026-05-10-nuvance-fundraising-strategy-design.md`
+- Implementation plan: `docs/superpowers/plans/2026-05-10-nuvance-fundraising-implementation.md`
+</code></pre>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 3: Final commit</strong></li>
+</ul>
+<pre><code class="language-bash">git add README.md
+git commit -m &quot;Add project README and final package index&quot;
+</code></pre>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 4: Tag the milestone</strong></li>
+</ul>
+<pre><code class="language-bash">git tag -a v1.0 -m &quot;Major-gift strategy package complete&quot;
+</code></pre>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Step 5: Notify Mark</strong></li>
+</ul>
+<p>Compose a final summary for Mark:</p>
+<ol>
+<li>The eight-artifact package is complete</li>
+<li>Final commit hash and tag</li>
+<li>The key recommendation: who to start with, why, what next 30 days look like</li>
+<li>The most consequential institutional finding from the Phase 0 audit (worth Mark mentioning to Laura first)</li>
+<li>Any outstanding risks or open questions the package surfaces</li>
+</ol>
+<hr>
+<h1>Appendices</h1>
+<h2>Appendix A — Dossier Template</h2>
+<p>For each candidate, the dossier follows this exact structure. Page target: 6-8 pages.</p>
+<pre><code class="language-markdown"># Dossier — [Candidate Full Name]
+
+**Rank:** #N of 10
+**Compiled:** YYYY-MM-DD
+**Compiled by:** Mark Senerth (project lead) / [agent if executed by agent]
+**Wealth tier:** Billionaire / Centi-millionaire
+**Confidence:** High / Medium / Low (overall confidence in the dossier&#39;s actionable conclusions)
+
+---
+
+## 1. Snapshot
+
+- **Full name:** ...
+- **Age:** ... (year of birth: ...)
+- **Primary residence:** ...
+- **Secondary residence(s):** ...
+- **Family:** spouse, children (with relevant philanthropic involvement noted), parents (if relevant for Dynast motivation)
+- **Wealth source:** ... (industry, company, transaction history)
+- **Estimated net worth:** $X.XB (range $X-Y) — **(confidence: known/inferred)**
+- **Primary giving vehicles:** [Foundation Name, EIN] / [DAF provider] / direct
+- **Social/club affiliations:** [most relevant — Augusta, Pine Valley, Pilgrims, NYC clubs, Greenwich Country Club, etc.]
+- **One-paragraph elevator description:** (3-5 sentences summarizing who they are at the level Laura would brief her CEO in the elevator)
+
+## 2. Wealth and liquidity analysis
+
+- **Wealth composition:** (estimated breakdown — public equity, private holdings, real estate, cash/securities, family-office-managed assets)
+- **Liquidity profile:** (what&#39;s liquid now, what&#39;s near-liquid, what&#39;s structurally illiquid)
+- **Recent liquidity events:** (any IPO, M&amp;A exit, large sale within the past 36 months, with citation)
+- **Anticipated liquidity events:** (any planned or rumored — IPO filings, sale processes, etc., with citation)
+- **Sources for wealth claims:** (numbered list with retrieval dates)
+
+## 3. Giving history
+
+A comprehensive inventory of every documented gift ≥ $100K to any nonprofit recipient, in the past 15 years where data is available. Sources: foundation 990-PFs (Schedule I grants paid), news archives, donor walls, annual reports.
+
+| Year | Recipient | Cause | Amount | Vehicle | Source |
+|------|-----------|-------|--------|---------|--------|
+| 2024 | ... | ... | $XM | Foundation | ... |
+| ... |
+
+### Pattern analysis
+
+- **Average gift size:** $X
+- **Largest single gift:** $X to [recipient]
+- **Time-of-year pattern:** (if visible — many give in December for tax reasons; some give around specific events)
+- **Recipient pattern:** (clusters by cause, geography, institutional type)
+- **Multi-year pledge pattern:** (do they make multi-year commitments? Single-shot gifts? Both?)
+- **Anonymous-gift signals:** (any clues that they give anonymously? — large gaps between their wealth and their visible giving suggest anonymous activity)
+
+## 4. Affinity signals (scored 1-5 each, per long-list methodology)
+
+### S1 — Documented Nuvance connection (score: N/5)
+(rationale with evidence and citations)
+
+### S2 — Residential ties (score: N/5)
+(rationale)
+
+### S3 — Healthcare giving history (score: N/5)
+(rationale, with explicit reference to S3 from giving history table)
+
+### S4 — Cause affinity to Nuvance signature programs (score: N/5)
+(rationale, referencing Phase 0 audit for what Nuvance&#39;s signature programs are)
+
+### S5 — Giving vehicle sophistication (score: N/5)
+(rationale, with foundation EIN and asset size)
+
+### S6 — Life-stage signals (score: N/5)
+(rationale, with age, succession status, recent liquidity events)
+
+**Total affinity score:** N/30
+
+## 5. Motivation hypothesis
+
+### Primary face (per Prince &amp; File): [Repayer / Dynast / Investor / Communitarian / Altruist / Socialite / Devout]
+
+(2-3 paragraph case for this hypothesis with specific evidence from giving history, public statements, life events. Be explicit that this is *inferred*, not certain.)
+
+### Secondary face: [face]
+
+(1-2 paragraph rationale)
+
+### What this means operationally
+
+- **Cultivation approach:** (specific moves that work for this profile)
+- **Pitch framing:** (specific framing for the first meeting)
+- **Anti-patterns:** (specific moves that would *break* trust with this profile)
+
+## 6. Warm-intro paths
+
+### Primary path (most likely to work)
+- **Connector:** [Name, role, organization]
+- **Their relationship to the candidate:** (specific — board service, school, business, family, club)
+- **Their relationship to Nuvance:** (specific — Nuvance board, foundation board, CEO contact, etc.)
+- **Strength assessment:** Strong / Medium / Weak
+- **How to activate:** (specific suggested ask of the connector — &quot;introduce us at lunch&quot;, &quot;host a small dinner&quot;, &quot;make a phone call&quot;, etc.)
+
+### Backup path
+(same structure)
+
+### Alternative path
+(same structure)
+
+## 7. Cultivation plan (12-18 months)
+
+### Phase 1 — Qualification (months 0-3)
+- Specific recommended first-touch (often via Primary Path)
+- Specific questions to test during qualification
+- Decision point: advance or drop
+
+### Phase 2 — Cultivation (months 3-12)
+- Recommended touchpoints, with specific people from Nuvance to involve at each (CMO, clinical director, board chair, etc.)
+- Recommended events or convenings
+- Pacing: how many touches, what intervals
+
+### Phase 3 — Solicitation (months 12-18)
+- **Suggested ask amount:** $XM
+- **Suggested named opportunity:** (from Phase 0 inventory, matched to motivation hypothesis)
+- **Who should be at the ask:** (specific roles — CEO + board chair + peer donor)
+- **Setting recommendation:** (their setting, specific suggestion)
+- **Specific opening, bridge, and ask language:** (3-4 sentences each, customized to this candidate)
+
+### Phase 4 — Stewardship (months 18+)
+- Recommended named-recognition event style
+- Impact-reporting cadence (quarterly / annually)
+- Clinical-leadership ongoing-access plan
+
+## 8. Risk flags
+
+- (any active litigation involving the candidate)
+- (any family disputes affecting philanthropic decision-making)
+- (any public controversies that could create reputational risk)
+- (any competing institutional loyalties — board memberships, recent gifts to competitors)
+- (any recent declined asks elsewhere, if documented)
+- (any health or life-situation flags)
+
+If no risk flags: explicitly note &quot;No identified risk flags as of [date].&quot;
+
+## 9. Novel-strategy applicability
+
+For each novel strategy in Playbook Section G, brief assessment of applicability:
+
+- **G.1 DAF activation:** Applicable / Not applicable / Inferred applicable. (Rationale)
+- **G.2 Family-office direct engagement:** ...
+- **G.3 Peer-cohort:** ... (note specific cohort with other candidates if applicable)
+- **G.4 Patient-advocate council:** ...
+- **G.5 Advisor-ecosystem cultivation:** ...
+- **G.6-G.10:** (assess each)
+
+## 10. Sources
+
+Numbered list of all sources cited in this dossier, with URL or filing identifier, retrieval date, and brief description. All sources also added to `sources/source_index.md`.
+</code></pre>
+<h2>Appendix B — Case Study Template</h2>
+<p>For each benchmarking case study, this exact structure:</p>
+<pre><code class="language-markdown"># Case Study — [Donor / Family] gift to [Institution] ([Year])
+
+**Gift size:** $XM
+**Type:** Lead / Principal / Major / Mid-tier
+**Compiled:** YYYY-MM-DD
+
+## 1. The gift in one paragraph
+
+(2-3 sentence summary)
+
+## 2. Donor profile
+
+- Background, wealth source, age at time of gift, family composition
+- Prior philanthropic history before this gift
+- Primary motivation (per Prince&#39;s framework): [Repayer / Dynast / ...]
+- Evidence for motivation classification
+
+## 3. Recipient institution profile (at time of gift)
+
+- Size, scale, strategic positioning
+- Case for support — what they were raising for
+- Existing donor base composition
+- Foundation/Development infrastructure
+
+## 4. The cultivation story
+
+(Reconstructed from public sources — how the relationship started, what touchpoints occurred over what timeline, who was involved on the institutional side, when the formal ask happened, what the structure of the ask was)
+
+## 5. The gift structure
+
+- One-time vs. multi-year pledge
+- Cash vs. appreciated stock vs. DAF grant vs. hybrid
+- Naming rights structure
+- Any restrictions or designations
+- Any contingencies or performance clauses
+
+## 6. Post-gift stewardship and follow-on
+
+- What stewardship was provided
+- Whether the donor made follow-on gifts (and at what scale)
+- Any controversies or course-corrections post-gift
+
+## 7. What worked — patterns to extract
+
+(specific moves the institution made that landed the gift)
+
+## 8. What didn&#39;t work or could have
+
+(any documented missteps, near-failures, or post-hoc institutional learnings)
+
+## 9. Applicability to Nuvance
+
+(specific transfer to Nuvance&#39;s situation: which of our 10 candidates this pattern most applies to, and what Nuvance leadership would need to do to apply it)
+
+## 10. Sources
+</code></pre>
+<h2>Appendix C — Cheat Sheet Template</h2>
+<p>One page. Designed to print on a single 8.5x11 sheet. Used by Laura immediately before a meeting.</p>
+<pre><code class="language-markdown"># Cheat Sheet — [Candidate Full Name]
+
+**Rank:** #N | **Tier:** Billionaire / Centi-millionaire | **Suggested first gift:** $XM
+**Primary motivation:** [Prince&#39;s face] | **Top intro path:** [Connector name]
+
+---
+
+## What you know (in 60 seconds)
+
+- (one-sentence: who they are professionally)
+- (one-sentence: their family / personal situation that matters)
+- (one-sentence: their philanthropic posture)
+- (one-sentence: their connection to Nuvance / health-region)
+- (one-sentence: a recent life event or signal worth knowing)
+
+## Three opening questions tailored to them
+
+1. **(Question that activates their motivation profile)**
+2. **(Question that surfaces their connection to health/Nuvance specifically)**
+3. **(Question about their philanthropic philosophy that lets them feel expert)**
+
+## Two reference points to mention naturally
+
+1. **(A name they care about: peer, mentor, family member, mutual friend)**
+2. **(A place or institution they care about: alma mater, club, town)**
+
+## The single motivation hypothesis to test
+
+**Hypothesis:** [Their primary face is X because of Y evidence]
+**What confirms:** [Specific things they&#39;d say or react to]
+**What disconfirms:** [Specific things that would force a revised hypothesis]
+
+## If conversation goes well: the gentle next step
+
+(Not the ask. The next-meeting setup. Specific suggested ask-of-them: &quot;Would you be open to a longer conversation with our CEO and CMO next month?&quot; or &quot;I&#39;d love to walk you through what we&#39;re planning at [program X] — I could come by for an hour in [timeframe].&quot;)
+
+## If asked &quot;What can I do to help?&quot; early (rare but happens)
+
+(Specific response that doesn&#39;t undersell the relationship — never blurt the ask, but signal the scope: &quot;We&#39;re in early thinking about [opportunity]. I&#39;d love your perspective as we develop it.&quot;)
+
+---
+
+**Full dossier:** `dossiers/NN_&lt;slug&gt;.md`
+**Compiled:** YYYY-MM-DD
+</code></pre>
+<hr>
+<h1>Self-Review (done by the plan author before delivery)</h1>
+<p>This section documents the review I performed against the spec.</p>
+<p><strong>1. Spec coverage check:</strong></p>
+<ul>
+<li>✓ Section 2 (strategic approach: affinity-first + calibrated tiers) — Phases 1-2 implement this</li>
+<li>✓ Section 3 (research methodology) — Task 1.1 documents the methodology; Tasks 1.2-1.3 execute it</li>
+<li>✓ Section 4 (eight deliverables) — Phases 3-7 produce all eight artifacts</li>
+<li>✓ Section 5 (playbook contents Sections A-G) — Tasks 6.1-6.7 implement each section</li>
+<li>✓ Section 6 (phasing) — Plan structure mirrors spec Phase 0-7 structure exactly</li>
+<li>✓ Section 7 (data limitations) — Documented in Task 1.1 and referenced throughout</li>
+<li>✓ Section 8 (out of scope) — No tasks attempt out-of-scope work</li>
+<li>✓ Section 9 (success criteria) — Verifiable criteria (1-6) are met by quality-standards checks in each task; aspirational criteria (7-10) are documented in the executive summary and final-package README for post-hoc tracking</li>
+</ul>
+<p><strong>2. Placeholder scan:</strong> No &quot;TBD&quot;, &quot;TODO&quot;, &quot;implement later&quot;, or &quot;Add appropriate X&quot; placeholders. All template structures have explicit fields. All commands are exact.</p>
+<p><strong>3. Type consistency:</strong> Naming conventions are consistent throughout — slugs are URL-safe with hyphens; file numbering is zero-padded <code>01</code>-<code>10</code>; section IDs are Section A, B, C, D, E, F, G consistently in the playbook; checkpoint labels are A, B, C, D, E consistently.</p>
+<p><strong>4. Critical paths verified:</strong></p>
+<ul>
+<li>Phase 0 must complete before Phase 1 (data dependency — affinity scoring depends on Nuvance signature-program identification from Phase 0)</li>
+<li>Phase 1 must complete before Phase 2 (dataflow dependency)</li>
+<li>Phase 2 must complete before Phase 3 (short list determines dossier candidates)</li>
+<li>Phase 3 can run in parallel with Phase 4 (no shared data)</li>
+<li>Phase 5 depends on Phase 3 (dossiers feed cheat sheets and network map)</li>
+<li>Phase 6 depends on Phases 0-5</li>
+<li>Phase 7 depends on Phase 6</li>
+</ul>
+<p><strong>5. Effort scaling:</strong> Plan reflects the 6-10 weeks scope from spec. Heavier tasks (Phase 3 dossiers, Phase 4 benchmarking case studies) are explicitly enumerated. Lighter tasks (cheat sheets, executive summary) are explicit one-pass artifacts.</p>
+<p><strong>6. Parallelization design:</strong> The Parallelization Strategy section maps every parallelizable batch with subagent count, dependencies, and conflict-resolution approach. Parallel execution can compress the full scope from 6-10 weeks to 1.5-3 weeks, bottlenecked by 5 sequential human-review checkpoints and synthesis tasks. Self-contained Appendix templates (A, B, C) make per-unit parallel dispatch feasible.</p>
+<p>The plan is ready for execution.</p>
+
+</main>
+
+<footer class="page-foot">
+  <p class="foot-orn">⁂ ⁂ ⁂</p>
+  <p class="foot-mark">Edition of one · MMXXVI · N</p>
+  <p class="foot-back"><a href="../../../artifacts/site/index.html">↤ Return to the catalog</a></p>
+</footer>
+
+</body>
+</html>

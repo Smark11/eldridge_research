@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Execution State — The Nuvance Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,200..900,0..100;1,9..144,200..900,0..100&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="artifacts/site/artifact.css">
+</head>
+<body>
+
+<svg class="grain" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <filter id="noiseFilter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch" />
+    <feColorMatrix type="matrix" values="0 0 0 0 0.10  0 0 0 0 0.10  0 0 0 0 0.18  0 0 0 0.08 0" />
+  </filter>
+  <rect width="100%" height="100%" filter="url(#noiseFilter)" />
+</svg>
+
+<header class="page-head">
+  <div>
+    <a href="artifacts/site/index.html" class="back-link"><span class="orn">⁂</span>The Nuvance Portfolio</a>
+  </div>
+  <div class="page-head-r">
+    <span class="cat-num">N.043</span>
+    <span class="cat-tag">checkpoint</span>
+  </div>
+</header>
+
+<main class="prose">
+<h1>Project Execution State</h1>
+<p><strong>Last updated:</strong> 2026-05-12
+<strong>Phase:</strong> v1.0 COMPLETE — all 8 phases done, all deliverables shipped
+<strong>Status:</strong> Full strategy package delivered. See <code>README.md</code> for package overview and <code>artifacts/executive_summary.md</code> for the top-line strategic findings.
+<strong>Next action:</strong> Mark reviews the package; surfaces any revisions before sharing with Laura.</p>
+<hr>
+<h2>How to resume in a fresh session</h2>
+<p>If this session ended (token reset, context overflow, deliberate stop), a fresh Claude session can pick up here:</p>
+<ol>
+<li><code>cd /Users/marksenerth/_src/eldridge_research</code></li>
+<li>Read this <code>STATE.md</code> to see what&#39;s done and what&#39;s next</li>
+<li>Read the plan: <code>docs/superpowers/plans/2026-05-10-nuvance-fundraising-implementation.md</code></li>
+<li>Read the spec for context: <code>docs/superpowers/specs/2026-05-10-nuvance-fundraising-strategy-design.md</code></li>
+<li>Run <code>git log --oneline</code> to see exactly which commits are in (each task commits with a descriptive message)</li>
+<li>Continue from &quot;Next action&quot; above using the same subagent-driven-development + parallelization approach</li>
+</ol>
+<p><strong>Critical context for resuming Claude:</strong></p>
+<ul>
+<li>We&#39;re executing the implementation plan using <code>superpowers:subagent-driven-development</code> + parallel dispatch per the plan&#39;s Parallelization Strategy section</li>
+<li>Five checkpoints (A, B, C, D, E) pause for Mark&#39;s human review; never proceed past a checkpoint without explicit approval</li>
+<li>Each plan task references self-contained Appendix templates (A, B, C) — subagents read those to do their work independently</li>
+<li>Quality standards: every claim cited, triangulated against ≥2 sources, confidence-labeled (known/inferred/unknown)</li>
+<li>Source-index conflict resolution: parallel subagents do NOT commit; they write artifact files, orchestrator commits after batch completes</li>
+</ul>
+<hr>
+<h2>Completed tasks</h2>
+<ul>
+<li>✅ <strong>Brainstorming complete</strong> — spec written and approved</li>
+<li>✅ <strong>Plan written</strong> — committed at <code>2d96c9e</code></li>
+<li>✅ <strong>Task 0.1</strong> — Project directory setup, source_index.md created, committed at <code>4984442</code></li>
+<li>✅ <strong>Batch 0.A</strong> — 4 parallel artifacts produced, committed at <code>53f9a97</code><ul>
+<li>⚠️ Web access (WebFetch/WebSearch) was denied to all four subagents; artifacts are training-data-based.</li>
+</ul>
+</li>
+<li>✅ <strong>Live-web verification pass</strong> — orchestrator used WebSearch/WebFetch in main session to verify top 10+ Phase 0 facts. Authoritative findings saved to <code>sources/phase_0_verification_update.md</code>, committed at <code>fcf6160</code>. This file supersedes any conflicting claim in the 4 training-data artifacts.</li>
+</ul>
+<h2>Most important verification corrections (see verification update for full sourcing)</h2>
+<ul>
+<li>Northwell-Nuvance merger <strong>COMPLETE</strong> May 2026 (subagents thought &quot;pending&quot;)</li>
+<li>Murphy retired Dec 2025; Robertson is market president; D&#39;Angelo is system CEO</li>
+<li>Robert R. Dyson is <strong>ALIVE</strong> (subagent reported deceased — wrong)</li>
+<li>Dyson Foundation historical scale is $1M-tier (not transformational); strategy must recalibrate</li>
+<li>Vassar Brothers Patient Pavilion ($550M, 2021) appears <strong>unnamed</strong> — potentially the single most consequential unsold naming opportunity</li>
+<li>Whittingham family confirmed top Phase 1 prospect ($4.5M cumulative since 1997, multi-generational)</li>
+<li>Laura Eldridge is &quot;Senior Director, Development &amp; Planned Giving&quot; (NOT Foundation president)</li>
+<li>$1B Northwell capital investment over 5 years = real capital pipeline</li>
+</ul>
+<h2>Critical findings from Batch 0.A (preview)</h2>
+<ul>
+<li><p><strong>Northwell affiliation/acquisition</strong> is the dominant strategic context (Feb 2024 announce, ~2025 close); materially reshapes case-for-support</p>
+</li>
+<li><p><strong>Nuvance entered the deal from financial weakness</strong> ($130-200M operating losses FY22-23, credit downgrades, layoffs)</p>
+</li>
+<li><p><strong>Dyson family/Foundation</strong> — top Phase 1 lead (named Dyson Center for Cancer Care at Vassar Brothers; Robert Rogers Dyson died 2024 → succession window)</p>
+</li>
+<li><p><strong>Vassar family</strong> genealogical question — single highest-leverage open question of the project</p>
+</li>
+<li><p><strong>No $100M+ named opportunity exists</strong> at Nuvance currently; no peer-tier signature program (Smilow/Bennett/Schwab equivalent). Case-for-support audit will recommend institutional repositioning as precondition for a credible $500M campaign.</p>
+</li>
+<li><p><strong>Realistic strategy framing:</strong> $75-200M over 3-5 years from 3-5 transformational gifts is plausible; the full $500M aspiration is 12-30x current baseline and requires institutional moves not yet visible.</p>
+</li>
+<li><p><strong>Donor base is regional, not national:</strong> three clusters — Dutchess multigenerational families, Fairfield grateful-patient executives, Litchfield weekenders. Affinity-first calibration is strongly ratified.</p>
+</li>
+<li><p>✅ <strong>Task 0.6: Case-for-support audit</strong> — synthesis complete, committed at <code>d993db4</code>. Verdict: Nuvance does not currently sustain $500M case. Three institutional recommendations: (1) resolve VBMC Pavilion naming 60 days, (2) define one signature institute by end FY2026 with $50M founding-donor opportunity, (3) publicly allocate the $1B Northwell capital commitment to year-1 anchor projects.</p>
+</li>
+<li><p>✅ <strong>Checkpoint A</strong> — completed. Scope tightened to 5-7 final candidates, web access enabled via curated allowlist (~30 domains), Laura&#39;s title corrected to AVP Development, source rigor codified.</p>
+</li>
+<li><p>✅ <strong>Phase 1 Task 1.1: Screening methodology</strong> — committed at <code>cae603e</code>. Reflects scope refinement and Phase 0 priors.</p>
+</li>
+<li><p>✅ <strong>Phase 1 Batch 1.B</strong> — 5 parallel screens complete, committed at <code>e993e71</code>. Subagents hit rate limit during return-to-orchestrator but all files were written to disk before limit. Recovered.</p>
+</li>
+<li><p>✅ <strong>Phase 1 aggregation + Batch 1.C (orchestrator-consolidated)</strong> — committed at <code>b9b31bc</code>. Orchestrator-led affinity scoring saved a parallel-subagent dispatch; long_list.md complete with 10-12 ADVANCE + 6-8 HOLD candidates.</p>
+</li>
+<li><p>✅ <strong>Whittingham correction</strong> — Phase 0 verification update §5 corrected (Andrew d. Feb 2021, Michael predeceased; current principals Adam + Robyn).</p>
+</li>
+</ul>
+<h2>Critical Phase 1 findings (preview for Checkpoint B)</h2>
+<ul>
+<li><p><strong>George &amp; Carol Bauer</strong> — TOP PRIORITY. $35M+ Norwalk Hospital lead donor, age 95, succession-imminent. Invisible to Phase 0.</p>
+</li>
+<li><p><strong>Robert R. Dyson</strong> — score 26/30. Multi-decade Vassar Brothers benefactor; foundation $246.9M; transformational ask requires escalation from $1M-tier history.</p>
+</li>
+<li><p><strong>Ray Dalio</strong> — score 26/30. Already active Nuvance donor ($5.1M June 2025); Bridgewater exit complete = peak life-stage signal.</p>
+</li>
+<li><p><strong>Whittingham family</strong> — score 23/30 BUT lower wealth tier than Phase 0 assumed. Transformational potential $1-10M, not $25M+.</p>
+</li>
+<li><p><strong>Michael Rees</strong> — Feinstein/Northwell board insider; mid-career.</p>
+</li>
+<li><p><strong>Amy Goldman Fowler</strong> — Rhinebeck NY core service area but cause-affinity gap.</p>
+</li>
+<li><p><strong>Jasper Johns</strong> — Sharon CT, $217M Low Road Foundation, age 95, blue-sky.</p>
+</li>
+<li><p><strong>Greenwich/Stamford hedge fund corridor</strong> is densely NYP/MSK/Mt Sinai-loyal — Phase 0 audit verdict reinforced.</p>
+</li>
+<li><p>✅ <strong>Checkpoint B</strong> — Mark approved 7-candidate short list. Committed at <code>2d3d758</code>.</p>
+</li>
+<li><p>✅ <strong>Phase 3: 7 deep dossiers complete</strong> — committed at <code>780504a</code>. ~60KB each. All web-verified with source citations.</p>
+</li>
+</ul>
+<h2>Top Phase 3 strategic findings (preview)</h2>
+<ul>
+<li><p><strong>Bauer:</strong> USAmeriBancorp $816M sale 2018 is wealth source; 3 children identified (Jocelyn, Jennifer, Brad); Jeffrey Peter Bauer (son d. 5 days old early 1960s) is Repayer anchor; Carol is certified chaplain. $5-15M ask via Peter Cordeau, ~12-24 month window.</p>
+</li>
+<li><p><strong>Dyson:</strong> Rob served on Health Quest Systems board (parent of Vassar Brothers pre-merger) — major affinity upgrade to 28/30. Anne E. Dyson (sister d. 2000 breast cancer) = endowed-chair Repayer opportunity. $10-25M via Andrea L. Reynolds (Foundation CEO).</p>
+</li>
+<li><p><strong>Dalio:</strong> STRUCTURAL ISSUE — June 2025 $5.1M routed through CHRO not Foundation; Laura must integrate before June 2026 milestone. $25-50M Dalio Health Equity Institute escalation pathway.</p>
+</li>
+<li><p><strong>Whittingham:</strong> C. Anthony&#39;s wealth source: U.S. Surgical → Joint Medical Products → Johnson &amp; Johnson 1995. Both G2 brothers deceased (Michael Oct 2020, Andrew Feb 2021). $3-7M realistic, not $25M.</p>
+</li>
+<li><p><strong>Rees:</strong> Wife Allison volunteers Northwell directly; March 2026 estate transfer = 18-36 month window (not 10+ years). $10-25M Feinstein-linked via Kevin J. Tracey.</p>
+</li>
+<li><p><strong>Goldman Fowler:</strong> TRANSFORMATIONAL FINDING — first cousin Lloyd Goldman is largest single donor in Northwell history ($100M+). Activates dramatic warm path. $5-25M for Goldman/Fowler Women&#39;s Health Center in unnamed Pavilion. Risk: active sibling litigation.</p>
+</li>
+<li><p><strong>Jasper Johns:</strong> Estate plan locked-in (Low Road Sharon Inc. artist residency); no family heirs. $1-5M conditional, hard 4-month decision gate.</p>
+</li>
+<li><p>✅ <strong>Phase 4: 8 benchmarking case studies complete</strong> — committed across <code>e4c59bd</code> (6 from initial dispatch) + later commit (Smilow, Greenwich re-dispatch).</p>
+</li>
+<li><p>✅ <strong>Phase 4 synthesis</strong> — benchmarking_memo.md committed at <code>4d917f4</code>. 7 patterns extracted; per-candidate analog mapping; 5 institutional recommendations.</p>
+</li>
+<li><p>✅ <strong>Phase 5 complete</strong> — cross-reference matrix, 7 cheat sheets, warm-intro network map (HTML+CSS+JS+JSON). Committed across <code>c473fda</code>, <code>b05cf9e</code>.</p>
+</li>
+<li><p>✅ <strong>Phase 6 complete</strong> — strategy playbook (<code>artifacts/playbook.md</code>) all 7 sections (A-G). Committed at <code>3957815</code>.</p>
+</li>
+<li><p>✅ <strong>Phase 7 complete</strong> — executive summary, ranked short list, designed deck (Fraunces + Newsreader editorial-monograph aesthetic). Committed at <code>2023b59</code>, <code>f057810</code>.</p>
+</li>
+<li><p>✅ <strong>Project README + v1.0 tag</strong> — final.</p>
+</li>
+</ul>
+<h2>Critical Phase 4 strategic updates</h2>
+<ul>
+<li><strong>Smilow surname is ALREADY at Norwalk Hospital</strong> via Smilow Family Breast Health Center (predates Yale-NHH naming). Phase 5 should verify current family stewardship status — potential unsurfaced candidate.</li>
+<li><strong>Bauer ultimate gift revised: $50-75M+</strong> (theological-stewardship framing via Yale Divinity precedent of $25M+; &quot;Sunday-Monday connection&quot;; named-position legacy giving). Phase 3 dossier $5-15M was too low.</li>
+<li><strong>System-level cancer institute brand recommendation:</strong> Layer &quot;[Family] Cancer Institute at Nuvance&quot; ABOVE existing Whittingham + Dyson facility brands. Primary candidate: Dalio ($25-75M).</li>
+<li><strong>Greenwich hedge-fund corridor confirmed off-limits:</strong> AQR/Lone Pine/Tiger Cubs cluster has NOT produced Greenwich Hospital naming-gift principals.</li>
+<li><strong>Norwalk Hospital case-for-support recommendations:</strong> Dual-track architecture (comprehensive campaign + building fund); long-tenured-physician honor gifts; matching-gift mechanism; Luminate-equivalent recognition ladder.</li>
+</ul>
+<h2>Project complete</h2>
+<p>All 8 phases done. See <code>README.md</code> for the package guide.</p>
+<h2>The three single most consequential findings (for Mark&#39;s relay to Laura)</h2>
+<ol>
+<li><p><strong>Bauer ultimate gift potential is $50-75M+</strong>, not $5-15M as initial scoping suggested. Theological-stewardship-of-vocation framing tied to Yale Divinity precedent (Carol B. Bauer Hall, $25M+; Olin ethics professorship; WashU named deanship) supports the upward calibration. 12-24 month cultivation window given age 95.</p>
+</li>
+<li><p><strong>Lloyd Goldman is Amy Goldman Fowler&#39;s first cousin</strong> and the largest single donor in Northwell history ($100M+ lifetime; Goldman Medical Pavilion at Lenox Hill opens 2026). This is a transformational warm-intro pathway through John D&#39;Angelo (Northwell system CEO).</p>
+</li>
+<li><p><strong>The June 2025 $5.1M Dalio Education gift was routed through CHRO Katie Cullinan</strong>, not Foundation. Laura must integrate into the stewardship channel before June 2026 (12-month milestone) and Dec 2026 (18-month milestone) to position any escalation.</p>
+</li>
+</ol>
+<p>Plus the institutional question: <strong>Is the Vassar Brothers Patient Pavilion ($550M, opened 2021) available to name?</strong> This gates $100M+ asks. Resolve within 60 days via internal conversation with Foundation Director + Northwell governance.</p>
+<h2>Recommended next steps post-dossiers</h2>
+<ul>
+<li>Run cross-dossier consistency review (Task 3.4 per implementation plan)</li>
+<li>Optionally dispatch Phase 4 (benchmarking memo, 8-12 case studies) in parallel with finishing Phase 3 work</li>
+<li>Phase 5 tactical artifacts (warm-intro network map, per-candidate cheat sheets, cross-reference matrix) depend on dossiers complete</li>
+<li>Phase 6 strategy playbook synthesis depends on Phases 0-5</li>
+<li>Phase 7 executive summary + designed deck is final synthesis</li>
+</ul>
+<h2>Phase 1 scope refinement (committed at <code>cae603e</code> in screening_methodology.md)</h2>
+<ul>
+<li>Final candidate target: 5-7 (was 10)</li>
+<li>Long-list target: 25-40 (was 40-60)</li>
+<li>Wealth-tier calibration shifted: ~70-80% centi-millionaires</li>
+<li>Affinity-first emphasized given Northwell-merger competitive context</li>
+<li>Phase 0 priors incorporated (Whittingham, Dyson, HV grandee corridor, Greenwich hedge fund cohort, Vassar College alumni network)</li>
+<li>Source rigor codified as hard standard</li>
+</ul>
+<h2>Web access enabled</h2>
+<p>Project-level settings.local.json populated with ~30 research domains. Subagents can WebFetch the allowed domains directly; new domains auto-add when first used (with permission prompt that may need user attention).</p>
+<h2>Pending — Phase 0</h2>
+<ul>
+<li>⏸ Task 0.6: Case-for-support audit (sequential after Batch 0.A) — synthesis task, less web-dependent</li>
+<li>🛑 Checkpoint A: Halt for Mark&#39;s review</li>
+</ul>
+<h2>Pending — later phases</h2>
+<p>See plan file for full sequence. Phase order: 0 → 1 → 2 → 3 (parallel with 4) → 5 → 6 → 7.</p>
+<hr>
+<h2>Update protocol</h2>
+<p>After every task or batch completes, the orchestrator updates this file with:</p>
+<ul>
+<li>New &quot;Last updated&quot; timestamp</li>
+<li>Move tasks from &quot;In progress&quot; → &quot;Completed&quot; with commit SHA</li>
+<li>Update &quot;Next action&quot;</li>
+<li>Commit the change with message: <code>STATE: &lt;one-line summary of progress&gt;</code></li>
+</ul>
+<p>This is the resumability backbone. <strong>Never let it go stale.</strong></p>
+
+</main>
+
+<footer class="page-foot">
+  <p class="foot-orn">⁂ ⁂ ⁂</p>
+  <p class="foot-mark">Edition of one · MMXXVI · N</p>
+  <p class="foot-back"><a href="artifacts/site/index.html">↤ Return to the catalog</a></p>
+</footer>
+
+</body>
+</html>
