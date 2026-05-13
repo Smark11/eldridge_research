@@ -60,6 +60,106 @@ html, body {
   mix-blend-mode: multiply;
 }
 
+/* ╔════════════════════════════════════════════ Image system ════════════════════════════════════════════╗ */
+
+/* Full-bleed atmospheric background image (used on title + closing slides) */
+.slide-bg-image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-size: cover;
+  background-position: center;
+  filter: sepia(0.32) saturate(0.55) contrast(1.04) brightness(0.78);
+  opacity: 0.42;
+  mix-blend-mode: multiply;
+}
+
+/* Paper-color veil over background images to integrate with palette */
+.slide-bg-veil {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(135deg, rgba(245,239,226,0.62) 0%, rgba(245,239,226,0.78) 60%, rgba(245,239,226,0.92) 100%);
+  pointer-events: none;
+}
+
+/* Inset framed photograph (used in narrative slides, story slide) */
+.slide-photo {
+  background-size: cover;
+  background-position: center;
+  filter: sepia(0.38) saturate(0.6) contrast(1.06) brightness(0.92);
+  border: 10px solid var(--cream);
+  outline: 1px solid var(--rule-deep);
+  box-shadow: 0 8px 26px rgba(26, 31, 46, 0.18), 0 2px 6px rgba(26, 31, 46, 0.1);
+  position: relative;
+}
+
+.slide-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(26,31,46,0.18) 100%);
+  pointer-events: none;
+}
+
+/* Narrow accent photo (strip) for slides that want a small visual moment */
+.slide-photo-strip {
+  height: 130px;
+  background-size: cover;
+  background-position: center;
+  filter: sepia(0.4) saturate(0.55) contrast(1.05) brightness(0.9);
+  border-top: 1px solid var(--rule-deep);
+  border-bottom: 1px solid var(--rule-deep);
+  position: relative;
+}
+
+.slide-photo-strip::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(245,239,226,0.15) 0%, transparent 50%, rgba(245,239,226,0.15) 100%);
+  pointer-events: none;
+}
+
+/* Caption beneath a photo */
+.photo-caption {
+  font-family: "Newsreader", serif;
+  font-style: italic;
+  font-size: var(--t-xs);
+  letter-spacing: 0.02em;
+  color: var(--ink-mute);
+  margin-top: 0.6rem;
+  line-height: 1.4;
+  font-variation-settings: "wght" 350;
+}
+
+/* Decorative ornament SVG */
+.ornament {
+  font-family: "Fraunces", serif;
+  font-size: 1.75rem;
+  color: var(--clay);
+  font-variation-settings: "wght" 250;
+  line-height: 1;
+  display: inline-block;
+  letter-spacing: 0.4em;
+  user-select: none;
+}
+
+.ornament-rule {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--clay);
+}
+
+.ornament-rule::before,
+.ornament-rule::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--rule-deep);
+}
+
 /* ╔════════════════════════════════════════════ Status bar ════════════════════════════════════════════╗ */
 
 .status {
@@ -240,18 +340,35 @@ html, body {
 
 .slide-narrative {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1fr 1.2fr;
+  grid-template-rows: auto 1fr;
+  gap: 2rem 4rem;
 }
 
 .slide-narrative .section-label {
-  grid-column: 1 / 2;
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
   align-self: start;
+}
+
+.narrative-photo-frame {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  max-width: 420px;
+}
+
+.narrative-photo-frame .slide-photo {
+  width: 100%;
 }
 
 .narrative-body {
   grid-column: 2 / 3;
+  grid-row: 2 / 3;
   max-width: 36ch;
+  align-self: center;
 }
 
 .lead {
@@ -286,8 +403,12 @@ html, body {
 
 .slide-context {
   display: grid;
-  grid-template-rows: auto auto 1fr;
-  gap: 3rem;
+  grid-template-rows: auto auto auto 1fr;
+  gap: 2rem;
+}
+
+.slide-context .slide-photo-strip {
+  margin: 0 calc(var(--pad-x) * -0.4);
 }
 
 .context-grid {
@@ -339,9 +460,19 @@ html, body {
 
 .opportunity-frame {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1.3fr 0.8fr 1fr;
+  gap: 3rem;
   align-items: start;
+}
+
+.opp-photo-stack {
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+}
+
+.opp-photo-stack .slide-photo {
+  width: 100%;
 }
 
 .opp-title {
@@ -464,8 +595,26 @@ html, body {
 
 .story-frame {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 0.8fr 1fr 1fr;
+  gap: 3rem;
+}
+
+.story-photo-col {
+  display: flex;
+  flex-direction: column;
+  max-width: 360px;
+  align-self: center;
+}
+
+.story-photo-col .slide-photo {
+  width: 100%;
+}
+
+.story-text-col {
+  grid-column: 2 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .story-lead {
@@ -476,6 +625,7 @@ html, body {
   color: var(--ink);
   letter-spacing: -0.01em;
   font-style: italic;
+  margin: 0;
 }
 
 .story-prose {
@@ -559,8 +709,13 @@ html, body {
 
 .slide-community {
   display: grid;
-  grid-template-rows: auto auto 1fr auto;
-  gap: 2rem;
+  grid-template-rows: auto auto auto 1fr auto;
+  gap: 1.5rem;
+}
+
+.slide-community .slide-photo-strip {
+  margin: 0 calc(var(--pad-x) * -0.4);
+  height: 100px;
 }
 
 .community-lead {
