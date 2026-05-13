@@ -150,7 +150,7 @@ This plan is designed for heavy parallelization. Most research work is embarrass
 ### Concurrency considerations
 
 - **Phase 3 + Phase 4 can run concurrently.** The most aggressive schedule dispatches Batch 3.B (8 dossier subagents) and Batch 4.A (8-12 case study subagents) simultaneously — up to 20 parallel subagents at peak. Limit by available concurrency budget.
-- **Source-index conflicts.** When parallel subagents both want to add to `sources/source_index.md`, conflicts can arise. Resolution: each subagent writes a **per-batch source addendum** (e.g., `sources/_pending_batch_3B_dossier_05.md`) and the orchestrator merges these into `source_index.md` at batch completion.
+- **Source-index conflicts.** When parallel subagents both want to add to `sources/source_index.md`, conflicts can arise. Resolution: each subagent writes a **per-batch source addendum** (e.g., `sources/sources_batch_3B_dossier_05.md`) and the orchestrator merges these into `source_index.md` at batch completion.
 - **Git conflicts.** Parallel subagents committing to the same repo can conflict. Two options:
   1. **Worktrees:** Each subagent operates in a separate git worktree, then orchestrator merges. Use `superpowers:using-git-worktrees`.
   2. **No-commit subagents:** Subagents produce their artifact files but do NOT commit. Orchestrator commits after batch completes. Simpler but less granular history.

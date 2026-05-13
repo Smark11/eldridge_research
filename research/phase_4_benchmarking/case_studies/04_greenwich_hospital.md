@@ -290,7 +290,7 @@ This is a critical strategic finding: **the Bauer family does NOT have giving re
 
 ## 10. Sources
 
-All sources retrieved 2026-05-12 unless otherwise noted. Detailed source addendum: `/Users/marksenerth/_src/eldridge_research/sources/_pending_4_04.md`.
+All sources retrieved 2026-05-12 unless otherwise noted. Detailed source addendum: `/Users/marksenerth/_src/eldridge_research/sources/sources_4_04.md`.
 
 [^arcofcare2023]: Greenwich Hospital Office of Development, "Celebrating Investments in Our $125 Million Arc of Care Campaign" — https://giving.greenhosp.org/celebrating-investments-in-our-125-million-arc-of-care-campaign/ — confirms $125M goal, $82M raised by Sept 27, 2024; $65M silent-phase total; five focus areas; Frantz Luminate Award; Berkley as Board Chair, Diane Kelly as President, Noël Appel as SVP/CDO.
 

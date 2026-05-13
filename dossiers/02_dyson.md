@@ -404,7 +404,7 @@ The Dyson Foundation's mission is explicitly Mid-Hudson Valley regional; six nam
 
 ---
 
-**Sources requiring follow-up verification (recorded in `/Users/marksenerth/_src/eldridge_research/sources/_pending_3_02.md`):**
+**Sources requiring follow-up verification (recorded in `/Users/marksenerth/_src/eldridge_research/sources/sources_3_02.md`):**
 
 - Direct Dyson Foundation 990-PF FY2024 Schedule I PDF extraction — current source databases lack the comprehensive grant-by-grant line item; Foundation's own searchable grant database at dysonfoundation.org/awarded-grants/ requires interactive query
 - Robert R. Dyson Bloomberg profile + Wikipedia (Rob Dyson) — both 403'd in this research session

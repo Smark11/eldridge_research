@@ -298,4 +298,4 @@ If no further risk flags surface during cultivation: this is a comparatively low
 
 ---
 
-*End of dossier. All claims sourced. Sources addendum at `/Users/marksenerth/_src/eldridge_research/sources/_pending_3_04.md` consolidates URLs and retrieval dates for downstream integration into source_index.md.*
+*End of dossier. All claims sourced. Sources addendum at `/Users/marksenerth/_src/eldridge_research/sources/sources_3_04.md` consolidates URLs and retrieval dates for downstream integration into source_index.md.*

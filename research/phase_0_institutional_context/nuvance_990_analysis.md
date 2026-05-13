@@ -280,7 +280,7 @@ Numbered in optimal retrieval order:
 
 ## 8. Sources
 
-See `/Users/marksenerth/_src/eldridge_research/sources/_pending_0_3.md` for the full source list with retrieval dates. Note: because live web access was unavailable, the pending sources list documents the **intended retrieval targets** rather than completed retrievals. The orchestrator should replace these with actual retrieved-URL entries once the verification pass is complete.
+See `/Users/marksenerth/_src/eldridge_research/sources/sources_0_3.md` for the full source list with retrieval dates. Note: because live web access was unavailable, the pending sources list documents the **intended retrieval targets** rather than completed retrievals. The orchestrator should replace these with actual retrieved-URL entries once the verification pass is complete.
 
 ### Key training-data references underpinning this analysis (not URLs):
 

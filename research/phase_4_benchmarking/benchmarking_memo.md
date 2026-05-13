@@ -322,6 +322,6 @@ All case study details, full source citations, retrieval dates, and confidence l
 - `research/phase_4_benchmarking/case_studies/07_nwh_schwartz.md`
 - `research/phase_4_benchmarking/case_studies/08_lloyd_goldman_lenox_hill.md`
 
-Plus source addenda: `sources/_pending_4_02.md`, `_pending_4_03.md`, `_pending_4_04.md`, `_pending_4_07.md`.
+Plus source addenda: `sources/sources_4_02.md`, `sources_4_03.md`, `sources_4_04.md`, `sources_4_07.md`.
 
 This synthesis memo cites those case studies; the case studies cite primary sources directly.

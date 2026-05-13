@@ -376,4 +376,4 @@ Three Repayer triggers exist in the Dalio family experience:
 52. [Short list (project file)](/Users/marksenerth/_src/eldridge_research/research/phase_2_short_list/short_list.md) — retrieved 2026-05-11 — Rank #3 placement rationale
 53. [Long list — Tier 1 #3 detail (project file)](/Users/marksenerth/_src/eldridge_research/research/phase_1_long_list/long_list.md) — retrieved 2026-05-11
 
-All sources also added to `sources/_pending_3_03.md` for merger into `sources/source_index.md`.
+All sources also added to `sources/sources_3_03.md` for merger into `sources/source_index.md`.

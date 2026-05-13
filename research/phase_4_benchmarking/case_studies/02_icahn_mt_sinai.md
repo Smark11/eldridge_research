@@ -143,7 +143,7 @@ The Icahn–Mount Sinai pattern is **directly transferable to Nuvance for instit
 
 ## 10. Sources
 
-(All retrieved 2026-05-11. Pending sources are submitted in `sources/_pending_4_02.md` for orchestrator merger into `sources/source_index.md`.)
+(All retrieved 2026-05-11. Pending sources are submitted in `sources/sources_4_02.md` for orchestrator merger into `sources/source_index.md`.)
 
 [^msnaming2012]: Mount Sinai Newsroom, "Mount Sinai School of Medicine to be Named in Honor of Carl Icahn," November 14, 2012. https://www.mountsinai.org/about/newsroom/2012/mount-sinai-school-of-medicine-to-be-named-in-honor-of-carl-icahn — retrieved 2026-05-11.
 [^pnd150m]: Philanthropy News Digest, "Icahn Pledges Additional $150 Million to Mount Sinai School of Medicine." https://philanthropynewsdigest.org/news/icahn-pledges-additional-150-million-to-mount-sinai-school-of-medicine — retrieved 2026-05-11.

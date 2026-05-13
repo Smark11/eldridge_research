@@ -46,7 +46,7 @@
 | Short list | `research/phase_2_short_list/short_list.md` |
 | 8 benchmarking case studies | `research/phase_4_benchmarking/case_studies/` |
 | Source citations index | `sources/source_index.md` |
-| Per-task source addenda | `sources/_pending_*.md` |
+| Per-task source addenda | `sources/sources_*.md` |
 
 ## How to use this package
 

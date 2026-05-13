@@ -275,7 +275,7 @@ Nuvance currently has two facility-level cancer brands:
 
 ## 10. Sources
 
-(All retrieved 2026-05-12. Pending sources are submitted in `sources/_pending_4_03.md` for orchestrator merger into `sources/source_index.md`.)
+(All retrieved 2026-05-12. Pending sources are submitted in `sources/sources_4_03.md` for orchestrator merger into `sources/source_index.md`.)
 
 [^ynews_naming]: Yale News, "Yale-New Haven Receives Naming Gift for Cancer Hospital: The Smilow Cancer Hospital Will Open in Late 2009," October 31, 2007. https://news.yale.edu/2007/10/31/yale-new-haven-receives-naming-gift-cancer-hospital-smilow-cancer-hospital-will-open-late — retrieved 2026-05-12.
 [^ynews_opens]: Yale News, "Smilow Cancer Hospital Opens," October 30, 2009. https://news.yale.edu/2009/10/30/smilow-cancer-hospital-opens — retrieved 2026-05-12.

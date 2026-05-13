@@ -313,7 +313,7 @@ Implicit tertiary: **Communitarian (latent, Dutchess County)**. Her 200-acre far
 
 ## 10. Sources
 
-(See also Sources Addendum at `/Users/marksenerth/_src/eldridge_research/sources/_pending_3_06.md` for full URL list with retrieval dates.)
+(See also Sources Addendum at `/Users/marksenerth/_src/eldridge_research/sources/sources_3_06.md` for full URL list with retrieval dates.)
 
 1. [Amy Goldman Fowler — Wikipedia](https://en.wikipedia.org/wiki/Amy_Goldman_Fowler) — retrieved 2026-05-11. Biographical anchor.
 2. [Cary Fowler — Wikipedia](https://en.wikipedia.org/wiki/Cary_Fowler) — retrieved 2026-05-11. Spouse biographical / 2024 World Food Prize / cancer survivorship.

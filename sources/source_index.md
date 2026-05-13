@@ -2,6 +2,8 @@
 
 Master index for verifying any factual claim in this package. Every research artifact contains its own inline source citations; this file provides the navigation map.
 
+**Naming convention.** Source-citation files are named `sources_NN_NN.md` and live alongside this index in `/sources/`. Each one is a curated, retrieval-dated URL list for a specific upstream research artifact (a Phase 0 document, a Phase 3 dossier, or a Phase 4 case study). All `sources_*.md` files are authoritative — they are the per-artifact citation indexes, indexed from here.
+
 ---
 
 ## Authoritative reference for Phase 0 facts
@@ -30,13 +32,13 @@ Every research artifact contains its own inline sources at the bottom. To verify
 
 ### Phase 0 — Institutional context (4 documents + audit)
 
-| Artifact | Inline citations | Pending source addendum |
+| Artifact | Inline citations | Source citation file |
 |---|---|---|
-| `research/phase_0_institutional_context/nuvance_overview.md` | Yes | `sources/_pending_0_2.md` |
-| `research/phase_0_institutional_context/nuvance_990_analysis.md` | Yes | `sources/_pending_0_3.md` |
-| `research/phase_0_institutional_context/predecessor_institutions.md` | Yes | `sources/_pending_0_4.md` |
-| `research/phase_0_institutional_context/naming_opportunities.md` | Yes | `sources/_pending_0_5.md` |
-| `research/phase_0_institutional_context/case_for_support_audit.md` | Yes | `sources/_pending_0_6.md` |
+| `research/phase_0_institutional_context/nuvance_overview.md` | Yes | `sources/sources_0_2.md` |
+| `research/phase_0_institutional_context/nuvance_990_analysis.md` | Yes | `sources/sources_0_3.md` |
+| `research/phase_0_institutional_context/predecessor_institutions.md` | Yes | `sources/sources_0_4.md` |
+| `research/phase_0_institutional_context/naming_opportunities.md` | Yes | `sources/sources_0_5.md` |
+| `research/phase_0_institutional_context/case_for_support_audit.md` | Yes | `sources/sources_0_6.md` |
 | `sources/phase_0_verification_update.md` | Yes (~25 verified URLs) | — (authoritative; supersedes others) |
 
 ### Phase 1 — Long list
@@ -59,29 +61,29 @@ Every research artifact contains its own inline sources at the bottom. To verify
 
 ### Phase 3 — Dossiers (7 candidates)
 
-| Dossier | Pending source addendum |
+| Dossier | Source citation file |
 |---|---|
-| `dossiers/01_bauer.md` | `sources/_pending_3_01.md` (71 sources) |
-| `dossiers/02_dyson.md` | `sources/_pending_3_02.md` (53 sources) |
-| `dossiers/03_dalio.md` | `sources/_pending_3_03.md` |
-| `dossiers/04_whittingham.md` | `sources/_pending_3_04.md` (50 sources) |
-| `dossiers/05_rees.md` | `sources/_pending_3_05.md` |
-| `dossiers/06_goldman_fowler.md` | `sources/_pending_3_06.md` (43 sources) |
-| `dossiers/07_jasper_johns.md` | `sources/_pending_3_07.md` (58 sources) |
+| `dossiers/01_bauer.md` | `sources/sources_3_01.md` (71 sources) |
+| `dossiers/02_dyson.md` | `sources/sources_3_02.md` (53 sources) |
+| `dossiers/03_dalio.md` | `sources/sources_3_03.md` |
+| `dossiers/04_whittingham.md` | `sources/sources_3_04.md` (50 sources) |
+| `dossiers/05_rees.md` | `sources/sources_3_05.md` |
+| `dossiers/06_goldman_fowler.md` | `sources/sources_3_06.md` (43 sources) |
+| `dossiers/07_jasper_johns.md` | `sources/sources_3_07.md` (58 sources) |
 
 Each dossier also has inline citations next to every claim.
 
 ### Phase 4 — Benchmarking case studies
 
-| Case study | Pending source addendum |
+| Case study | Source citation file |
 |---|---|
 | `research/phase_4_benchmarking/case_studies/01_cohen_childrens_northwell.md` | (none — see inline citations; subagent did not produce separate addendum) |
-| `research/phase_4_benchmarking/case_studies/02_icahn_mt_sinai.md` | `sources/_pending_4_02.md` |
-| `research/phase_4_benchmarking/case_studies/03_smilow_yale_nhh.md` | `sources/_pending_4_03.md` (75 sources) |
-| `research/phase_4_benchmarking/case_studies/04_greenwich_hospital.md` | `sources/_pending_4_04.md` (47KB, full list) |
+| `research/phase_4_benchmarking/case_studies/02_icahn_mt_sinai.md` | `sources/sources_4_02.md` |
+| `research/phase_4_benchmarking/case_studies/03_smilow_yale_nhh.md` | `sources/sources_4_03.md` (75 sources) |
+| `research/phase_4_benchmarking/case_studies/04_greenwich_hospital.md` | `sources/sources_4_04.md` (47KB, full list) |
 | `research/phase_4_benchmarking/case_studies/05_hartford_ayer_neuroscience.md` | (none — see inline citations) |
 | `research/phase_4_benchmarking/case_studies/06_hss_specialty.md` | (none — see inline citations) |
-| `research/phase_4_benchmarking/case_studies/07_nwh_schwartz.md` | `sources/_pending_4_07.md` |
+| `research/phase_4_benchmarking/case_studies/07_nwh_schwartz.md` | `sources/sources_4_07.md` |
 | `research/phase_4_benchmarking/case_studies/08_lloyd_goldman_lenox_hill.md` | (none — see inline citations) |
 
 Case studies 01, 05, 06, 08 do not have separate addenda because the subagents hit the rate limit during return-to-orchestrator. **The case study files themselves contain full inline citations** for every claim; only the standalone addendum file wasn't produced.

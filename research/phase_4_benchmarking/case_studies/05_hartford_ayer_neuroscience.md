@@ -150,7 +150,7 @@ This three-person principal team (CEO, COO/heir-apparent, recruited clinical chi
 
 ## 10. Sources
 
-All sources retrieved live-web 2026-05-11. Full citation list compiled into `/Users/marksenerth/_src/eldridge_research/sources/_pending_4_05.md` for orchestrator merge into `source_index.md`.
+All sources retrieved live-web 2026-05-11. Full numbered citation list follows inline below; the case study file itself is the authoritative source index for these citations (no separate per-case-study addendum was produced by the subagent for this case).
 
 1. [Hartford HealthCare Neuroscience Institute Receives Transformational Gifts — PR Newswire (Jan. 30, 2017)](https://www.prnewswire.com/news-releases/hartford-healthcare-neuroscience-institute-receives-transformational-gifts-300399008.html)
 2. [Ramani Ayer — Wikipedia](https://en.wikipedia.org/wiki/Ramani_Ayer)

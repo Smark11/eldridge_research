@@ -13,7 +13,7 @@
 - **(inferred):** A claim derived by combining adjacent facts (e.g., extending a known family-foundation pattern, drawing the obvious conclusion from a name on a hospital).
 - **(unknown — research gap):** A search target that the task brief specified but for which the assistant has no training-corpus evidence at all; flagged so a follow-up researcher with live access can fill the gap.
 
-The orchestrator should plan a **verification pass** during Checkpoint A that confirms every "known — training corpus" item against a live primary source before any of the names below are used to seed Phase 1 candidate screening. See Section 5 ("Sources") for the citation convention used in the body, and `/Users/marksenerth/_src/eldridge_research/sources/_pending_0_4.md` for the source-action plan.
+The orchestrator should plan a **verification pass** during Checkpoint A that confirms every "known — training corpus" item against a live primary source before any of the names below are used to seed Phase 1 candidate screening. See Section 5 ("Sources") for the citation convention used in the body, and `/Users/marksenerth/_src/eldridge_research/sources/sources_0_4.md` for the source-action plan.
 
 A second consequence of the constraint: **named buildings, wings, programs, and chairs cannot be enumerated comprehensively** for any institution below. Hospital donor walls and naming inventories are typically only available via (a) live institutional websites, (b) on-site signage, (c) capital-campaign brochures, or (d) annual-report donor honor rolls — none of which are accessible from training data alone. Where the assistant has training-corpus knowledge of a particular named space, it is included; where not, the gap is explicitly flagged.
 
@@ -264,7 +264,7 @@ The most strategically valuable outcomes of this document for the Phase 1 long-l
 
 ## 5. Sources
 
-**Source-access note:** As described in the methodology note at the top of this document, the execution environment denied `WebFetch` and `WebSearch` permissions during the 2026-05-10 research session. The "sources" below therefore reflect the **target source set** the task brief specified, not actual retrieved citations. A separate file at `/Users/marksenerth/_src/eldridge_research/sources/_pending_0_4.md` lists each target source with the specific verification action a follow-up researcher (or this same researcher with live web access) should take.
+**Source-access note:** As described in the methodology note at the top of this document, the execution environment denied `WebFetch` and `WebSearch` permissions during the 2026-05-10 research session. The "sources" below therefore reflect the **target source set** the task brief specified, not actual retrieved citations. A separate file at `/Users/marksenerth/_src/eldridge_research/sources/sources_0_4.md` lists each target source with the specific verification action a follow-up researcher (or this same researcher with live web access) should take.
 
 Target source set (to be retrieved at Checkpoint A verification pass):
 

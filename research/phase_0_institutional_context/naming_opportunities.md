@@ -245,4 +245,4 @@ When these verifications complete, this document should be revised. Specifically
 
 ## Sources
 
-Per project requirements, see `sources/_pending_0_5.md` for the consolidated source list with retrieval dates and identifiers. The orchestrator will merge that file into `sources/source_index.md` after this batch completes.
+Per project requirements, see `sources/sources_0_5.md` for the consolidated source list with retrieval dates and identifiers. The orchestrator will merge that file into `sources/source_index.md` after this batch completes.

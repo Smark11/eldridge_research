@@ -281,7 +281,7 @@ For each novel strategy in Playbook Section G, brief assessment of applicability
 
 ## 10. Sources
 
-All sources cited in this dossier, with URL or filing identifier, retrieval date, and brief description. All sources also to be added to `sources/source_index.md` via the addendum `sources/_pending_3_05.md`.
+All sources cited in this dossier, with URL or filing identifier, retrieval date, and brief description. All sources also to be added to `sources/source_index.md` via the addendum `sources/sources_3_05.md`.
 
 1. [Blue Owl Capital — Michael Rees bio](https://www.blueowl.com/our-team/michael-rees) — retrieved 2026-05-11 — Primary source on career, board memberships, philanthropy
 2. [Wikipedia — Michael Rees (businessman)](https://en.wikipedia.org/wiki/Michael_Rees_(businessman)) — retrieved 2026-05-11 — Biographical summary, birth year, education, family, net worth
