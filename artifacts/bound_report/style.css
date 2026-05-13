@@ -947,79 +947,93 @@ body {
   color: var(--ink-mute);
 }
 
-/* ╔════════════════════════════════════════════ Image system — plates & frontispiece ════════════════════════════════════════════╗ */
+/* ╔════════════════════════════════════════════ Decorative plates — typographic ornament moments ════════════════════════════════════════════╗ */
 
-/* Tipped-in plate image at section openers and cover frontispiece.
-   Treated like a hand-mounted photographic plate in a fine-press monograph. */
+/* Replaces photographic plates with elegant typographic ornament compositions.
+   Authentic to the fine-press monograph genre, fully controllable, no external
+   imagery dependency. */
+
 .section-plate {
-  width: 70%;
-  margin: 1.5rem auto 2rem;
+  width: 62%;
+  margin: 2rem auto 2.5rem;
   position: relative;
+  padding: 2rem 0;
+  border-top: 0.5px solid var(--rule-deep, #b8af9b);
+  border-bottom: 0.5px solid var(--rule-deep, #b8af9b);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
 }
 
-.section-plate .plate-image {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  background-size: cover;
-  background-position: center;
-  filter: sepia(0.4) saturate(0.55) contrast(1.06) brightness(0.88);
-  border: 8px solid var(--cream, #faf6ee);
-  outline: 1px solid var(--rule-deep, #b8af9b);
-  box-shadow: 0 10px 28px rgba(26,31,46,0.16), 0 3px 8px rgba(26,31,46,0.1);
-  position: relative;
-}
-
-.section-plate .plate-image::after {
-  content: "";
+.section-plate::before,
+.section-plate::after {
+  content: "·";
   position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at center, transparent 55%, rgba(26,31,46,0.16) 100%);
-  pointer-events: none;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Fraunces", serif;
+  font-size: 1.4rem;
+  color: var(--clay, #a8553a);
+  background: var(--paper, #f5efe2);
+  padding: 0 0.6rem;
+  line-height: 0.4;
 }
 
-.section-plate .plate-caption {
+.section-plate::before { top: 0; }
+.section-plate::after { bottom: 0; }
+
+.plate-ornament {
+  font-family: "Fraunces", serif;
+  font-size: 2.8rem;
+  letter-spacing: 0.8em;
+  color: var(--clay, #a8553a);
+  font-variation-settings: "wght" 250;
+  line-height: 1;
+  text-indent: 0.8em;
+  user-select: none;
+}
+
+.plate-kicker {
   font-family: "Newsreader", serif;
   font-style: italic;
   font-size: 0.78rem;
-  letter-spacing: 0.02em;
-  text-align: center;
+  letter-spacing: 0.16em;
+  text-transform: lowercase;
   color: var(--ink-mute, #5a5246);
-  margin-top: 0.7rem;
-  line-height: 1.45;
-  font-variation-settings: "wght" 350;
+  font-variation-settings: "wght" 380;
 }
 
-.section-plate .plate-caption em {
-  font-style: normal;
-  color: var(--clay, #a8553a);
-  margin: 0 0.4rem;
-}
-
-/* Cover frontispiece — slightly smaller, more centered */
+/* Cover decorative band */
 .cover-frontispiece {
-  width: 58%;
-  margin: 1rem auto 1.5rem;
-  position: relative;
+  width: 70%;
+  margin: 1.5rem auto 1.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.4rem 0;
+  border-top: 0.5px solid var(--rule-deep, #b8af9b);
+  border-bottom: 0.5px solid var(--rule-deep, #b8af9b);
 }
 
-.cover-frontispiece .plate-image {
-  width: 100%;
-  aspect-ratio: 3 / 2;
-  background-size: cover;
-  background-position: center;
-  filter: sepia(0.45) saturate(0.5) contrast(1.04) brightness(0.82);
-  border: 10px solid var(--cream, #faf6ee);
-  outline: 1px solid var(--rule-deep, #b8af9b);
-  box-shadow: 0 14px 36px rgba(26,31,46,0.2), 0 4px 12px rgba(26,31,46,0.12);
-  position: relative;
+.cover-frontispiece-orn {
+  font-family: "Fraunces", serif;
+  font-size: 2.2rem;
+  letter-spacing: 0.5em;
+  color: var(--clay, #a8553a);
+  font-variation-settings: "wght" 250;
+  line-height: 1;
+  text-indent: 0.5em;
 }
 
-.cover-frontispiece .plate-image::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at center, transparent 50%, rgba(26,31,46,0.22) 100%);
-  pointer-events: none;
+.cover-frontispiece-kicker {
+  font-family: "Newsreader", serif;
+  font-style: italic;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: lowercase;
+  color: var(--ink-mute, #5a5246);
 }
 
 /* ╔════════════════════════════════════════════ Print ════════════════════════════════════════════╗ */
