@@ -947,6 +947,81 @@ body {
   color: var(--ink-mute);
 }
 
+/* ╔════════════════════════════════════════════ Image system — plates & frontispiece ════════════════════════════════════════════╗ */
+
+/* Tipped-in plate image at section openers and cover frontispiece.
+   Treated like a hand-mounted photographic plate in a fine-press monograph. */
+.section-plate {
+  width: 70%;
+  margin: 1.5rem auto 2rem;
+  position: relative;
+}
+
+.section-plate .plate-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-size: cover;
+  background-position: center;
+  filter: sepia(0.4) saturate(0.55) contrast(1.06) brightness(0.88);
+  border: 8px solid var(--cream, #faf6ee);
+  outline: 1px solid var(--rule-deep, #b8af9b);
+  box-shadow: 0 10px 28px rgba(26,31,46,0.16), 0 3px 8px rgba(26,31,46,0.1);
+  position: relative;
+}
+
+.section-plate .plate-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(26,31,46,0.16) 100%);
+  pointer-events: none;
+}
+
+.section-plate .plate-caption {
+  font-family: "Newsreader", serif;
+  font-style: italic;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: var(--ink-mute, #5a5246);
+  margin-top: 0.7rem;
+  line-height: 1.45;
+  font-variation-settings: "wght" 350;
+}
+
+.section-plate .plate-caption em {
+  font-style: normal;
+  color: var(--clay, #a8553a);
+  margin: 0 0.4rem;
+}
+
+/* Cover frontispiece — slightly smaller, more centered */
+.cover-frontispiece {
+  width: 58%;
+  margin: 1rem auto 1.5rem;
+  position: relative;
+}
+
+.cover-frontispiece .plate-image {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  background-size: cover;
+  background-position: center;
+  filter: sepia(0.45) saturate(0.5) contrast(1.04) brightness(0.82);
+  border: 10px solid var(--cream, #faf6ee);
+  outline: 1px solid var(--rule-deep, #b8af9b);
+  box-shadow: 0 14px 36px rgba(26,31,46,0.2), 0 4px 12px rgba(26,31,46,0.12);
+  position: relative;
+}
+
+.cover-frontispiece .plate-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 50%, rgba(26,31,46,0.22) 100%);
+  pointer-events: none;
+}
+
 /* ╔════════════════════════════════════════════ Print ════════════════════════════════════════════╗ */
 
 @media print {

@@ -761,6 +761,31 @@ html, body {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* ╔════════════════════════════════════════════ Image system ════════════════════════════════════════════╗ */
+
+.slide-bg-image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-size: cover;
+  background-position: center;
+  filter: sepia(0.34) saturate(0.55) contrast(1.05) brightness(0.78);
+  opacity: 0.38;
+  mix-blend-mode: multiply;
+}
+
+.slide-bg-veil {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(135deg, rgba(245,239,226,0.66) 0%, rgba(245,239,226,0.82) 60%, rgba(245,239,226,0.94) 100%);
+  pointer-events: none;
+}
+
+.slide-quote .slide-bg-image { opacity: 0.16; }
+.slide-closing .slide-bg-image { opacity: 0.5; }
+.slide-divider .slide-bg-image { opacity: 0.32; }
+
 /* ╔════════════════════════════════════════════ Print ════════════════════════════════════════════╗ */
 
 @media print {

@@ -1,6 +1,11 @@
-(async function () {
-  const response = await fetch('network_data.json');
-  const data = await response.json();
+(function () {
+  // Read inline data (loaded via network_data.js) — works over file:// since
+  // browsers block fetch() of local JSON for security reasons.
+  const data = window.NETWORK_DATA;
+  if (!data) {
+    document.getElementById('network').innerHTML = '<div style="padding:2rem;font-family:Georgia,serif;color:#5a5468;"><strong>Network data not loaded.</strong> Ensure <code>network_data.js</code> is present alongside <code>index.html</code> and reloaded.</div>';
+    return;
+  }
 
   const COLORS = {
     candidate: '#1a4d7a',
