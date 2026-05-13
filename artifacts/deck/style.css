@@ -933,6 +933,30 @@ html, body {
   cursor: not-allowed;
 }
 
+/* Ornament-rule layout (used on impact, model, next slides) */
+.ornament-rule {
+  width: 12rem;
+  align-self: flex-start;
+}
+
+.slide-impact .ornament-rule,
+.slide-model .ornament-rule,
+.slide-next .ornament-rule {
+  margin-bottom: 1.25rem;
+}
+
+/* Responsive — collapse photo columns on smaller viewports so layout doesn't crowd */
+@media (max-width: 1100px) {
+  .opportunity-frame { grid-template-columns: 1fr 1fr; }
+  .opportunity-frame .opp-photo-stack { display: none; }
+  .story-frame { grid-template-columns: 1fr 1fr; }
+  .story-photo-col { display: none; }
+  .story-text-col { grid-column: 1 / -1; }
+  .slide-narrative .narrative-photo-frame { display: none; }
+  .slide-narrative { grid-template-columns: 1fr; }
+  .slide-narrative .narrative-body { grid-column: 1 / -1; max-width: 60ch; }
+}
+
 /* ╔════════════════════════════════════════════ Reveal animation on active ════════════════════════════════════════════╗ */
 
 .slide.active > * {
