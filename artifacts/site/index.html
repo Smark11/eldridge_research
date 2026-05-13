@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Nuvance Portfolio — Catalog</title>
+<meta name="description" content="An independent research package on transformational philanthropy for Nuvance Health Foundation. Edition of one. May 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,200..900,0..100;1,9..144,200..900,0..100&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ─────────────────────────────────────  Paper-grain background  ───────────────────────────────────── -->
+<svg class="grain" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <filter id="noiseFilter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch" />
+    <feColorMatrix type="matrix" values="0 0 0 0 0.10  0 0 0 0 0.10  0 0 0 0 0.18  0 0 0 0.08 0" />
+  </filter>
+  <rect width="100%" height="100%" filter="url(#noiseFilter)" />
+</svg>
+
+<!-- ─────────────────────────────────────  Fixed shelf register (right edge)  ───────────────────────────────────── -->
+<aside class="shelf-register" aria-hidden="true">
+  <span class="shelf-tag">N · CAT.</span>
+  <span class="shelf-num" id="shelfNum">i</span>
+  <span class="shelf-rule"></span>
+  <span class="shelf-section" id="shelfSection">masthead</span>
+</aside>
+
+<!-- ─────────────────────────────────────  MASTHEAD  ───────────────────────────────────── -->
+<header class="masthead">
+
+  <div class="topbar">
+    <span class="topbar-left">N · catalog</span>
+    <span class="topbar-center">an independent research package · edition of one</span>
+    <span class="topbar-right">mmxxvi · 13.v.26</span>
+  </div>
+
+  <div class="masthead-grid">
+
+    <div class="masthead-title">
+      <div class="masthead-orn">⁂ ⁂ ⁂</div>
+      <p class="masthead-eyebrow">A research package on transformational philanthropy</p>
+      <h1 class="masthead-h">
+        The Nuvance<br><span class="h-italic">Portfolio<em>.</em></span>
+      </h1>
+      <p class="masthead-sub">Seven candidates, three findings of consequence, and a particular way of looking at major-gift cultivation in the post-merger era — assembled into a single catalog of forty-odd artifacts.</p>
+    </div>
+
+    <div class="masthead-seal-wrap">
+      <svg class="seal" viewBox="0 0 200 200" aria-label="Edition seal">
+        <defs>
+          <path id="seal-circle-outer" d="M 100, 100 m -82, 0 a 82,82 0 1,1 164,0 a 82,82 0 1,1 -164,0" />
+          <path id="seal-circle-inner" d="M 100, 100 m 70, 0 a 70,70 0 1,0 -140,0 a 70,70 0 1,0 140,0" />
+        </defs>
+        <circle cx="100" cy="100" r="92" class="seal-outer-ring" />
+        <circle cx="100" cy="100" r="88" class="seal-mid-ring" />
+        <circle cx="100" cy="100" r="64" class="seal-inner-ring" />
+        <text class="seal-text">
+          <textPath href="#seal-circle-outer" startOffset="0%">EDITION OF ONE  ·  NUVANCE PORTFOLIO  ·  MMXXVI  ·  </textPath>
+        </text>
+        <text class="seal-text-inner">
+          <textPath href="#seal-circle-inner" startOffset="25%">forty&#8209;odd artifacts &#8209; three days &#8209; one reader</textPath>
+        </text>
+        <text class="seal-monogram" x="100" y="116" text-anchor="middle">N</text>
+        <text class="seal-rule" x="100" y="138" text-anchor="middle">— i —</text>
+      </svg>
+    </div>
+
+  </div>
+
+  <div class="masthead-meta">
+    <div class="meta-col">
+      <p class="meta-l">Compiled for</p>
+      <p class="meta-v">Laura Eldridge, CFRE</p>
+      <p class="meta-s">AVP, Development — Nuvance Health Foundation</p>
+    </div>
+    <div class="meta-col">
+      <p class="meta-l">Compiled by</p>
+      <p class="meta-v">Mark Senerth</p>
+      <p class="meta-s">with Claude Opus 4.7</p>
+    </div>
+    <div class="meta-col">
+      <p class="meta-l">Volume</p>
+      <p class="meta-v">i · May MMXXVI</p>
+      <p class="meta-s">v.1 — research package</p>
+    </div>
+    <div class="meta-col">
+      <p class="meta-l">Edition</p>
+      <p class="meta-v">One of one</p>
+      <p class="meta-s">An independent artifact</p>
+    </div>
+  </div>
+
+</header>
+
+<!-- ─────────────────────────────────────  A NOTE TO THE READER  ───────────────────────────────────── -->
+<section class="opening" id="opening">
+
+  <div class="section-header">
+    <span class="section-ghost-num">·</span>
+    <div class="section-title-block">
+      <p class="section-roman">A note before</p>
+      <h2 class="section-h">To the reader<em>.</em></h2>
+    </div>
+  </div>
+
+  <div class="opening-body">
+    <p class="opening-lede"><span class="dropcap">T</span>his catalog assembles every artifact produced for the Nuvance Portfolio research package — forty&#8209;some files across eight phases of work, indexed and described, with the most consequential moments surfaced at the top. It is the door to everything else. The catalog itself is brief; the underlying work is dense. Read this page first; drill into whatever interests you.</p>
+
+    <p class="opening-p">The package was built over three days in early May 2026 as an independent research curiosity that turned into something worth handing to a particular person — a CFRE working a particular institution in a particular operating context. It is a gift, in the most literal sense. Nothing is asked of you in return. Use as much or as little of it as is useful. Forward it. Set it aside. The momentum was the research's, not the recipient's.</p>
+
+    <p class="opening-p">Three movements organize the work. <em>The first</em> establishes the strategic frame — where Nuvance sits in May 2026, what the merger with Northwell has and has not changed about the case for support, and what realistically can be raised from the candidate cohort over the next three to five years. <em>The second</em> introduces the seven candidates: who they are, why they were selected, what the research surfaced about each. <em>The third</em> distills the three findings of consequence — the moves that, if executed, would materially alter outcomes.</p>
+
+    <p class="opening-p">Every factual claim in this package is sourced — to live web research, to public filings, to retrieved articles. Where inferring rather than reporting, it says so. Where uncertain, it labels it. Where a strong recommendation diverges from what the conventional read would be, the divergence is visible and the reasoning is traced.</p>
+  </div>
+
+</section>
+
+<!-- ─────────────────────────────────────  THE THREE FINDINGS OF CONSEQUENCE  ───────────────────────────────────── -->
+<section class="findings" id="findings">
+
+  <div class="section-header">
+    <span class="section-ghost-num">i</span>
+    <div class="section-title-block">
+      <p class="section-roman">Part one</p>
+      <h2 class="section-h">Three findings of <em>consequence.</em></h2>
+      <p class="section-sub">The moves that, if executed within twelve to twenty&#8209;four months, would materially alter the cohort's transformational&#8209;gift outcomes.</p>
+    </div>
+  </div>
+
+  <div class="findings-stack">
+
+    <article class="finding">
+      <div class="finding-num">
+        <span class="finding-roman">I</span>
+        <span class="finding-tag">the recalibration</span>
+      </div>
+      <div class="finding-body">
+        <h3 class="finding-h">The Bauer ask is materially larger than initial scoping <em>suggested</em>.</h3>
+        <p class="finding-p">Phase 3 originally scoped the Bauer ask at $5–15M as an escalation gift. The Phase 4 Greenwich Hospital case study surfaced evidence — $25M+ to Yale Divinity, Olin School ethics professorship, named medical&#8209;school deanship at WashU — that revises the recommended ask upward to <strong>$50–75M+</strong>, structured as a perpetuity&#8209;endowment legacy mirroring the Yale Divinity Living Village.</p>
+        <p class="finding-amt">$50<em>–</em>75M+</p>
+      </div>
+    </article>
+
+    <article class="finding">
+      <div class="finding-num">
+        <span class="finding-roman">II</span>
+        <span class="finding-tag">the structural question</span>
+      </div>
+      <div class="finding-body">
+        <h3 class="finding-h">The Vassar Brothers Patient Pavilion appears <em>unnamed</em>.</h3>
+        <p class="finding-p">Nuvance's $550M, 752,000 sq ft Patient Pavilion — the largest hospital construction project in Hudson Valley history at the time of its 2021 opening — appears in the research to have no lead&#8209;donor naming attached after five years. If pavilion&#8209;level naming is institutionally available post&#8209;merger, this is the single structural anchor for a $100M+ ask. Resolving the question is a 60&#8209;day internal conversation that gates substantial downstream major&#8209;gift value.</p>
+        <p class="finding-amt">$550M</p>
+      </div>
+    </article>
+
+    <article class="finding">
+      <div class="finding-num">
+        <span class="finding-roman">III</span>
+        <span class="finding-tag">the channel integration</span>
+      </div>
+      <div class="finding-body">
+        <h3 class="finding-h">The Dalio relationship currently runs outside the Foundation's <em>institutional ownership</em>.</h3>
+        <p class="finding-p">Ray Dalio's June 2025 $5.1M gift to the Nuvance Career Academy was routed through CHRO Katie Cullinan as a workforce / HR initiative; Laura Eldridge and the Foundation are not named in the press release. Before the June 2026 12&#8209;month and December 2026 18&#8209;month stewardship milestones, the Foundation needs to integrate into the active stewardship channel. The escalation pathway — a Dalio Health Equity Institute at Nuvance, geographically differentiated from the existing NYP Dalio Center for Health Justice — opens from that integration.</p>
+        <p class="finding-amt">June 2026</p>
+      </div>
+    </article>
+
+  </div>
+
+</section>
+
+<!-- ─────────────────────────────────────  THE COHORT  ───────────────────────────────────── -->
+<section class="cohort" id="cohort">
+
+  <div class="section-header">
+    <span class="section-ghost-num">ii</span>
+    <div class="section-title-block">
+      <p class="section-roman">Part two</p>
+      <h2 class="section-h">The <em>seven.</em></h2>
+      <p class="section-sub">Carried forward from a long list of fifty through affinity&#8209;first selection into deep&#8209;dossier research. Each candidate has a full dossier, a printable cheat sheet, and a position in the warm&#8209;intro network map.</p>
+    </div>
+  </div>
+
+  <div class="cohort-grid">
+
+    <a class="cohort-card" href="../../dossiers/01_bauer.md">
+      <span class="cohort-rank">01</span>
+      <p class="cohort-name">George <em>&amp;</em> Carol Bauer</p>
+      <p class="cohort-meta">Wilton CT · Norwalk Hospital</p>
+      <p class="cohort-mot">Repayer <em>+</em> Devout</p>
+      <p class="cohort-amt">$50–75M+</p>
+      <p class="cohort-tier"><span>centi&#8209;millionaire</span></p>
+    </a>
+
+    <a class="cohort-card" href="../../dossiers/02_dyson.md">
+      <span class="cohort-rank">02</span>
+      <p class="cohort-name">Robert R. Dyson <em>+</em> family</p>
+      <p class="cohort-meta">Millbrook NY · Vassar Brothers</p>
+      <p class="cohort-mot">Dynast <em>+</em> Communitarian</p>
+      <p class="cohort-amt">$10–25M</p>
+      <p class="cohort-tier"><span>centi&#8209;millionaire</span></p>
+    </a>
+
+    <a class="cohort-card" href="../../dossiers/03_dalio.md">
+      <span class="cohort-rank">03</span>
+      <p class="cohort-name">Ray <em>&amp;</em> Barbara Dalio</p>
+      <p class="cohort-meta">Greenwich CT · system&#8209;level</p>
+      <p class="cohort-mot">Investor <em>+</em> Communitarian</p>
+      <p class="cohort-amt">$25–50M+</p>
+      <p class="cohort-tier"><span>billionaire</span></p>
+    </a>
+
+    <a class="cohort-card" href="../../dossiers/04_whittingham.md">
+      <span class="cohort-rank">04</span>
+      <p class="cohort-name">Adam <em>&amp;</em> Robyn Whittingham</p>
+      <p class="cohort-meta">Stamford CT · Norwalk Hospital</p>
+      <p class="cohort-mot">Dynast <em>+</em> Repayer</p>
+      <p class="cohort-amt">$3–7M</p>
+      <p class="cohort-tier"><span>centi&#8209;mill. (modest)</span></p>
+    </a>
+
+    <a class="cohort-card" href="../../dossiers/05_rees.md">
+      <span class="cohort-rank">05</span>
+      <p class="cohort-name">Michael <em>&amp;</em> Allison Rees</p>
+      <p class="cohort-meta">New Canaan CT · Feinstein&#8209;linked</p>
+      <p class="cohort-mot">Investor</p>
+      <p class="cohort-amt">$10–25M</p>
+      <p class="cohort-tier"><span>billionaire</span></p>
+    </a>
+
+    <a class="cohort-card" href="../../dossiers/06_goldman_fowler.md">
+      <span class="cohort-rank">06</span>
+      <p class="cohort-name">Amy Goldman Fowler</p>
+      <p class="cohort-meta">Rhinebeck NY · Vassar Brothers</p>
+      <p class="cohort-mot">Altruist <em>+</em> Dynast</p>
+      <p class="cohort-amt">$5–25M</p>
+      <p class="cohort-tier"><span>billionaire</span></p>
+    </a>
+
+    <a class="cohort-card" href="../../dossiers/07_jasper_johns.md">
+      <span class="cohort-rank">07</span>
+      <p class="cohort-name">Jasper Johns</p>
+      <p class="cohort-meta">Sharon CT · Sharon Hospital</p>
+      <p class="cohort-mot">Altruist</p>
+      <p class="cohort-amt">$1–5M</p>
+      <p class="cohort-tier"><span>centi&#8209;millionaire</span></p>
+    </a>
+
+  </div>
+
+</section>
+
+<!-- ─────────────────────────────────────  THE ARCHIVE  ───────────────────────────────────── -->
+<section class="archive" id="archive">
+
+  <div class="section-header">
+    <span class="section-ghost-num">iii</span>
+    <div class="section-title-block">
+      <p class="section-roman">Part three</p>
+      <h2 class="section-h">The <em>archive.</em></h2>
+      <p class="section-sub">Forty&#8209;some artifacts, organized into seven sub&#8209;sections. Catalog numbers are the canonical reference. Click any title to open the file or page.</p>
+    </div>
+  </div>
+
+  <!-- ───── i. The headlines ───── -->
+  <div class="archive-sub" id="archive-headlines">
+    <p class="sub-roman">i.</p>
+    <h3 class="sub-h">The headlines<em>.</em></h3>
+    <p class="sub-desc">The artifacts you open first — the front of the package.</p>
+
+    <ul class="catalog">
+      <li class="entry">
+        <span class="entry-num">N.001</span>
+        <a class="entry-link" href="../executive_summary.md">
+          <span class="entry-title">Executive Summary</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">artifacts/executive_summary.md</span>
+        </a>
+        <p class="entry-desc">Two pages, shareable up the chain. Frames the strategy, names the seven, surfaces the four most consequential findings, lists the thirty&#8209;day next&#8209;steps.</p>
+        <span class="entry-tag">markdown · 2 pp.</span>
+      </li>
+
+      <li class="entry">
+        <span class="entry-num">N.002</span>
+        <a class="entry-link" href="../bound_report/index.html">
+          <span class="entry-title">The Bound Report</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">artifacts/bound_report/index.html</span>
+        </a>
+        <p class="entry-desc">A 31&#8209;page paginated research monograph. Cover, foreword, contents, six numbered parts. Print&#8209;to&#8209;PDF for the bound&#8209;volume edition.</p>
+        <span class="entry-tag">html · 31 pp.</span>
+      </li>
+
+      <li class="entry">
+        <span class="entry-num">N.003</span>
+        <a class="entry-link" href="../executive_presentation/index.html">
+          <span class="entry-title">Executive Presentation</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">artifacts/executive_presentation/index.html</span>
+        </a>
+        <p class="entry-desc">A 19&#8209;slide walkthrough deck. Click&#8209;through navigation with keyboard arrows. Designed for executive consumption at reading distance.</p>
+        <span class="entry-tag">html · 19 slides</span>
+      </li>
+
+      <li class="entry">
+        <span class="entry-num">N.004</span>
+        <a class="entry-link" href="../deck/index.html">
+          <span class="entry-title">The Donor Pitch Deck</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">artifacts/deck/index.html</span>
+        </a>
+        <p class="entry-desc">A 12&#8209;slide solicitation deck, pre&#8209;populated with the Bauer pitch as the worked example. Per&#8209;donor customization slots throughout.</p>
+        <span class="entry-tag">html · 12 slides</span>
+      </li>
+
+      <li class="entry">
+        <span class="entry-num">N.005</span>
+        <a class="entry-link" href="../intro_network_map/index.html">
+          <span class="entry-title">Warm&#8209;Intro Network Map</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">artifacts/intro_network_map/index.html</span>
+        </a>
+        <p class="entry-desc">Interactive HTML visualization. Candidate&#8209;connector&#8209;institution relationships with strength indicators and avoid&#8209;edges flagged. Click any node for details.</p>
+        <span class="entry-tag">html · interactive</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ───── ii. The synthesis ───── -->
+  <div class="archive-sub" id="archive-synthesis">
+    <p class="sub-roman">ii.</p>
+    <h3 class="sub-h">The synthesis<em>.</em></h3>
+    <p class="sub-desc">Tailored cross&#8209;candidate strategy and the institutional&#8209;level findings.</p>
+
+    <ul class="catalog">
+      <li class="entry">
+        <span class="entry-num">N.006</span>
+        <a class="entry-link" href="../playbook.md">
+          <span class="entry-title">Strategy Playbook</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">artifacts/playbook.md</span>
+        </a>
+        <p class="entry-desc">Sections A–G per spec. Donor psychology applied to the cohort; cultivation cadence; appointment&#8209;getting tactics; pitch architecture; gift table; risk register; novel strategies.</p>
+        <span class="entry-tag">markdown · 25 pp.</span>
+      </li>
+
+      <li class="entry">
+        <span class="entry-num">N.007</span>
+        <a class="entry-link" href="../ranked_short_list.md">
+          <span class="entry-title">Ranked Short List</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">artifacts/ranked_short_list.md</span>
+        </a>
+        <p class="entry-desc">The seven in priority order. Designed to lay against Laura's existing portfolio for validation, net&#8209;new identification, and ranking&#8209;divergence discussion.</p>
+        <span class="entry-tag">markdown · 4 pp.</span>
+      </li>
+
+      <li class="entry">
+        <span class="entry-num">N.008</span>
+        <a class="entry-link" href="../cross_reference_matrix.md">
+          <span class="entry-title">Cross&#8209;Reference Matrix</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">artifacts/cross_reference_matrix.md</span>
+        </a>
+        <p class="entry-desc">Side&#8209;by&#8209;side comparison on affinity signals, gift positioning, cultivation timing, case&#8209;study analogs.</p>
+        <span class="entry-tag">markdown · 3 pp.</span>
+      </li>
+
+      <li class="entry">
+        <span class="entry-num">N.009</span>
+        <a class="entry-link" href="../../research/phase_4_benchmarking/benchmarking_memo.md">
+          <span class="entry-title">Benchmarking Memo</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">research/phase_4_benchmarking/benchmarking_memo.md</span>
+        </a>
+        <p class="entry-desc">Synthesis of eight regional&#8209;health&#8209;system mega&#8209;gifts. Seven patterns extracted, per&#8209;candidate analog mapping, five institutional recommendations.</p>
+        <span class="entry-tag">markdown · 15 pp.</span>
+      </li>
+
+      <li class="entry">
+        <span class="entry-num">N.010</span>
+        <a class="entry-link" href="../../research/phase_0_institutional_context/case_for_support_audit.md">
+          <span class="entry-title">Case&#8209;for&#8209;Support Audit</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">research/phase_0_institutional_context/case_for_support_audit.md</span>
+        </a>
+        <p class="entry-desc">Honest institutional assessment finding Nuvance does not currently sustain a $500M case. Recommends three institutional moves as preconditions for a credible campaign.</p>
+        <span class="entry-tag">markdown · 12 pp.</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ───── iii. The seven dossiers ───── -->
+  <div class="archive-sub" id="archive-dossiers">
+    <p class="sub-roman">iii.</p>
+    <h3 class="sub-h">The seven dossiers<em>.</em></h3>
+    <p class="sub-desc">Per&#8209;candidate research files. Each ~7 pages: wealth, giving history, motivation hypothesis, warm&#8209;intro paths, cultivation plan, risk flags, novel&#8209;strategy applicability, full sources.</p>
+
+    <ul class="catalog">
+      <li class="entry">
+        <span class="entry-num">N.011</span>
+        <a class="entry-link" href="../../dossiers/01_bauer.md">
+          <span class="entry-title">George <em>&amp;</em> Carol Bauer</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">dossiers/01_bauer.md</span>
+        </a>
+        <p class="entry-desc">Rank #1. Wilton CT, age 95. $35M+ Norwalk Hospital donor; Yale&#8209;Divinity&#8209;precedent legacy escalation pathway.</p>
+        <span class="entry-tag">dossier · 8 pp.</span>
+      </li>
+
+      <li class="entry">
+        <span class="entry-num">N.012</span>
+        <a class="entry-link" href="../../dossiers/02_dyson.md">
+          <span class="entry-title">Robert R. Dyson <em>+</em> family</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">dossiers/02_dyson.md</span>
+        </a>
+        <p class="entry-desc">Rank #2. Millbrook NY. Multi&#8209;decade Vassar Brothers benefactor; Phase II expansion + Anne E. Dyson Chair anchor.</p>
+        <span class="entry-tag">dossier · 7 pp.</span>
+      </li>
+
+      <li class="entry">
+        <span class="entry-num">N.013</span>
+        <a class="entry-link" href="../../dossiers/03_dalio.md">
+          <span class="entry-title">Ray <em>&amp;</em> Barbara Dalio</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">dossiers/03_dalio.md</span>
+        </a>
+        <p class="entry-desc">Rank #3. Greenwich CT. Active Nuvance donor; CHRO&#8209;channel structural issue; institute&#8209;naming escalation pathway.</p>
+        <span class="entry-tag">dossier · 7 pp.</span>
+      </li>
+
+      <li class="entry">
+        <span class="entry-num">N.014</span>
+        <a class="entry-link" href="../../dossiers/04_whittingham.md">
+          <span class="entry-title">Adam <em>&amp;</em> Robyn Whittingham</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">dossiers/04_whittingham.md</span>
+        </a>
+        <p class="entry-desc">Rank #4. Stamford CT. Third&#8209;generation Norwalk cancer&#8209;care donors; 30th&#8209;anniversary 2027 anchor.</p>
+        <span class="entry-tag">dossier · 6 pp.</span>
+      </li>
+
+      <li class="entry">
+        <span class="entry-num">N.015</span>
+        <a class="entry-link" href="../../dossiers/05_rees.md">
+          <span class="entry-title">Michael <em>&amp;</em> Allison Rees</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">dossiers/05_rees.md</span>
+        </a>
+        <p class="entry-desc">Rank #5. New Canaan CT. Feinstein Institutes board insider; mid&#8209;career estate&#8209;planning window opening.</p>
+        <span class="entry-tag">dossier · 7 pp.</span>
+      </li>
+
+      <li class="entry">
+        <span class="entry-num">N.016</span>
+        <a class="entry-link" href="../../dossiers/06_goldman_fowler.md">
+          <span class="entry-title">Amy Goldman Fowler</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">dossiers/06_goldman_fowler.md</span>
+        </a>
+        <p class="entry-desc">Rank #6. Rhinebeck NY. Dutchess&#8209;County primary residence; first cousin Lloyd Goldman is the largest Northwell donor in history.</p>
+        <span class="entry-tag">dossier · 7 pp.</span>
+      </li>
+
+      <li class="entry">
+        <span class="entry-num">N.017</span>
+        <a class="entry-link" href="../../dossiers/07_jasper_johns.md">
+          <span class="entry-title">Jasper Johns</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">dossiers/07_jasper_johns.md</span>
+        </a>
+        <p class="entry-desc">Rank #7. Sharon CT. Low Road Foundation $217M; estate&#8209;plan locked&#8209;in; conditional hold with 4&#8209;month decision gate.</p>
+        <span class="entry-tag">dossier · 6 pp.</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ───── iv. The seven cheat sheets ───── -->
+  <div class="archive-sub" id="archive-cheats">
+    <p class="sub-roman">iv.</p>
+    <h3 class="sub-h">The seven cheat sheets<em>.</em></h3>
+    <p class="sub-desc">One&#8209;page printable meeting&#8209;prep cards. 60&#8209;second briefing, three tailored opening questions, two reference points, motivation hypothesis to test, gentle next&#8209;step framing.</p>
+
+    <ul class="catalog catalog--dense">
+      <li class="entry entry--compact">
+        <span class="entry-num">N.018</span>
+        <a class="entry-link" href="../cheat_sheets/01_bauer.md">
+          <span class="entry-title">Cheat sheet · Bauer</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">artifacts/cheat_sheets/01_bauer.md</span>
+        </a>
+      </li>
+      <li class="entry entry--compact">
+        <span class="entry-num">N.019</span>
+        <a class="entry-link" href="../cheat_sheets/02_dyson.md">
+          <span class="entry-title">Cheat sheet · Dyson</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">artifacts/cheat_sheets/02_dyson.md</span>
+        </a>
+      </li>
+      <li class="entry entry--compact">
+        <span class="entry-num">N.020</span>
+        <a class="entry-link" href="../cheat_sheets/03_dalio.md">
+          <span class="entry-title">Cheat sheet · Dalio</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">artifacts/cheat_sheets/03_dalio.md</span>
+        </a>
+      </li>
+      <li class="entry entry--compact">
+        <span class="entry-num">N.021</span>
+        <a class="entry-link" href="../cheat_sheets/04_whittingham.md">
+          <span class="entry-title">Cheat sheet · Whittingham</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">artifacts/cheat_sheets/04_whittingham.md</span>
+        </a>
+      </li>
+      <li class="entry entry--compact">
+        <span class="entry-num">N.022</span>
+        <a class="entry-link" href="../cheat_sheets/05_rees.md">
+          <span class="entry-title">Cheat sheet · Rees</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">artifacts/cheat_sheets/05_rees.md</span>
+        </a>
+      </li>
+      <li class="entry entry--compact">
+        <span class="entry-num">N.023</span>
+        <a class="entry-link" href="../cheat_sheets/06_goldman_fowler.md">
+          <span class="entry-title">Cheat sheet · Goldman Fowler</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">artifacts/cheat_sheets/06_goldman_fowler.md</span>
+        </a>
+      </li>
+      <li class="entry entry--compact">
+        <span class="entry-num">N.024</span>
+        <a class="entry-link" href="../cheat_sheets/07_jasper_johns.md">
+          <span class="entry-title">Cheat sheet · Jasper Johns</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">artifacts/cheat_sheets/07_jasper_johns.md</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ───── v. The case studies ───── -->
+  <div class="archive-sub" id="archive-cases">
+    <p class="sub-roman">v.</p>
+    <h3 class="sub-h">The case studies<em>.</em></h3>
+    <p class="sub-desc">Eight comparable regional&#8209;health&#8209;system mega&#8209;gifts of the past fifteen years. Pattern extraction at the end; per&#8209;candidate analog mapping in the synthesis memo.</p>
+
+    <ul class="catalog catalog--dense">
+      <li class="entry entry--compact">
+        <span class="entry-num">N.025</span>
+        <a class="entry-link" href="../../research/phase_4_benchmarking/case_studies/01_cohen_childrens_northwell.md">
+          <span class="entry-title">Cohen Children's at Northwell</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">case_studies/01</span>
+        </a>
+      </li>
+      <li class="entry entry--compact">
+        <span class="entry-num">N.026</span>
+        <a class="entry-link" href="../../research/phase_4_benchmarking/case_studies/02_icahn_mt_sinai.md">
+          <span class="entry-title">Icahn at Mount Sinai · $150M</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">case_studies/02</span>
+        </a>
+      </li>
+      <li class="entry entry--compact">
+        <span class="entry-num">N.027</span>
+        <a class="entry-link" href="../../research/phase_4_benchmarking/case_studies/03_smilow_yale_nhh.md">
+          <span class="entry-title">Smilow Cancer Hospital at Yale&#8209;NHH</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">case_studies/03</span>
+        </a>
+      </li>
+      <li class="entry entry--compact">
+        <span class="entry-num">N.028</span>
+        <a class="entry-link" href="../../research/phase_4_benchmarking/case_studies/04_greenwich_hospital.md">
+          <span class="entry-title">Greenwich Hospital · Arc of Care</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">case_studies/04</span>
+        </a>
+      </li>
+      <li class="entry entry--compact">
+        <span class="entry-num">N.029</span>
+        <a class="entry-link" href="../../research/phase_4_benchmarking/case_studies/05_hartford_ayer_neuroscience.md">
+          <span class="entry-title">Hartford Ayer Neuroscience Institute</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">case_studies/05</span>
+        </a>
+      </li>
+      <li class="entry entry--compact">
+        <span class="entry-num">N.030</span>
+        <a class="entry-link" href="../../research/phase_4_benchmarking/case_studies/06_hss_specialty.md">
+          <span class="entry-title">Hospital for Special Surgery</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">case_studies/06</span>
+        </a>
+      </li>
+      <li class="entry entry--compact">
+        <span class="entry-num">N.031</span>
+        <a class="entry-link" href="../../research/phase_4_benchmarking/case_studies/07_nwh_schwartz.md">
+          <span class="entry-title">Northern Westchester · Schwartz $10M</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">case_studies/07</span>
+        </a>
+      </li>
+      <li class="entry entry--compact">
+        <span class="entry-num">N.032</span>
+        <a class="entry-link" href="../../research/phase_4_benchmarking/case_studies/08_lloyd_goldman_lenox_hill.md">
+          <span class="entry-title">Lloyd Goldman at Lenox Hill · $100M+</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">case_studies/08</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ───── vi. Research foundations ───── -->
+  <div class="archive-sub" id="archive-foundations">
+    <p class="sub-roman">vi.</p>
+    <h3 class="sub-h">Research foundations<em>.</em></h3>
+    <p class="sub-desc">The intermediate work that supports the headlines. Phase 0 institutional context, Phase 1 long list, Phase 2 short list, verification update, source index.</p>
+
+    <ul class="catalog">
+      <li class="entry">
+        <span class="entry-num">N.033</span>
+        <a class="entry-link" href="../../sources/phase_0_verification_update.md">
+          <span class="entry-title">Phase 0 Verification Update</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">sources/phase_0_verification_update.md</span>
+        </a>
+        <p class="entry-desc"><strong>Authoritative reference.</strong> Live&#8209;web&#8209;verified findings that supersede conflicting claims in the four Phase 0 training&#8209;data artifacts.</p>
+        <span class="entry-tag">authoritative</span>
+      </li>
+
+      <li class="entry">
+        <span class="entry-num">N.034</span>
+        <a class="entry-link" href="../../research/phase_0_institutional_context/nuvance_overview.md">
+          <span class="entry-title">Nuvance Health · Institutional Overview</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">research/phase_0_institutional_context/nuvance_overview.md</span>
+        </a>
+        <p class="entry-desc">Structure, facilities, clinical service profile, leadership, financials, strategic initiatives, recent news.</p>
+        <span class="entry-tag">research · 12 pp.</span>
+      </li>
+
+      <li class="entry">
+        <span class="entry-num">N.035</span>
+        <a class="entry-link" href="../../research/phase_0_institutional_context/nuvance_990_analysis.md">
+          <span class="entry-title">Foundation 990 Analysis</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">research/phase_0_institutional_context/nuvance_990_analysis.md</span>
+        </a>
+        <p class="entry-desc">Legal entities, contribution&#8209;revenue trends, largest disclosed gifts, donor&#8209;base composition.</p>
+        <span class="entry-tag">research · 10 pp.</span>
+      </li>
+
+      <li class="entry">
+        <span class="entry-num">N.036</span>
+        <a class="entry-link" href="../../research/phase_0_institutional_context/predecessor_institutions.md">
+          <span class="entry-title">Predecessor Institutions</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">research/phase_0_institutional_context/predecessor_institutions.md</span>
+        </a>
+        <p class="entry-desc">Legacy donor mapping across Vassar Brothers, Danbury, Norwalk, Sharon, Northern Dutchess, Putnam, New Milford.</p>
+        <span class="entry-tag">research · 11 pp.</span>
+      </li>
+
+      <li class="entry">
+        <span class="entry-num">N.037</span>
+        <a class="entry-link" href="../../research/phase_0_institutional_context/naming_opportunities.md">
+          <span class="entry-title">Naming Opportunities · by Tier</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">research/phase_0_institutional_context/naming_opportunities.md</span>
+        </a>
+        <p class="entry-desc">$10M / $25M / $50M / $100M / $250M+ tiers. Strategic gaps. Comparison to peer institutions.</p>
+        <span class="entry-tag">research · 7 pp.</span>
+      </li>
+
+      <li class="entry">
+        <span class="entry-num">N.038</span>
+        <a class="entry-link" href="../../research/phase_1_long_list/long_list.md">
+          <span class="entry-title">Phase 1 Long List</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">research/phase_1_long_list/long_list.md</span>
+        </a>
+        <p class="entry-desc">Aggregated, deduplicated, affinity&#8209;scored. ~50 candidates surfaced from five source streams.</p>
+        <span class="entry-tag">research</span>
+      </li>
+
+      <li class="entry">
+        <span class="entry-num">N.039</span>
+        <a class="entry-link" href="../../research/phase_2_short_list/short_list.md">
+          <span class="entry-title">Phase 2 Short List</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">research/phase_2_short_list/short_list.md</span>
+        </a>
+        <p class="entry-desc">The seven final candidates with selection rationale and wealth&#8209;tier calibration.</p>
+        <span class="entry-tag">research</span>
+      </li>
+
+      <li class="entry">
+        <span class="entry-num">N.040</span>
+        <a class="entry-link" href="../../sources/source_index.md">
+          <span class="entry-title">Source Index</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">sources/source_index.md</span>
+        </a>
+        <p class="entry-desc">Master navigation for verifying any factual claim. Per&#8209;artifact citation map plus known verification gaps.</p>
+        <span class="entry-tag">index</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ───── vii. Project documentation ───── -->
+  <div class="archive-sub" id="archive-docs">
+    <p class="sub-roman">vii.</p>
+    <h3 class="sub-h">Project documentation<em>.</em></h3>
+    <p class="sub-desc">The specification, the implementation plan, the execution&#8209;state checkpoint, and the project README. For full transparency about how the package was produced.</p>
+
+    <ul class="catalog">
+      <li class="entry">
+        <span class="entry-num">N.041</span>
+        <a class="entry-link" href="../../docs/superpowers/specs/2026-05-10-nuvance-fundraising-strategy-design.md">
+          <span class="entry-title">Design Spec</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">docs/superpowers/specs/…design.md</span>
+        </a>
+        <p class="entry-desc">The original specification — methodology, deliverables structure, phasing, success criteria, out&#8209;of&#8209;scope.</p>
+        <span class="entry-tag">spec</span>
+      </li>
+
+      <li class="entry">
+        <span class="entry-num">N.042</span>
+        <a class="entry-link" href="../../docs/superpowers/plans/2026-05-10-nuvance-fundraising-implementation.md">
+          <span class="entry-title">Implementation Plan</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">docs/superpowers/plans/…implementation.md</span>
+        </a>
+        <p class="entry-desc">Eight phases, thirty&#8209;eight tasks, one hundred forty&#8209;three steps, three self&#8209;contained Appendix templates, full parallelization strategy.</p>
+        <span class="entry-tag">plan</span>
+      </li>
+
+      <li class="entry">
+        <span class="entry-num">N.043</span>
+        <a class="entry-link" href="../../STATE.md">
+          <span class="entry-title">Execution State</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">STATE.md</span>
+        </a>
+        <p class="entry-desc">The resumability checkpoint. Used during execution to allow any session to pick up where the prior one left off.</p>
+        <span class="entry-tag">checkpoint</span>
+      </li>
+
+      <li class="entry">
+        <span class="entry-num">N.044</span>
+        <a class="entry-link" href="../../README.md">
+          <span class="entry-title">Project README</span>
+          <span class="entry-leader"></span>
+          <span class="entry-path">README.md</span>
+        </a>
+        <p class="entry-desc">Top&#8209;level navigation, the eight&#8209;artifact package overview, the most consequential recommendation.</p>
+        <span class="entry-tag">overview</span>
+      </li>
+    </ul>
+  </div>
+
+</section>
+
+<!-- ─────────────────────────────────────  COLOPHON  ───────────────────────────────────── -->
+<footer class="colophon" id="colophon">
+
+  <div class="section-header">
+    <span class="section-ghost-num">·</span>
+    <div class="section-title-block">
+      <p class="section-roman">A note at the end</p>
+      <h2 class="section-h">Colophon<em>.</em></h2>
+    </div>
+  </div>
+
+  <div class="colophon-grid">
+
+    <div class="colophon-prose">
+      <p>The Nuvance Portfolio was assembled over three days in early May MMXXVI by Mark Senerth in collaboration with Claude Opus 4.7, working from public sources — Forbes filings, Form 990&#8209;PF records, news archives, foundation annual reports, retrieved articles, regional business journals, and a great deal of triangulation.</p>
+
+      <p>Eight phases of work produced forty&#8209;four catalogued artifacts: institutional context audit, a long list of fifty candidates surfaced from five parallel source streams, a short list of seven after affinity&#8209;first selection, seven deep dossiers, eight benchmarking case studies, tactical artifacts (cheat sheets, cross&#8209;reference matrix, warm&#8209;intro network map), a tailored strategy playbook, an executive summary, a designed pitch deck, an executive presentation, and a 31&#8209;page bound research monograph.</p>
+
+      <p>Approximately twenty&#8209;seven parallel subagent dispatches plus extensive orchestrator&#8209;led synthesis. Forty&#8209;some commits on the main branch, tagged v1.0. Every factual claim in the package is source&#8209;cited; every inference is labeled; every verification gap is documented for follow&#8209;on resolution.</p>
+    </div>
+
+    <div class="colophon-meta">
+
+      <div class="colophon-section">
+        <p class="colophon-l">Set in</p>
+        <p class="colophon-v"><em>Fraunces</em> &amp; <em>Newsreader</em></p>
+        <p class="colophon-s">Variable&#8209;axis serifs by Undercase Type and Production Type, served via Google Fonts.</p>
+      </div>
+
+      <div class="colophon-section">
+        <p class="colophon-l">Palette</p>
+        <p class="colophon-v">Paper · Ink · Clay · Moss</p>
+        <p class="colophon-s">A four&#8209;color editorial system; clay as accent, moss reserved for verification and edition marks.</p>
+      </div>
+
+      <div class="colophon-section">
+        <p class="colophon-l">Compiled</p>
+        <p class="colophon-v">10–13 May MMXXVI</p>
+        <p class="colophon-s">Three days. One reader.</p>
+      </div>
+
+      <div class="colophon-section">
+        <p class="colophon-l">Edition</p>
+        <p class="colophon-v">One of one</p>
+        <p class="colophon-s">An independent research artifact, given freely.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="colophon-foot">
+    <div class="colophon-foot-orn">⁂ ⁂ ⁂</div>
+    <p class="colophon-foot-mark">Edition of one · MMXXVI · N</p>
+  </div>
+
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
