@@ -1,16 +1,36 @@
 (function () {
+  let visRetries = 0;
   function init() {
     if (typeof vis === 'undefined' || !vis.Network) {
-      // vis-network not yet loaded — retry shortly
+      visRetries++;
+      if (visRetries > 100) {
+        const c = document.getElementById('network');
+        if (c) c.innerHTML = '<div style="padding:2rem;font-family:Georgia,serif;color:#b04848;"><strong>vis-network library failed to load.</strong> Check your internet connection — this page loads <code>vis-network</code> from a CDN.</div>';
+        return;
+      }
       return setTimeout(init, 50);
     }
 
     const data = window.NETWORK_DATA;
     const container = document.getElementById('network');
-    if (!data) {
-      container.innerHTML = '<div style="padding:2rem;font-family:Georgia,serif;color:#5a5468;"><strong>Network data not loaded.</strong> Ensure <code>network_data.js</code> is present alongside <code>index.html</code> and reloaded.</div>';
+    if (!container) {
+      console.error('Network container element not found');
       return;
     }
+    if (!data) {
+      container.innerHTML = '<div style="padding:2rem;font-family:Georgia,serif;color:#b04848;"><strong>Network data not loaded.</strong> Ensure <code>network_data.js</code> is present alongside <code>index.html</code> and reloaded.</div>';
+      return;
+    }
+
+    try {
+      buildNetwork(data, container);
+    } catch (err) {
+      console.error('Network render error:', err);
+      container.innerHTML = '<div style="padding:2rem;font-family:Georgia,serif;color:#b04848;"><strong>Render error:</strong> ' + (err && err.message ? err.message : String(err)) + '<br><small>See browser console for details.</small></div>';
+    }
+  }
+
+  function buildNetwork(data, container) {
 
     const COLORS = {
       candidate: '#1a4d7a',
