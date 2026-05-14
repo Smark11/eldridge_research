@@ -224,7 +224,10 @@ for (const f of FILES) {
   try {
     const src = readFileSync(mdAbs, 'utf8');
     const title = extractTitle(src);
-    const html = marked.parse(stripLeadingH1(src));
+    let html = marked.parse(stripLeadingH1(src));
+    // Wrap tables for horizontal scroll on small screens.
+    html = html.replace(/<table>/g, '<div class="table-wrap"><table>')
+               .replace(/<\/table>/g, '</table></div>');
 
     // Compute paths relative to the OUTPUT file
     const outDir = dirname(outAbs);
