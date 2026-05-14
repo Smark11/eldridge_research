@@ -20,17 +20,24 @@
 </svg>
 
 <header class="page-head">
-  <div>
-    <a href="../../artifacts/site/index.html" class="back-link"><span class="orn">⁂</span>The Nuvance Portfolio</a>
+  <div class="page-head-inner">
+    <div>
+      <a href="../../artifacts/site/index.html" class="back-link"><span class="orn">⁂</span>The Nuvance Portfolio</a>
+    </div>
+    <div class="page-head-r">
+      <span class="cat-num">N.046</span>
+      <span class="cat-tag">screen</span>
+    </div>
   </div>
-  <div class="page-head-r">
-    <span class="cat-num">N.046</span>
-    <span class="cat-tag">screen</span>
+  <div class="page-head-title">
+    <p class="page-head-eyebrow">An artifact in the Nuvance Portfolio</p>
+    <h1 class="page-head-h">Phase 1 Screen 01: Forbes 400 — NY/CT residents<em>.</em></h1>
   </div>
 </header>
 
-<main class="prose">
-<h1>Phase 1 Screen 01: Forbes 400 — NY/CT residents</h1>
+<main class="page-main">
+
+  <article class="prose">
 <p><strong>Compiled:</strong> 2026-05-10
 <strong>Source category:</strong> Forbes 400 (2025 edition, published Sept 9, 2025) + Forbes Real-Time Billionaires Index, NY/CT residents
 <strong>Subagent role:</strong> 1 of 5 in Batch 1.B (parallel geographic-wealth screen)
@@ -399,13 +406,70 @@
 <hr>
 <p><em>End of screen.</em></p>
 
+  </article>
+
+  <aside class="page-aside">
+    <p class="aside-l">In this artifact</p>
+    <ul class="aside-toc" id="toc"></ul>
+    <div class="aside-rule"></div>
+    <p class="aside-mark"><span class="orn">⁂</span>Edition of one · MMXXVI · N</p>
+    <a class="aside-back" href="../../artifacts/site/index.html">↤ Return to the catalog</a>
+  </aside>
+
 </main>
 
 <footer class="page-foot">
-  <p class="foot-orn">⁂ ⁂ ⁂</p>
-  <p class="foot-mark">Edition of one · MMXXVI · N</p>
-  <p class="foot-back"><a href="../../artifacts/site/index.html">↤ Return to the catalog</a></p>
+  <div class="page-foot-inner">
+    <p class="foot-orn">⁂ ⁂ ⁂</p>
+    <p class="foot-mark">Edition of one · MMXXVI · N</p>
+    <p class="foot-back"><a href="../../artifacts/site/index.html">↤ Return to the catalog</a></p>
+  </div>
 </footer>
+
+<script>
+// ── Auto-generate TOC from h2/h3 in the article body ──
+(function () {
+  const article = document.querySelector('.prose');
+  const tocList = document.getElementById('toc');
+  if (!article || !tocList) return;
+
+  const headings = article.querySelectorAll('h2, h3');
+  if (headings.length === 0) {
+    document.querySelector('.aside-l').style.display = 'none';
+    return;
+  }
+
+  headings.forEach((h, i) => {
+    if (!h.id) h.id = 'h-' + i + '-' + (h.textContent || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 40);
+    const li = document.createElement('li');
+    li.className = h.tagName.toLowerCase() === 'h3' ? 'toc-h3' : 'toc-h2';
+    const a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent.replace(/\.$/, '');
+    li.appendChild(a);
+    tocList.appendChild(li);
+  });
+
+  // ── Highlight active section on scroll ──
+  if ('IntersectionObserver' in window) {
+    const tocLinks = new Map();
+    tocList.querySelectorAll('a').forEach(a => tocLinks.set(a.getAttribute('href').slice(1), a));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const a = tocLinks.get(entry.target.id);
+        if (!a) return;
+        if (entry.isIntersecting) {
+          tocList.querySelectorAll('a.active').forEach(el => el.classList.remove('active'));
+          a.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -60% 0px' });
+
+    headings.forEach(h => observer.observe(h));
+  }
+})();
+</script>
 
 </body>
 </html>

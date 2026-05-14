@@ -20,17 +20,24 @@
 </svg>
 
 <header class="page-head">
-  <div>
-    <a href="../../../artifacts/site/index.html" class="back-link"><span class="orn">⁂</span>The Nuvance Portfolio</a>
+  <div class="page-head-inner">
+    <div>
+      <a href="../../../artifacts/site/index.html" class="back-link"><span class="orn">⁂</span>The Nuvance Portfolio</a>
+    </div>
+    <div class="page-head-r">
+      <span class="cat-num">N.027</span>
+      <span class="cat-tag">case study</span>
+    </div>
   </div>
-  <div class="page-head-r">
-    <span class="cat-num">N.027</span>
-    <span class="cat-tag">case study</span>
+  <div class="page-head-title">
+    <p class="page-head-eyebrow">An artifact in the Nuvance Portfolio</p>
+    <h1 class="page-head-h">Case Study 03 — Joel E. and Joan Smilow naming gift to Smilow Cancer Hospital at Yale-New Haven (October 2007 / 2009 opening)<em>.</em></h1>
   </div>
 </header>
 
-<main class="prose">
-<h1>Case Study 03 — Joel E. and Joan Smilow naming gift to Smilow Cancer Hospital at Yale-New Haven (October 2007 / 2009 opening)</h1>
+<main class="page-main">
+
+  <article class="prose">
 <p><strong>Gift size:</strong> Undisclosed at the donors&#39; request; widely characterized as a &quot;major&quot; / &quot;transformational&quot; naming gift. Public reporting routinely conflates the gift with the $467M total project cost, but the gift itself was a <em>portion</em> of that project (bond-financed primarily) — best-available triangulated estimate <strong>$50M-$100M (most likely $50M-$60M)</strong>, consistent with comparable single-name hospital-tower gifts of the 2006-2010 era. Confidence: <strong>Medium-low</strong> on the exact figure; <strong>High</strong> that the gift was the institution&#39;s largest single naming gift to date and unambiguously transformational in scale.
 <strong>Type:</strong> Principal / lead naming gift; whole-building / whole-hospital naming
 <strong>Compiled:</strong> 2026-05-12
@@ -357,13 +364,70 @@
 [^hfm_norwalk]: HFM Magazine, &quot;New cancer center focuses on providing the best care in a comforting environment.&quot; <a href="https://www.hfmmagazine.com/articles/2571-new-cancer-center-focuses-on-providing-the-best-care-in-a-comforting-environment">https://www.hfmmagazine.com/articles/2571-new-cancer-center-focuses-on-providing-the-best-care-in-a-comforting-environment</a> — retrieved 2026-05-12.
 [^dalio_dossier]: Phase 3 Dossier #3 — Raymond T. Dalio. <code>dossiers/03_dalio.md</code> — compiled 2026-05-11.</p>
 
+  </article>
+
+  <aside class="page-aside">
+    <p class="aside-l">In this artifact</p>
+    <ul class="aside-toc" id="toc"></ul>
+    <div class="aside-rule"></div>
+    <p class="aside-mark"><span class="orn">⁂</span>Edition of one · MMXXVI · N</p>
+    <a class="aside-back" href="../../../artifacts/site/index.html">↤ Return to the catalog</a>
+  </aside>
+
 </main>
 
 <footer class="page-foot">
-  <p class="foot-orn">⁂ ⁂ ⁂</p>
-  <p class="foot-mark">Edition of one · MMXXVI · N</p>
-  <p class="foot-back"><a href="../../../artifacts/site/index.html">↤ Return to the catalog</a></p>
+  <div class="page-foot-inner">
+    <p class="foot-orn">⁂ ⁂ ⁂</p>
+    <p class="foot-mark">Edition of one · MMXXVI · N</p>
+    <p class="foot-back"><a href="../../../artifacts/site/index.html">↤ Return to the catalog</a></p>
+  </div>
 </footer>
+
+<script>
+// ── Auto-generate TOC from h2/h3 in the article body ──
+(function () {
+  const article = document.querySelector('.prose');
+  const tocList = document.getElementById('toc');
+  if (!article || !tocList) return;
+
+  const headings = article.querySelectorAll('h2, h3');
+  if (headings.length === 0) {
+    document.querySelector('.aside-l').style.display = 'none';
+    return;
+  }
+
+  headings.forEach((h, i) => {
+    if (!h.id) h.id = 'h-' + i + '-' + (h.textContent || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 40);
+    const li = document.createElement('li');
+    li.className = h.tagName.toLowerCase() === 'h3' ? 'toc-h3' : 'toc-h2';
+    const a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent.replace(/\.$/, '');
+    li.appendChild(a);
+    tocList.appendChild(li);
+  });
+
+  // ── Highlight active section on scroll ──
+  if ('IntersectionObserver' in window) {
+    const tocLinks = new Map();
+    tocList.querySelectorAll('a').forEach(a => tocLinks.set(a.getAttribute('href').slice(1), a));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const a = tocLinks.get(entry.target.id);
+        if (!a) return;
+        if (entry.isIntersecting) {
+          tocList.querySelectorAll('a.active').forEach(el => el.classList.remove('active'));
+          a.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -60% 0px' });
+
+    headings.forEach(h => observer.observe(h));
+  }
+})();
+</script>
 
 </body>
 </html>

@@ -20,17 +20,24 @@
 </svg>
 
 <header class="page-head">
-  <div>
-    <a href="../artifacts/site/index.html" class="back-link"><span class="orn">⁂</span>The Nuvance Portfolio</a>
+  <div class="page-head-inner">
+    <div>
+      <a href="../artifacts/site/index.html" class="back-link"><span class="orn">⁂</span>The Nuvance Portfolio</a>
+    </div>
+    <div class="page-head-r">
+      <span class="cat-num">N.040</span>
+      <span class="cat-tag">index</span>
+    </div>
   </div>
-  <div class="page-head-r">
-    <span class="cat-num">N.040</span>
-    <span class="cat-tag">index</span>
+  <div class="page-head-title">
+    <p class="page-head-eyebrow">An artifact in the Nuvance Portfolio</p>
+    <h1 class="page-head-h">Source Index<em>.</em></h1>
   </div>
 </header>
 
-<main class="prose">
-<h1>Source Index</h1>
+<main class="page-main">
+
+  <article class="prose">
 <p>Master index for verifying any factual claim in this package. Every research artifact contains its own inline source citations; this file provides the navigation map.</p>
 <p><strong>Naming convention.</strong> Source-citation files are named <code>sources_NN_NN.md</code> and live alongside this index in <code>/sources/</code>. Each one is a curated, retrieval-dated URL list for a specific upstream research artifact (a Phase 0 document, a Phase 3 dossier, or a Phase 4 case study). All <code>sources_*.md</code> files are authoritative — they are the per-artifact citation indexes, indexed from here.</p>
 <hr>
@@ -292,13 +299,70 @@
 </ol>
 <p>These gaps don&#39;t block the package from being usable; they are the Phase-2 research follow-on priorities.</p>
 
+  </article>
+
+  <aside class="page-aside">
+    <p class="aside-l">In this artifact</p>
+    <ul class="aside-toc" id="toc"></ul>
+    <div class="aside-rule"></div>
+    <p class="aside-mark"><span class="orn">⁂</span>Edition of one · MMXXVI · N</p>
+    <a class="aside-back" href="../artifacts/site/index.html">↤ Return to the catalog</a>
+  </aside>
+
 </main>
 
 <footer class="page-foot">
-  <p class="foot-orn">⁂ ⁂ ⁂</p>
-  <p class="foot-mark">Edition of one · MMXXVI · N</p>
-  <p class="foot-back"><a href="../artifacts/site/index.html">↤ Return to the catalog</a></p>
+  <div class="page-foot-inner">
+    <p class="foot-orn">⁂ ⁂ ⁂</p>
+    <p class="foot-mark">Edition of one · MMXXVI · N</p>
+    <p class="foot-back"><a href="../artifacts/site/index.html">↤ Return to the catalog</a></p>
+  </div>
 </footer>
+
+<script>
+// ── Auto-generate TOC from h2/h3 in the article body ──
+(function () {
+  const article = document.querySelector('.prose');
+  const tocList = document.getElementById('toc');
+  if (!article || !tocList) return;
+
+  const headings = article.querySelectorAll('h2, h3');
+  if (headings.length === 0) {
+    document.querySelector('.aside-l').style.display = 'none';
+    return;
+  }
+
+  headings.forEach((h, i) => {
+    if (!h.id) h.id = 'h-' + i + '-' + (h.textContent || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 40);
+    const li = document.createElement('li');
+    li.className = h.tagName.toLowerCase() === 'h3' ? 'toc-h3' : 'toc-h2';
+    const a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent.replace(/\.$/, '');
+    li.appendChild(a);
+    tocList.appendChild(li);
+  });
+
+  // ── Highlight active section on scroll ──
+  if ('IntersectionObserver' in window) {
+    const tocLinks = new Map();
+    tocList.querySelectorAll('a').forEach(a => tocLinks.set(a.getAttribute('href').slice(1), a));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const a = tocLinks.get(entry.target.id);
+        if (!a) return;
+        if (entry.isIntersecting) {
+          tocList.querySelectorAll('a.active').forEach(el => el.classList.remove('active'));
+          a.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -60% 0px' });
+
+    headings.forEach(h => observer.observe(h));
+  }
+})();
+</script>
 
 </body>
 </html>

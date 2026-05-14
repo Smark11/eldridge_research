@@ -20,17 +20,24 @@
 </svg>
 
 <header class="page-head">
-  <div>
-    <a href="../../../artifacts/site/index.html" class="back-link"><span class="orn">⁂</span>The Nuvance Portfolio</a>
+  <div class="page-head-inner">
+    <div>
+      <a href="../../../artifacts/site/index.html" class="back-link"><span class="orn">⁂</span>The Nuvance Portfolio</a>
+    </div>
+    <div class="page-head-r">
+      <span class="cat-num">N.042</span>
+      <span class="cat-tag">plan</span>
+    </div>
   </div>
-  <div class="page-head-r">
-    <span class="cat-num">N.042</span>
-    <span class="cat-tag">plan</span>
+  <div class="page-head-title">
+    <p class="page-head-eyebrow">An artifact in the Nuvance Portfolio</p>
+    <h1 class="page-head-h">Nuvance Health Major-Gift Strategy — Implementation Plan<em>.</em></h1>
   </div>
 </header>
 
-<main class="prose">
-<h1>Nuvance Health Major-Gift Strategy — Implementation Plan</h1>
+<main class="page-main">
+
+  <article class="prose">
 <blockquote>
 <p><strong>For agentic workers:</strong> REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (<code>- [ ]</code>) syntax for tracking.</p>
 </blockquote>
@@ -2916,13 +2923,70 @@ Numbered list of all sources cited in this dossier, with URL or filing identifie
 <p><strong>6. Parallelization design:</strong> The Parallelization Strategy section maps every parallelizable batch with subagent count, dependencies, and conflict-resolution approach. Parallel execution can compress the full scope from 6-10 weeks to 1.5-3 weeks, bottlenecked by 5 sequential human-review checkpoints and synthesis tasks. Self-contained Appendix templates (A, B, C) make per-unit parallel dispatch feasible.</p>
 <p>The plan is ready for execution.</p>
 
+  </article>
+
+  <aside class="page-aside">
+    <p class="aside-l">In this artifact</p>
+    <ul class="aside-toc" id="toc"></ul>
+    <div class="aside-rule"></div>
+    <p class="aside-mark"><span class="orn">⁂</span>Edition of one · MMXXVI · N</p>
+    <a class="aside-back" href="../../../artifacts/site/index.html">↤ Return to the catalog</a>
+  </aside>
+
 </main>
 
 <footer class="page-foot">
-  <p class="foot-orn">⁂ ⁂ ⁂</p>
-  <p class="foot-mark">Edition of one · MMXXVI · N</p>
-  <p class="foot-back"><a href="../../../artifacts/site/index.html">↤ Return to the catalog</a></p>
+  <div class="page-foot-inner">
+    <p class="foot-orn">⁂ ⁂ ⁂</p>
+    <p class="foot-mark">Edition of one · MMXXVI · N</p>
+    <p class="foot-back"><a href="../../../artifacts/site/index.html">↤ Return to the catalog</a></p>
+  </div>
 </footer>
+
+<script>
+// ── Auto-generate TOC from h2/h3 in the article body ──
+(function () {
+  const article = document.querySelector('.prose');
+  const tocList = document.getElementById('toc');
+  if (!article || !tocList) return;
+
+  const headings = article.querySelectorAll('h2, h3');
+  if (headings.length === 0) {
+    document.querySelector('.aside-l').style.display = 'none';
+    return;
+  }
+
+  headings.forEach((h, i) => {
+    if (!h.id) h.id = 'h-' + i + '-' + (h.textContent || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 40);
+    const li = document.createElement('li');
+    li.className = h.tagName.toLowerCase() === 'h3' ? 'toc-h3' : 'toc-h2';
+    const a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent.replace(/\.$/, '');
+    li.appendChild(a);
+    tocList.appendChild(li);
+  });
+
+  // ── Highlight active section on scroll ──
+  if ('IntersectionObserver' in window) {
+    const tocLinks = new Map();
+    tocList.querySelectorAll('a').forEach(a => tocLinks.set(a.getAttribute('href').slice(1), a));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const a = tocLinks.get(entry.target.id);
+        if (!a) return;
+        if (entry.isIntersecting) {
+          tocList.querySelectorAll('a.active').forEach(el => el.classList.remove('active'));
+          a.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -60% 0px' });
+
+    headings.forEach(h => observer.observe(h));
+  }
+})();
+</script>
 
 </body>
 </html>
